@@ -7,3 +7,4 @@ pocketchef/app/password.py
 *.swp
 *.pem
 react/output/
+venv/

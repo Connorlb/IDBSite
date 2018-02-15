@@ -1,0 +1,9 @@
+*.pyc
+**/.coverage
+.idea/
+ache/api_key.py
+pocketchef/app/__pycache__/
+pocketchef/app/password.py
+*.swp
+*.pem
+react/output/

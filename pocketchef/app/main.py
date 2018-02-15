@@ -6,17 +6,17 @@ app = Flask(__name__)
 def home() :
     return render_template('home.html')
 
-@app.route("/model1")
+@app.route("/dishes")
 def model1() :
-    return render_template('model1.html')
+    return render_template('dishes.html')
 
-@app.route("/model2")
+@app.route("/ingredients")
 def model2() :
-    return render_template('model2.html')
+    return render_template('ingredients.html')
 
-@app.route("/model3")
+@app.route("/recipes")
 def model3() :
-    return render_template('model3.html')
+    return render_template('recipes.html')
 
 @app.route("/about")
 def about() :

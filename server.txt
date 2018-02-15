@@ -1,0 +1,20 @@
+# Connecting to server instance
+ssh -i "pocketchef.pem" ubuntu@pocketchef.me
+
+# Building website image, make sure you're in pocketchef directory
+cd pocketchef
+sudo docker build -t pocketchef .
+
+# Run new website build
+sudo docker run -p 80:80 pocketchef
+
+# If you have issues running the build, try these:
+	# Shows running builds - shows build ID - use this to do server fixes
+	sudo docker ps
+
+	# Force kill builds running on server, get buildID from above command
+	sudo docker rm -f buildID
+
+	# Restart build images
+	sudo service docker restart
+

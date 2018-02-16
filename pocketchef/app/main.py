@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -21,6 +21,17 @@ def recipes() :
 
 @app.route("/about")
 def about() :
+    #r = request.get_json('https://api.github.com/repos/Connorlb/IDBSite/contributors?anon=1')
+    data = {
+        'hello'  : 'world',
+        'number' : 3
+    }
+    js = json.dumps(data)
+
+    resp = Response(js, status=200, mimetype='application/json')
+    resp.headers['Link'] = 'http://luisrei.com'
+
+
     return render_template('about.html')
 
 
@@ -35,7 +46,7 @@ def cabobobs() :
 
 @app.route("/restaurants/cheesecakefactory")
 def cheesecakefactory() :
-    return render_template('cheesecakefactory.html')  
+    return render_template('cheesecakefactory.html')
 
 
 # Recipe Pages
@@ -63,7 +74,7 @@ def tomatoes() :
 
 @app.route("/ingredients/tortillas")
 def tortillas() :
-    return render_template('tortillas.html')  
+    return render_template('tortillas.html')
 
 if __name__ == "__main__" :
     app.run(host='0.0.0.0', debug=True, port=80)

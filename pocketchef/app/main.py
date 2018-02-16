@@ -64,7 +64,7 @@ def tomatosoup() :
 
 
 # Ingredient Pages
-@app.route("/ingredients/grahamcrackers")
+@app.route("/ingredients/graham-crackers")
 def grahamcrackers() :
     return render_template('grahamcrackers.html')
 

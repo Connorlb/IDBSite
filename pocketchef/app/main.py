@@ -22,5 +22,9 @@ def model3() :
 def about() :
     return render_template('about.html')
 
+@app.route("/restaurants/maggianos")
+def about() :
+    return render_template('maggianos.html')  
+
 if __name__ == "__main__" :
     app.run(host='0.0.0.0', debug=True, port=80)

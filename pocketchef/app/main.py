@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -21,17 +21,6 @@ def recipes() :
 
 @app.route("/about")
 def about() :
-    #r = request.get_json('https://api.github.com/repos/Connorlb/IDBSite/contributors?anon=1')
-    data = {
-        'hello'  : 'world',
-        'number' : 3
-    }
-    js = json.dumps(data)
-
-    resp = Response(js, status=200, mimetype='application/json')
-    resp.headers['Link'] = 'http://luisrei.com'
-
-
     return render_template('about.html')
 
 
@@ -64,7 +53,7 @@ def tomatosoup() :
 
 
 # Ingredient Pages
-@app.route("/ingredients/graham-crackers")
+@app.route("/ingredients/grahamcrackers")
 def grahamcrackers() :
     return render_template('grahamcrackers.html')
 

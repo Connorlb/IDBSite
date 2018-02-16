@@ -7,15 +7,15 @@ def home() :
     return render_template('home.html')
 
 @app.route("/restaurants")
-def model1() :
+def restaurants() :
     return render_template('restaurants.html')
 
 @app.route("/ingredients")
-def model2() :
+def ingredients() :
     return render_template('ingredients.html')
 
 @app.route("/recipes")
-def model3() :
+def recipes() :
     return render_template('recipes.html')
 
 @app.route("/about")
@@ -23,7 +23,7 @@ def about() :
     return render_template('about.html')
 
 @app.route("/restaurants/maggianos")
-def about() :
+def maggianos() :
     return render_template('maggianos.html')  
 
 if __name__ == "__main__" :

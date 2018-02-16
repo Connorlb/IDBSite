@@ -1,11 +1,22 @@
 {% extends 'layout.html' %}
 {% block body %}
 <style type="text/css">
-.bgimg{
-	background-image: url('http://ialoc.org/Resources/Pictures/Maggianos-Nordstrom-009.jpg');
-	background-size:100%;
-	-webkit-filter:brightness(40%);
-	filter: brightness(40%) ccontrast(70%);
+.mycont{
+  position:relative;
+  text-align:center;
+  color:white;
+}
+.centered{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+}
+.tops{
+  position:absolute;
+  top:70%;
+  left:50%;
+  transform: translate(-50%, -30%);
 }
 </style>
 <html lang="en">
@@ -29,14 +40,10 @@
     <main role="main">
 
       <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="jumbotron">
- 	    
-        <div class="container">
-          <div class="bgimg"></div>
-          <h1 class="display-3" style="color:white;">Maggiano's Little Italy</h1>
-          <p style="color:white;text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;">Maggiano's is an upscale Italian restaurant serving high-quality traditonal Italian quisine.</p>
-        </div>
-      </div>
+      <div class="mycont">
+        <img src="http://ialoc.org/Resources/Pictures/Maggianos-Nordstrom-009.jpg" style="width:800px; height:600px">
+        <div class="tops">MAGGIANoS</div>
+        <div class="centered">Maggiano's is an upscale Italian restaurant serving high-quality traditonal Italian quisine.</div>
 
       <div class="container">
         <!-- Example row of columns -->

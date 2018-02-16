@@ -6,3 +6,5 @@
 - Patrick Dalisay
 - Aditya Prasad
 - Jesus Romero
+
+./serverRestart --help

@@ -1,8 +1,4 @@
 {% extends 'layout.html' %}
-.jumbotron {
-background-image: url(http://ialoc.org/Resources/Pictures/Maggianos-Nordstrom-009.jpg);
-background-size: cover;
-height: 100%;}
 {% block body %}
 <!doctype html>
 <html lang="en">
@@ -26,7 +22,7 @@ height: 100%;}
     <main role="main">
 
       <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="jumbotron">
+      <div class="jumbotron" style="background-image: url(http://ialoc.org/Resources/Pictures/Maggianos-Nordstrom-009.jpg); background-size:100%;">
         <div class="container">
           <h1 class="display-3">Maggiano's Little Italy</h1>
           <p>Maggiano's is an upscale Italian restaurant serving high-quality traditonal Italian quisine.</p>
@@ -45,8 +41,8 @@ height: 100%;}
             <p>“The value comes in when you get to take home another platter of either the same or another selection.” <br></br> See more on <a href="Yelp.com">Yelp.com</a></p>
           </div>
           <div class="col-md-4">
-            <h2>Contact Information</h2>
-            <p>Address: 10910 Domain Dr Suite 100, Austin, TX 78758<br></br>Reservations:maggianos.com,opentable.com<br></br>Phone:(512)501-7870</p>
+            <h2>Commonly Used Ingredients</h2>
+            <p>Ingredients at Maggiano's often include chicken, <a href="/ingredients/tomatoes">tomatoes</a>, and noodles</p>
           </div>
         </div>
 
@@ -55,10 +51,6 @@ height: 100%;}
       </div> <!-- /container -->
 
     </main>
-
-    <footer class="container">
-      <p>&copy; Company 2017-2018</p>
-    </footer>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

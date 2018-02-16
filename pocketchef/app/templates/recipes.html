@@ -1,6 +1,16 @@
 {% extends 'layout.html' %}
 
 {% block body %}
+<head>
+<!-- Font Awesome Icon Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.checked {
+    color: orange;
+}
+</style>
+</head>
+
     <h1 class="my-4 text-center text-lg-center">Recipes</h1>
       <div class="row">
 
@@ -37,6 +47,12 @@
                 </li>
                 <li class="list-group-item">
                   <p class="card-text"><b>Reviews:</b> 5 Stars</p>
+                  
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span>
                 </li>
               </ul>
               <div class="card-body">

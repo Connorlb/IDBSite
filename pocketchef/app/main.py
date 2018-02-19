@@ -23,9 +23,10 @@ def recipes() :
 
 @app.route("/about")
 def about() :
-    user = {
+    user = [
+  {
     "login": "Connorlb",
-    "id": "9309007",
+    "id": 9309007,
     "avatar_url": "https://avatars2.githubusercontent.com/u/9309007?v=4",
     "gravatar_id": "",
     "url": "https://api.github.com/users/Connorlb",
@@ -40,10 +41,115 @@ def about() :
     "events_url": "https://api.github.com/users/Connorlb/events{/privacy}",
     "received_events_url": "https://api.github.com/users/Connorlb/received_events",
     "type": "User",
-    "site_admin": "false",
-    "contributions": "57"
+    "site_admin": false,
+    "contributions": 57
+  },
+  {
+    "email": "mmcurtis@cs.utexas.edu",
+    "name": "Matthew Curtis",
+    "type": "Anonymous",
+    "contributions": 28
+  },
+  {
+    "email": "aprasad@cs.utexas.edu",
+    "name": "Aditya Prasad",
+    "type": "Anonymous",
+    "contributions": 16
+  },
+  {
+    "login": "pdalisay",
+    "id": 23086871,
+    "avatar_url": "https://avatars2.githubusercontent.com/u/23086871?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/pdalisay",
+    "html_url": "https://github.com/pdalisay",
+    "followers_url": "https://api.github.com/users/pdalisay/followers",
+    "following_url": "https://api.github.com/users/pdalisay/following{/other_user}",
+    "gists_url": "https://api.github.com/users/pdalisay/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/pdalisay/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/pdalisay/subscriptions",
+    "organizations_url": "https://api.github.com/users/pdalisay/orgs",
+    "repos_url": "https://api.github.com/users/pdalisay/repos",
+    "events_url": "https://api.github.com/users/pdalisay/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/pdalisay/received_events",
+    "type": "User",
+    "site_admin": false,
+    "contributions": 16
+  },
+  {
+    "login": "mmcurtis55",
+    "id": 10254859,
+    "avatar_url": "https://avatars2.githubusercontent.com/u/10254859?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/mmcurtis55",
+    "html_url": "https://github.com/mmcurtis55",
+    "followers_url": "https://api.github.com/users/mmcurtis55/followers",
+    "following_url": "https://api.github.com/users/mmcurtis55/following{/other_user}",
+    "gists_url": "https://api.github.com/users/mmcurtis55/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/mmcurtis55/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/mmcurtis55/subscriptions",
+    "organizations_url": "https://api.github.com/users/mmcurtis55/orgs",
+    "repos_url": "https://api.github.com/users/mmcurtis55/repos",
+    "events_url": "https://api.github.com/users/mmcurtis55/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/mmcurtis55/received_events",
+    "type": "User",
+    "site_admin": false,
+    "contributions": 8
+  },
+  {
+    "login": "AdityaPrasad1",
+    "id": 14363433,
+    "avatar_url": "https://avatars2.githubusercontent.com/u/14363433?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/AdityaPrasad1",
+    "html_url": "https://github.com/AdityaPrasad1",
+    "followers_url": "https://api.github.com/users/AdityaPrasad1/followers",
+    "following_url": "https://api.github.com/users/AdityaPrasad1/following{/other_user}",
+    "gists_url": "https://api.github.com/users/AdityaPrasad1/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/AdityaPrasad1/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/AdityaPrasad1/subscriptions",
+    "organizations_url": "https://api.github.com/users/AdityaPrasad1/orgs",
+    "repos_url": "https://api.github.com/users/AdityaPrasad1/repos",
+    "events_url": "https://api.github.com/users/AdityaPrasad1/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/AdityaPrasad1/received_events",
+    "type": "User",
+    "site_admin": false,
+    "contributions": 8
+  },
+  {
+    "login": "Jesus-Romero",
+    "id": 17364365,
+    "avatar_url": "https://avatars3.githubusercontent.com/u/17364365?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/Jesus-Romero",
+    "html_url": "https://github.com/Jesus-Romero",
+    "followers_url": "https://api.github.com/users/Jesus-Romero/followers",
+    "following_url": "https://api.github.com/users/Jesus-Romero/following{/other_user}",
+    "gists_url": "https://api.github.com/users/Jesus-Romero/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/Jesus-Romero/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/Jesus-Romero/subscriptions",
+    "organizations_url": "https://api.github.com/users/Jesus-Romero/orgs",
+    "repos_url": "https://api.github.com/users/Jesus-Romero/repos",
+    "events_url": "https://api.github.com/users/Jesus-Romero/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/Jesus-Romero/received_events",
+    "type": "User",
+    "site_admin": false,
+    "contributions": 3
+  },
+  {
+    "email": "connor.burkman@gmail.com",
+    "name": "Connorlb",
+    "type": "Anonymous",
+    "contributions": 1
+  },
+  {
+    "email": "ubuntu@ip-172-31-45-109.us-east-2.compute.internal",
+    "name": "Ubuntu",
+    "type": "Anonymous",
+    "contributions": 1
   }
-    return render_template('about.html', user=user)
+]
+    return render_template('about.html', user=json.dumps(user))
 
 
 # Restaurant Pages

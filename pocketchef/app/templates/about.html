@@ -84,11 +84,10 @@
         </div>
       </div>
 
-      <p>Hello, <span id="username"></span></p>
+      <p>Commits:, <span id="commits"></span></p>
       <script>
     var user = JSON.parse('{{ user | tojson | safe}}');
-    document.getElementById('username').innerHTML = user.firstname + " " +
-            user.lastname;
+    document.getElementById('commits').innerHTML = user.contributions;
       </script>
 
 

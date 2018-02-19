@@ -23,7 +23,27 @@ def recipes() :
 
 @app.route("/about")
 def about() :
-    user = {'firstname': "Mr.", 'lastname': "My Father's Son"}
+    user = [
+  {
+    "login": "Connorlb",
+    "id": 9309007,
+    "avatar_url": "https://avatars2.githubusercontent.com/u/9309007?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/Connorlb",
+    "html_url": "https://github.com/Connorlb",
+    "followers_url": "https://api.github.com/users/Connorlb/followers",
+    "following_url": "https://api.github.com/users/Connorlb/following{/other_user}",
+    "gists_url": "https://api.github.com/users/Connorlb/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/Connorlb/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/Connorlb/subscriptions",
+    "organizations_url": "https://api.github.com/users/Connorlb/orgs",
+    "repos_url": "https://api.github.com/users/Connorlb/repos",
+    "events_url": "https://api.github.com/users/Connorlb/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/Connorlb/received_events",
+    "type": "User",
+    "site_admin": false,
+    "contributions": 57
+  }]
     return render_template('about.html', user=user)
 
 

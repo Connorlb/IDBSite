@@ -23,9 +23,8 @@ def recipes() :
 
 @app.route("/about")
 def about() :
-    #r = requests.get(https://api.github.com/repos/Connorlb/IDBSite/contributors?anon=1)
-    #return render_template('about.html', stats=json.loads(r.text)['stats'])\
-    return render_template('about.html')
+    user = {'firstname': "Mr.", 'lastname': "My Father's Son"}
+    return render_template('about.html', user=user)
 
 
 # Restaurant Pages

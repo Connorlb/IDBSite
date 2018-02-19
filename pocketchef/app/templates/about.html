@@ -84,6 +84,14 @@
         </div>
       </div>
 
+      <p>Hello, <span id="username"></span></p>
+      <script>
+    var user = JSON.parse('{{ user | tojson | safe}}');
+    document.getElementById('username').innerHTML = user.firstname + " " +
+            user.lastname;
+      </script>
+
+
       <h3>Data</h3>
       <ul>
         <li><a href="https://www.yelp.com/developers/">Yelp</a>: Used to get Restaurant reviews</li>

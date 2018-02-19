@@ -1,4 +1,6 @@
 from flask import Flask, render_template
+import requests
+import json
 
 app = Flask(__name__)
 
@@ -21,7 +23,9 @@ def recipes() :
 
 @app.route("/about")
 def about() :
-    return render_template('about.html')
+    r = requests.get(https://api.github.com/repos/Connorlb/IDBSite/contributors?anon=1)
+  return render_template('about.html', stats=json.loads(r.text)['stats'])
+
 
 
 # Restaurant Pages

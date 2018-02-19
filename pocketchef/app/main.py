@@ -24,7 +24,7 @@ def recipes() :
 @app.route("/about")
 def about() :
     r = requests.get(https://api.github.com/repos/Connorlb/IDBSite/contributors?anon=1)
-  return render_template('about.html', stats=json.loads(r.text)['stats'])
+    return render_template('about.html', stats=json.loads(r.text)['stats'])
 
 
 

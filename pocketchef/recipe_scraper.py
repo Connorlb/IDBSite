@@ -2,7 +2,7 @@ import urllib.request
 import json
 
 # Request Headers
-api_key = "eSpzDnsnCKmshP9N9IbybaCNXlQsp1P3BQSjsn0xgRvKJA2hrE"
+api_key = ""
 accept = "application/json"
 
 # Parameters

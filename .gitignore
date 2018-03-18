@@ -8,3 +8,4 @@ pocketchef/app/password.py
 *.pem
 react/output/
 venv/
+pocketchef-2/node_modules

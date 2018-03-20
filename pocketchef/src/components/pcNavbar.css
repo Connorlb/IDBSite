@@ -1,0 +1,9 @@
+nav.navbar, .navbar-default{
+    background-color: darksalmon;
+}
+
+.navbar-default{
+    background-image: none;
+    border: none;
+    border-radius: 0;
+}

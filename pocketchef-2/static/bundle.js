@@ -78,7 +78,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("throw new Error(\"Module build failed: TypeError: Cannot read property 'babel' of undefined\\n    at Object.module.exports (/home/ubuntu/IDBSite/pocketchef-2/node_modules/babel-loader/lib/index.js:103:35)\");\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("throw new Error(\"Module build failed: SyntaxError: Unexpected token (7:16)\\n\\n\\u001b[0m \\u001b[90m 5 | \\u001b[39m\\u001b[36mimport\\u001b[39m registerServiceWorker from \\u001b[32m'./registerServiceWorker'\\u001b[39m\\u001b[33m;\\u001b[39m\\n \\u001b[90m 6 | \\u001b[39m\\n\\u001b[31m\\u001b[1m>\\u001b[22m\\u001b[39m\\u001b[90m 7 | \\u001b[39m\\u001b[33mReactDOM\\u001b[39m\\u001b[33m.\\u001b[39mrender(\\u001b[33m<\\u001b[39m\\u001b[33mApp\\u001b[39m \\u001b[33m/\\u001b[39m\\u001b[33m>\\u001b[39m\\u001b[33m,\\u001b[39m document\\u001b[33m.\\u001b[39mgetElementById(\\u001b[32m'root'\\u001b[39m))\\u001b[33m;\\u001b[39m\\n \\u001b[90m   | \\u001b[39m                \\u001b[31m\\u001b[1m^\\u001b[22m\\u001b[39m\\n \\u001b[90m 8 | \\u001b[39mregisterServiceWorker()\\u001b[33m;\\u001b[39m\\n \\u001b[90m 9 | \\u001b[39m\\u001b[0m\\n\");\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 

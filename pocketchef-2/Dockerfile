@@ -1,4 +1,4 @@
-M tiangolo/uwsgi-nginx-flask:flask
+FROM tiangolo/uwsgi-nginx-flask:flask
 
 COPY requirements.txt /tmp/
 

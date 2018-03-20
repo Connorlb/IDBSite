@@ -11,8 +11,8 @@ lat = "latitude="
 lon = "&longitude="
 rad = "&radius="
 
-# Queries
-radius = 16000  # meters
+# Queries - radius (meters) and coordinates (latitude, longitude)
+radius = 16000
 coordinates = [
     (40.7589, -73.9851),
     (37.7749, -122.4194),
@@ -32,7 +32,7 @@ for city in coordinates :
     data = urllib.request.urlopen(req)
     j_data = json.loads(data.read().decode("utf-8"))
     for venue in j_data["businesses"] :
-        # (name, address, phone, cuisine, review)
+        # (name, address, phone, cuisine, rating)
         print("(" +
             venue["name"] + ", " +
             venue["location"]["address1"] + ", " +

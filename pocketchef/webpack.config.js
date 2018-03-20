@@ -1,25 +1,21 @@
 const webpack = require('webpack');
-
-module.exports = {
-entry: [
-  './src/index.js'
-],
-output: {
-  path: __dirname + '/static',
-  filename: 'bundle.js',
-},
-module: {
-  loaders: [
-    {
-      test: /\.jsx?$/,
-      exclude: /node_modules/,
-      loader: 'babel-loader',
-      query: {
-	presets: ['es2015', 'react']
-      }
+const config = {
+    entry:  __dirname + '/src/index.js',
+    output: {
+        path: __dirname + '/static',
+        filename: 'bundle.js',
     },
-  ],
-},
-plugins: [
-]
+    resolve: {
+        extensions: ['.js', '.jsx', '.css']
+    },
+    module: {
+      rules: [
+        {
+          test: /\.jsx?/,
+          exclude: /node_modules/,
+          use: 'babel-loader'
+        }
+      ]
+    }
 };
+module.exports = config;

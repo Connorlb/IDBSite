@@ -10,8 +10,10 @@ get_req = "https://api.yelp.com/v3/businesses/search?"
 lat = "latitude="
 lon = "&longitude="
 rad = "&radius="
+lim = "&limit="
 
-# Queries - radius (meters) and coordinates (latitude, longitude)
+# Queries - result limit, radius (meters), and coordinates (latitude, longitude)
+limit = 30
 radius = 16000
 coordinates = [
     (40.7589, -73.9851),
@@ -27,7 +29,7 @@ coordinates = [
 
 # GET Request
 for city in coordinates :
-    url = get_req + lat + str(city[0]) + lon + str(city[1]) + rad + str(radius)
+    url = get_req + lat + str(city[0]) + lon + str(city[1]) + rad + str(radius) + lim + str(limit)
     req = urllib.request.Request(url, headers={"Authorization":api_key})
     data = urllib.request.urlopen(req)
     j_data = json.loads(data.read().decode("utf-8"))
@@ -35,7 +37,7 @@ for city in coordinates :
         # (name, address, phone, cuisine, rating)
         print("(" +
             venue["name"] + ", " +
-            venue["location"]["address1"] + ", " +
+            ' '.join(venue["location"]["display_address"]) + ", " +
             venue["display_phone"] + ", " +
             venue["categories"][0]["title"] + ", " +
             str(venue["rating"]) + ")")

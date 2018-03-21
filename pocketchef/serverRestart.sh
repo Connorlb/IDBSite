@@ -11,8 +11,10 @@ then
   echo "And of course, to access this page:"
   echo "	./serverRestart.sh --help"
 else
+  sudo touch info.txt
+  sudo touch num.txt
   sudo docker ps > info.txt
-  awk '{print $1}' info.txt > num.txt
+  sudo awk '{print $1}' info.txt > num.txt
   number=$(sed '2q;d' num.txt)
 
   if [ -z "$number" ]
@@ -26,10 +28,10 @@ else
         echo "Server is down"
   fi
 
-  rm info.txt
-  rm num.txt
+  sudo rm info.txt
+  sudo rm num.txt
 
-  git pull origin master
+ sudo git pull origin master
 
   if [ "$arg1" = "--kill" ]
   then

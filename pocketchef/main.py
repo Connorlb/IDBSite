@@ -1,11 +1,11 @@
 from flask import Flask, render_template
 
 # the all-important app variable:
-app = Flask(__name__, static_folder="../static", template_folder="../public")
+app = Flask(__name__, static_folder="static", template_folder="public")
 
 @app.route("/")
 def index():
-    return render_template('../app/index.html');
+    return render_template('index.html');
 
 @app.route("/home")
 def index1():

@@ -10,15 +10,15 @@ conn.autocommit = True
 cur = conn.cursor()
 
 # SQL Query
-sql = """SELECT name FROM restaurants"""
+sql = """SELECT name, latitude, longitude FROM restaurants"""
 
 # Request
 try:
     cur.execute(sql)
     rows = cur.fetchall()
-    print("Entry Count: " + cur.rowcount)
+    print("Entry Count: " + str(cur.rowcount))
     for row in rows :
-        print(row)
+        print(row[0])
     cur.close()
 except (Exception, psycopg2.DatabaseError) as error:
     print(error)

@@ -9,6 +9,16 @@ conn = psycopg2.connect("dbname=pocketchef user=postgres")
 conn.autocommit = True
 cur = conn.cursor()
 
+# Request Headers
+api_key = "64c8da69ae64740f902b194fea4cae01"
+accept = "application/json"
+
+# Parameters
+get_req = "https://developers.zomato.com/api/v2.1/search?"
+q = "q="
+lat = "&lat="
+lon = "&lon="
+
 # SQL Query
 sql = """SELECT name, latitude, longitude FROM restaurants"""
 
@@ -16,9 +26,13 @@ sql = """SELECT name, latitude, longitude FROM restaurants"""
 try:
     cur.execute(sql)
     rows = cur.fetchall()
-    print("Entry Count: " + str(cur.rowcount))
     for row in rows :
-        print(row[0])
+        url = get_req + q + row[0] + lat + str(row[1]) + lon + str(row[2])
+        req = urllib.request.Request(url, headers={"user-key":api_key, "Accept":accept})
+        data = urllib.request.urlopen(req)
+        j_data = json.loads(data.read().decode("utf-8"))
+        if j_data["results_shown"] > 0 :
+            print(j_data["restaurants"][0]["id"] + " " + j_data["restaurants"][0]["name"]
     cur.close()
 except (Exception, psycopg2.DatabaseError) as error:
     print(error)

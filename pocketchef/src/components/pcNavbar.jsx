@@ -21,10 +21,10 @@ export default class pcNavbar extends Component {
               Restaurants
             </NavItem>
             <NavItem eventKey={3} componentClass={Link} href="/recipes" to="/recipes">
-              Home
+              Recipes
             </NavItem>
             <NavItem eventKey={4} componentClass={Link} href="/ingredients" to="/ingredients">
-              Home
+              Ingredients
             </NavItem>
             <NavItem eventKey={5} componentClass={Link} href="/about" to="/about">
               About

@@ -8,7 +8,6 @@ export default class Recipes extends Component {
     return (
       <div>
       </div>
-
     );
   }
 }

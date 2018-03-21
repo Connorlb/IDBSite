@@ -37,7 +37,7 @@ try:
         data = urllib.request.urlopen(req)
         j_data = json.loads(data.read().decode("utf-8"))
         if j_data["results_shown"] > 0 :
-            print(j_data["restaurants"][0]["id"] + " " + j_data["restaurants"][0]["name"]
+            print(j_data["restaurants"][0]["id"] + " " + j_data["restaurants"][0]["name"])
     cur.close()
 except (Exception, psycopg2.DatabaseError) as error:
     print(error)

@@ -32,12 +32,12 @@ export default class About extends Component {
           <Col xs={12} sm={4} className="image-wrap">
             <Image width={200} height={200} alt="200x200" src="https://i.imgur.com/H158r6O.jpg" circle className="contributor-pic" />
             <h3>Matthew Curtis</h3>
-            <p>Matthew is a fourth-year CS students who has the misfortune of having first names for both first and last names. He loves the take on Asian cuisine at the local food truck Pinch.</p>
+            <p>Matthew is a fourth-year CS student who has the misfortune of having first names for both first and last names. He loves the take on Asian cuisine at the local food truck Pinch.</p>
           </Col>
           <Col xs={12} sm={4} className="image-wrap">
             <Image width={200} height={200} alt="100x100" src="https://i.imgur.com/BmRVX02.jpg" circle className="contributor-pic" />
             <h3>Patrick Dalisay</h3>
-            <p>Matthew is a fourth-year CS students who has the misfortune of having first names for both first and last names. He loves the take on Asian cuisine at the local food truck Pinch.</p>
+            <p>Patrick is a third-year CS student who struggles to balance school and competative dancing. He has an undying love for tacos, specifically al pastor. </p>
           </Col>
         </Row>
       </Grid>

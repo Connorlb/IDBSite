@@ -28,9 +28,6 @@ else
         echo "Server is down"
   fi
 
-  sudo rm info.txt
-  sudo rm num.txt
-
  sudo git pull origin master
 
   if [ "$arg1" = "--kill" ]

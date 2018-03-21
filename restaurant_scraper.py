@@ -1,6 +1,16 @@
 import urllib.request
 import html
 import json
+import psycopg2
+from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String
+
+# Database Connection
+conn = psycopg2.connect("dbname=pocketchef user=postgres")
+conn.autocommit = True
+cur = conn.cursor()
+
+# SQL query
+sql = """INSERT INTO restaurants VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
 
 # Request Headers
 api_key = "Bearer cKPmJvt1fspaPHYGP39B24XV_08Tq6DD93cKq0XQvSDFy5as_vPmgu7LVAor8dWqH1dL3sNZCWUiMhp_QtG_j-wV6jXJFvfTkikzzOKd4HvhzUekrQuzyFKWK6WhWnYx"
@@ -34,10 +44,13 @@ for city in coordinates :
     data = urllib.request.urlopen(req)
     j_data = json.loads(data.read().decode("utf-8"))
     for venue in j_data["businesses"] :
-        # (name, address, phone, cuisine, rating)
-        print("(" +
-            venue["name"] + ", " +
-            ' '.join(venue["location"]["display_address"]) + ", " +
-            venue["display_phone"] + ", " +
-            venue["categories"][0]["title"] + ", " +
-            str(venue["rating"]) + ")")
+        # (name, address, phone, rating, cuisine, latitude, longitude, yelp_link, img_link)
+        name = venue["name"]
+        addr = ' '.join(venue["location"]["display_address"])
+        phone = venue["display_phone"]
+        cuisine = venue["categories"][0]["title"]
+        rating = venue["rating"]
+        latitude, longitude = venue["coordinates"][0], venue["coordinates"][1]
+        yelp_link = venue["url"]
+        img_link = venue["image_url"]
+        cur.execute(sql, (name, addr, phone, rating, cuisine, latitude, longitude, None, None, yelp_link, img_link))

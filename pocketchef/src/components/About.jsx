@@ -10,10 +10,14 @@ export default class About extends Component {
     return (
       <Grid>
         <Row className="show-grid text-center">
-          <Col xs={12} sm={4} className="image-wrap">
-            <Image width={200} height={200} alt="200x200" src="https://i.imgur.com/9iA21IL.jpg" circle className="contributor-pic" />
-            <h3>Aditya Prasad</h3>
-            <p>Aditya is a third-year CS student who is super into playing instruments, but not one specific one. He plays four different ones. He really enjoys going to Halal Bros.</p>
+          <Col xs={12} sm={4} md={4} className="image-wrap">
+            <li class="list-group-item"><Image width={200} height={200} alt="200x200" src="https://i.imgur.com/9iA21IL.jpg" circle className="contributor-pic" /></li>
+            <li class="list-group-item"><h3>Aditya Prasad</h3></li>
+            <li class="list-group-item"><b>About:</b> Aditya is a third-year CS student who is super into playing instruments, but not one specific one. He plays four different ones. He really enjoys going to Halal Bros.</li>
+            <li class="list-group-item"><b>Major Responsibilities:</b> Full Stack, setting up server</li>
+            <li class="list-group-item"><b>Commits:</b>32</li>
+            <li class="list-group-item"><b>Issues:</b>0</li>
+            <li class="list-group-item"><b>Unit Tests:</b>0</li>
           </Col>
           <Col xs={12} sm={4} className="image-wrap">
             <Image width={200} height={200} alt="200x200" src="https://i.imgur.com/bXpurgB.jpg" circle className="contributor-pic" />

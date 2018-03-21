@@ -50,7 +50,10 @@ for city in coordinates :
         phone = venue["display_phone"]
         cuisine = venue["categories"][0]["title"]
         rating = venue["rating"]
-        latitude, longitude = venue["coordinates"][0], venue["coordinates"][1]
+        latitude, longitude = venue["coordinates"]["latitude"], venue["coordinates"]["longitude"]
         yelp_link = venue["url"]
         img_link = venue["image_url"]
-        cur.execute(sql, (name, addr, phone, rating, cuisine, latitude, longitude, None, None, yelp_link, img_link))
+        try:
+            cur.execute(sql, (name, addr, phone, rating, cuisine, latitude, longitude, None, None, yelp_link, img_link))
+        except psycopg2.IntegrityError:
+            pass

@@ -57,3 +57,5 @@ for city in coordinates :
             cur.execute(sql, (name, addr, phone, rating, cuisine, latitude, longitude, None, None, yelp_link, img_link))
         except psycopg2.IntegrityError:
             pass
+cur.close()
+conn.close()

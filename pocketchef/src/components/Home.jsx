@@ -8,7 +8,7 @@ export default class Home extends Component {
     return (
       <Grid>
         <Jumbotron>
-          <h2> Welcome to PocketChef </h2>
+          <h2> Welcome to PocketChef you are cool</h2>
           <p> Bringing restaurants to your home </p>
         </Jumbotron>
       </Grid>

@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 
 # the all-important app variable:
-app = Flask(__name__, static_folder="static", template_folder="public")
+app = Flask(__name__, static_folder="../static", template_folder="../public")
 
 @app.route("/")
 def index():
@@ -20,4 +20,5 @@ def hello():
     return "Hello World"
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', debug=True, port=80)
+    #app.run(host='0.0.0.0', debug=True, port=80)
+    app.run()

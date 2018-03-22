@@ -36,7 +36,7 @@ export default class About extends Component {
             <li class="list-group-item"><b>Issues:</b>0</li>
             <li class="list-group-item"><b>Unit Tests:</b>0</li>
           </Col>
-          <Col xs={12} sm={3}>
+          <Col xs={12} sm={4}>
             <Image width={200} height={200} alt="200x200" src="https://i.imgur.com/puiutQZ.jpg" circle align="center"/>
             <h3>Jesus Romero</h3>
             <li class="list-group-item"><b>About:</b> Jesus is a fourth-year CS student who loves tamales. He's an advocate of Olive Garden and splurges at Sushi Junai.</li>

@@ -1,3 +1,5 @@
+from string import punctuation
+
 # Strips all punctuation from a string
 def strip_punctuation(s) :
     return ''.join(c for c in s if c not in punctuation)

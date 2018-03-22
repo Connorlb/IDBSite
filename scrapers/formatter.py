@@ -18,7 +18,7 @@ def formatter(s) :
 
 # Formats ingredient string into a list of tuples
 def ingredient_formatter(s) :
-    result = []
     out = s.split('@@')
     for i in range(len(out)):
         out[i] = out[i].split('::')
+    return out

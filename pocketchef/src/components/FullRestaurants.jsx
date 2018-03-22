@@ -11,9 +11,9 @@ const FullRestaurants = () => (
       {
         PlayerAPI.all().map(p => (
 
-            <Col xs={12} sm={4} md={4} className="image-wrap" key={p.number}>
+            <Col xs={12} sm={4} md={4} className="image-wrap" key={p.name}>
             <li class="list-group-item">
-            <Link to={`/restaurants/${p.number}`}>
+            <Link to={`/restaurants/${p.name}`}>
             <Image width={200} height={200} alt="200x200" src={p.image} circle className="contributor-pic" /></Link></li>
             <li class="list-group-item"><h3>{p.name}</h3></li>
             <li class="list-group-item"><b>Cuisine Type:</b> {p.number}</li>

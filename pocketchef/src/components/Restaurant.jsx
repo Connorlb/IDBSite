@@ -13,7 +13,8 @@ import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 // number, then a "restaurant not found" message is displayed.
 const Restaurant = (props) => {
   const restaurant = RestaurantAPI.get(
-    parseInt(props.match.params.number, 10)
+    //parseInt(props.match.params.number, 10)
+    props.match.params.name
   )
   if (!restaurant) {
     return <div>Sorry, the restaurant was not found</div>

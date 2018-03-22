@@ -12,7 +12,7 @@ export default class RestaurantsContainer extends Component {
     return (
       <Switch>
         <Route exact path='/restaurants' component={FullRestaurants}/>
-        <Route path='/restaurants/:number' component={Restaurant}/>
+        <Route path='/restaurants/:name' component={Restaurant}/>
       </Switch>
     );
   }

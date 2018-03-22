@@ -12,9 +12,8 @@ const RestaurantAPI = {
   ],
   all: function() { return this.restaurants},
   get: function(id) {
-    const isRestaurant = p => p.number === id
+    const isRestaurant = p => p.name === id
     return this.restaurants.find(isRestaurant)
   }
 }
-
 export default RestaurantAPI

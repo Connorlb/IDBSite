@@ -8,3 +8,4 @@ pgClient.query("SELECT name, rating FROM api.restaurants WHERE cuisine='American
     console.log(JSON.stringify(res, null, 2))
     pgClient.end()
 })
+console.log(typeof res)

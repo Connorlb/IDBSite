@@ -1,12 +1,12 @@
 var pg = require('pg');
 
-var data = "";
 var connectionString = "postgres://postgres:pocketchef@localhost/pocketchef";
 var pgClient = new pg.Client(connectionString);
 pgClient.connect();
-pgClient.query("SELECT name, rating FROM api.restaurants WHERE cuisine='American'", (err, res) => {
+var data = pgClient.query("SELECT name, rating FROM api.restaurants WHERE cuisine='American'", (err, res) => {
     if (err) throw err;
     data = JSON.stringify(res);
     pgClient.end();
+    return data;
 });
-console.log(data);
+console.log(data)

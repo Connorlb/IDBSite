@@ -17,7 +17,7 @@ export default class pcNavbar extends Component {
             <NavItem eventKey={1} componentClass={Link} href="/" to="/">
               Home
             </NavItem>
-            <NavItem eventKey={2} componentClass={Link} href="/restaurant" to="/restaurant">
+            <NavItem eventKey={2} componentClass={Link} href="/restaurants" to="/restaurants">
               Restaurants
             </NavItem>
             <NavItem eventKey={3} componentClass={Link} href="/recipes" to="/recipes">

@@ -18,7 +18,7 @@ export default class About extends Component {
           <h2 align="center">Team SWEats</h2>
         </Row>
         <Row className="show-grid text-center">
-          <Col xs={12} sm={4} className="image-wrap">
+          <Col xs={15} sm={2} className="image-wrap">
             <Image width={200} height={200} alt="200x200" src="https://i.imgur.com/9iA21IL.jpg" circle className="contributor-pic" />
             <h3>Aditya Prasad</h3>
             <li class="list-group-item"><b>About:</b> Aditya is a third-year CS student who is super into playing instruments, but not one specific one. He plays four different ones. He really enjoys going to Halal Bros.</li>

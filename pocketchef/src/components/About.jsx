@@ -12,7 +12,7 @@ export default class About extends Component {
         <Row>
           <h2>About PocketChef</h2>
           <p>Pocketchef.me was created in hopes of streamlining the process of learning new recipes from recipes at their favorite restaurants so users can make them at home. The website offers data on popular menu items at restaurants, as well as recipes for these menu items and information including prep-time and nutritional facts on all the ingredients included in those recipes.</p>
-          <p>The website is useful for any aspring cook or anybody who has fallen in love with a particular dish (or few dishes) from a restaurant. Such a person can easily navigate the site to find recipes for those dishes as well as information regarding how much it would cost them to make at home and recipes including full instructions on how to prepare the dish.</p> 
+          <p>The website is useful for any aspring cook or anybody who has fallen in love with a particular dish (or few dishes) from a restaurant. Such a person can easily navigate the site to find recipes for those dishes as well as information regarding how much time it would take them to make at home and recipes including full instructions on how to prepare the dish.</p> 
         </Row>
         <Row>
           <h2 align="center">Team SWEats</h2>

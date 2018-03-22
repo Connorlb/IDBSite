@@ -22,4 +22,3 @@ def ingredient_formatter(s) :
     out = s.split('@@')
     for i in range(len(out)):
         out[i] = out[i].split('::')
-    return out

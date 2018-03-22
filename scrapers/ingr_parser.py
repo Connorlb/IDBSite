@@ -21,6 +21,7 @@ try:
     rows = cur.fetchall()
     for row in rows :
         print(formatter.ingredient_formatter(row[0]))
+        break
     cur.close()
 except (Exception, psycopg2.DatabaseError) as error:
     print(error)

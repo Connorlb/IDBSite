@@ -18,7 +18,7 @@ export default class About extends Component {
           <h2 align="center">Team SWEats</h2>
         </Row>
         <Row className="show-grid text-center">
-          <Col xs={12} sm={4} md={4} className="image-wrap">
+          <Col xs={12} sm={4} className="image-wrap">
             <Image width={200} height={200} alt="200x200" src="https://i.imgur.com/9iA21IL.jpg" circle className="contributor-pic" />
             <h3>Aditya Prasad</h3>
             <li class="list-group-item"><b>About:</b> Aditya is a third-year CS student who is super into playing instruments, but not one specific one. He plays four different ones. He really enjoys going to Halal Bros.</li>
@@ -27,7 +27,7 @@ export default class About extends Component {
             <li class="list-group-item"><b>Issues:</b>0</li>
             <li class="list-group-item"><b>Unit Tests:</b>0</li>
           </Col>
-          <Col xs={12} sm={4} className="image-wrap">
+          <Col xs={12} sm={2} className="image-wrap">
             <Image width={200} height={200} alt="200x200" src="https://i.imgur.com/bXpurgB.jpg" circle className="contributor-pic" />
             <h3>Connor Burkman</h3>
             <li class="list-group-item"><b>About:</b> Connor is a fourth-year CS student who thinks Panda Express is too spicy. He's in love with some of the food at Song La.</li>
@@ -36,7 +36,7 @@ export default class About extends Component {
             <li class="list-group-item"><b>Issues:</b>0</li>
             <li class="list-group-item"><b>Unit Tests:</b>0</li>
           </Col>
-          <Col xs={12} sm={4} className="image-wrap">
+          <Col xs={12} sm={2} className="image-wrap">
             <Image width={200} height={200} alt="200x200" src="https://i.imgur.com/puiutQZ.jpg" circle className="contributor-pic" />
             <h3>Jesus Romero</h3>
             <li class="list-group-item"><b>About:</b> Jesus is a fourth-year CS student who loves tamales. He's an advocate of Olive Garden and splurges at Sushi Junai.</li>
@@ -45,7 +45,7 @@ export default class About extends Component {
             <li class="list-group-item"><b>Issues:</b>0</li>
             <li class="list-group-item"><b>Unit Tests:</b>0</li>
           </Col>
-          <Col xs={12} sm={4} className="image-wrap">
+          <Col xs={12} sm={2} className="image-wrap">
             <Image width={200} height={200} alt="200x200" src="https://i.imgur.com/H158r6O.jpg" circle className="contributor-pic" />
             <h3>Matthew Curtis</h3>
             <li class="list-group-item"><b>About:</b> Matthew is a fourth-year CS students who has the misfortune of having first names for both first and last names. He loves the take on Asian cuisine at the local food truck Pinch.</li>
@@ -54,7 +54,7 @@ export default class About extends Component {
             <li class="list-group-item"><b>Issues:</b>18</li>
             <li class="list-group-item"><b>Unit Tests:</b>0</li>
             </Col>
-          <Col xs={12} sm={4} className="image-wrap">
+          <Col xs={12} sm={2} className="image-wrap">
             <Image width={200} height={200} alt="100x100" src="https://i.imgur.com/BmRVX02.jpg" circle className="contributor-pic" />
             <h3>Patrick Dalisay</h3>
             <li class="list-group-item"><b>About:</b> Patrick is a third-year CS student who enjoys long walks on the beach and competitive dancing. His favorite place to eat is at basically any taco truck that serves some nice, cheap tacos al pastor.</li>
@@ -65,16 +65,16 @@ export default class About extends Component {
           </Col>
         </Row>
         <Row>
-          <Col xs={12} sm={4}>
+          <Col xs={12} sm={3}>
             <h3>Stats:</h3>
           </Col>
-          <Col xs={12} sm={4}>
+          <Col xs={12} sm={3}>
             <h3>Data:</h3>
           </Col>
-          <Col xs={12} sm={4}>
+          <Col xs={12} sm={3}>
             <h3>Tools:</h3>
           </Col>
-          <Col xs={12} sm={4}>
+          <Col xs={12} sm={3}>
             <h3>Links:</h3>
           </Col>
         </Row>

@@ -17,10 +17,11 @@ sql = """SELECT ingredients FROM recipes"""
 
 # Request
 try:
+    result = []
     cur.execute(sql)
     rows = cur.fetchall()
     for row in rows :
-        print(formatter.ingredient_formatter(row[0]))
+        result += [formatter.ingredient_formatter(row[0])]
     cur.close()
 except (Exception, psycopg2.DatabaseError) as error:
     print(error)

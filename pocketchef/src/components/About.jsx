@@ -69,42 +69,38 @@ export default class About extends Component {
         <Row>
           <Col xs={12} sm={3}>
             <h3>Stats:</h3>
-            <p>Total no. of commits:
-              Total no. of issues:
-              Total no. of unit tests:
-            </p>
+            <p>Total no. of commits:</p>
+            <p>Total no. of issues:</p>
+            <p>Total no. of unit tests:</p>
           </Col>
           <Col xs={12} sm={3}>
             <h3>Data:</h3>
-            <p>https://spoonacular.com/food-ap : wrote a API scraper in Python to scrape ingredient and recipe information by running http requests in a loop, then commiting the information to the database.
-            https://developers.zomato.com/api : wrote another API scraper in Python to scrape nutritional information and then commited the values to the database.
-            https://www.yelp.com/developers : wrote Python API scrapers to scrape restaurant specifics, such as name, location, and rating.
-            https://developers.google.com/maps/ : used restaurant coordinates and address to produce a map of the area</p>
+            <p>https://spoonacular.com/food-ap : wrote a API scraper in Python to scrape ingredient and recipe information by running http requests in a loop, then commiting the information to the database.</p>
+            <p>https://developers.zomato.com/api : wrote another API scraper in Python to scrape nutritional information and then commited the values to the database.</p>
+            <p>https://www.yelp.com/developers : wrote Python API scrapers to scrape restaurant specifics, such as name, location, and rating.</p>
+            <p>https://developers.google.com/maps/ : used restaurant coordinates and address to produce a map of the area</p>
           </Col>
           <Col xs={12} sm={3}>
             <h3>Tools:</h3>
-            <p>
-              Amazon Web Services: Website Host
-              Bootstrap: CSS Framework
-              React-Boostrap: Front-End Framework
-              Webpack: Module Bundler
-              Flask: Web Framework
-              Github: Version Control & File Hosting
-              Namecheap: Custom Domain Name
-              Postman: API Documentation
-              Slack: Communication Device
-              Mocha: Test Framework 
-              Selenium: Automated Browser Testing Framework
-              PostgreSQL: Databse System
-              SQLAlchemy: Python SQL Tooklkit
-              Psycopg2: PostgreSQL Adapter for Python
-            </p>
+            <p>Amazon Web Services: Website Host</p>
+            <p>Bootstrap: CSS Framework</p>
+            <p>React-Boostrap: Front-End Framework</p>
+            <p>Webpack: Module Bundler</p>
+            <p>Flask: Web Framework</p>
+            <p>Github: Version Control & File Hosting</p>
+            <p>Namecheap: Custom Domain Name</p>
+            <p>Postman: API Documentation</p>
+            <p>Slack: Communication Device</p>
+            <p>Mocha: Test Framework </p>
+            <p>Selenium: Automated Browser Testing Framework</p>
+            <p>PostgreSQL: Databse System</p>
+            <p>SQLAlchemy: Python SQL Tooklkit</p>
+            <p>Psycopg2: PostgreSQL Adapter for Python</p>
           </Col>
           <Col xs={12} sm={3}>
             <h3>Links:</h3>
-            <p>https://www.gitbook.com/book/connorlb/pocketchef/details
-            https://www.gitbook.com/book/connorlb/pocketchef/details
-            </p>
+            <p>https://www.gitbook.com/book/connorlb/pocketchef/details</p>
+            <p>https://www.gitbook.com/book/connorlb/pocketchef/details</p>
           </Col>
         </Row>
       </Grid>

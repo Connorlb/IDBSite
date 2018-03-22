@@ -3,6 +3,7 @@ import html
 import json
 import psycopg2
 import unidecode
+import formatter
 from string import punctuation
 from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String
 
@@ -27,25 +28,31 @@ info = "/information"
 #SQL INSERT: [name, servings, prep_time, source_url, ingredients, cuisine, instructions]
 sql = """INSERT INTO recipes VALUES (%s,%s,%s,%s,%s,%s,%s)"""
 
+items = formatter.formatter("recipeIDs")
+
 # Request
 try:
-    #for (tuple in file) :
-        #grab cuisine up here
-        #for (item in tuple) :
-            #account for the first item being the cuisine type
-             url = get_req + item + info
+    for tup in items :
+        cuisine = tup[0]
+        for item in tup[1] :
+             url = get_req + str(item) + info
              req = urllib.request.Request(url, headers={"X-Mashape-Key":api_key, "Accept":accept})
              data = urllib.request.urlopen(req)
              j_data = json.loads(data.read().decode("utf-8"))
              name = j_data["title"]
              servings = j_data["servings"]
-             prep_time = j_data["preperationMinutes"] + j_data["cookingMinutes"]
+             prep_time = None
+             if "preparationMinutes" in j_data:
+                 prep_time = int(j_data["preparationMinutes"])
              source_url = j_data["sourceUrl"]
              ingredients = ""
              for ing in j_data["extendedIngredients"]:
-                 ingredients = ingredients + ", " +ing["originalString"]
+                 ingredients +=  ing["originalString"] +"::" +str(ing["id"]) + "@@"
+             ingredients = ingredients[:len(ingredients)-2]
              instructions = j_data["instructions"]
-             cur.execute(sql,(name,str(servings),str(prep_time),source_url,ingredients,cuisine,instructions))
+             
+             cur.execute(sql,(str(name),str(servings),prep_time,source_url,ingredients,cuisine,instructions))
+             print(name + ", servings: " +str(servings) +" cuisine-> " +cuisine + " " + ingredients)
     cur.close()
 except (Exception, psycopg2.DatabaseError) as error:
     print(error)

@@ -6,7 +6,7 @@ import './Home.css'
 export default class Home extends Component {
   render(){
     return (
-      <div>
+      <Row>
         <Carousel>
           <Carousel.Item>
             <img width={1920} height={1080} alt="900x500" src="https://i.imgur.com/4RBHMnj.jpg" />
@@ -29,8 +29,8 @@ export default class Home extends Component {
               <p>Find the best ingredients for your meals.</p>
             </Carousel.Caption>
           </Carousel.Item>
-        </Carousel>;
-      </div>
+        </Carousel>
+      </Row>
     );
   }
 }

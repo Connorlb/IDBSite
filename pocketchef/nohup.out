@@ -302,3 +302,7 @@ error: [Errno 32] Broken pipe
 72.177.48.113 - - [22/Mar/2018 21:32:29] "GET /restaurants HTTP/1.1" 200 -
 72.177.48.113 - - [22/Mar/2018 21:32:30] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
 72.177.48.113 - - [22/Mar/2018 21:42:20] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+192.30.252.39 - - [22/Mar/2018 21:46:24] "HEAD / HTTP/1.1" 200 -
+72.177.48.113 - - [22/Mar/2018 21:47:48] "GET / HTTP/1.1" 200 -
+72.177.48.113 - - [22/Mar/2018 21:47:49] "GET /static/bundle.js HTTP/1.1" 200 -
+72.177.48.113 - - [22/Mar/2018 21:47:50] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -

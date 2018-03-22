@@ -1,4 +1,5 @@
 import urllib.request
+import urllib.error
 import html
 import json
 import psycopg2
@@ -39,34 +40,37 @@ try:
         result += [formatter.ingredient_formatter(row[0])]
     for recipe in result:
         for tup in recipe:
-             url = get_req + tup[1] + info
-             cur.execute(existence,(tup[1],))
-             exists = cur.fetchone()[0]
-             if not exists:
-                 req = urllib.request.Request(url, headers={"X-Mashape-Key":api_key, "Accept":accept})
-                 data = urllib.request.urlopen(req)
-                 j_data = json.loads(data.read().decode("utf-8"))
-                 name = j_data["name"]
-                 picture = img + j_data["image"]
-                 calories = None
-                 for nut in j_data["nutrition"]["nutrients"]:
-                     if nut["title"] == "Calories":
-                         calories = nut["amount"]
-                         break
-                 #Protein, fat, and carbs are all percentages of total calories
-                 protein = j_data["nutrition"]["caloricBreakdown"]["percentProtein"]
-                 fat = j_data["nutrition"]["caloricBreakdown"]["percentFat"]
-                 carbs = j_data["nutrition"]["caloricBreakdown"]["percentCarbs"]
-                 cuisine = None
-                 recipes = None
-                 try:
-                     cur.execute(sql,(name,picture,calories,protein,fat,carbs,cuisine,recipes,tup[1]))
-                 except psycopg2.IntegrityError:
-                     print("INTEGRITY ERROR")
-                     pass
-                 print("Name: " +name +" added")
-             else:
-                 print("Already exists")
+            url = get_req + tup[1] + info
+            cur.execute(existence,(tup[1],))
+            exists = cur.fetchone()[0]
+            if not exists:
+                try:
+                    req = urllib.request.Request(url, headers={"X-Mashape-Key":api_key, "Accept":accept})
+                    data = urllib.request.urlopen(req)
+                    j_data = json.loads(data.read().decode("utf-8"))
+                    name = j_data["name"]
+                    picture = img + j_data["image"]
+                    calories = None
+                    for nut in j_data["nutrition"]["nutrients"]:
+                        if nut["title"] == "Calories":
+                            calories = nut["amount"]
+                            break
+                    #Protein, fat, and carbs are all percentages of total calories
+                    protein = j_data["nutrition"]["caloricBreakdown"]["percentProtein"]
+                    fat = j_data["nutrition"]["caloricBreakdown"]["percentFat"]
+                    carbs = j_data["nutrition"]["caloricBreakdown"]["percentCarbs"]
+                    cuisine = None
+                    recipes = None
+                    try:
+                        cur.execute(sql,(name,picture,calories,protein,fat,carbs,cuisine,recipes,tup[1]))
+                    except psycopg2.IntegrityError:
+                        print("INTEGRITY ERROR")
+                        pass
+                    print("Name: " +name +" added")
+                except urllib.error.HTTPError :
+                    pass
+            else:
+                print("Already exists")
     cur.close()
 except (Exception, psycopg2.DatabaseError) as error:
     print(error)

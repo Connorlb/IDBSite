@@ -4,7 +4,6 @@ import json
 import psycopg2
 import unidecode
 import formatter
-from string import punctuation
 from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String
 
 # Database Connection

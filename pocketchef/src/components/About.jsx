@@ -17,7 +17,7 @@ export default class About extends Component {
         <Row>
           <h2 align="center">Team SWEats</h2>
         </Row>
-        <Row className="text-center" align= "center">
+        <Row align= "center">
           <Col xs={12} sm={4} className="image-wrap" align="center">
             <Image width={200} height={200} alt="200x200" src="https://i.imgur.com/9iA21IL.jpg" circle align="center"/>
             <h3>Aditya Prasad</h3>
@@ -45,6 +45,8 @@ export default class About extends Component {
             <li class="list-group-item"><b>Issues:</b>0</li>
             <li class="list-group-item"><b>Unit Tests:</b>0</li>
           </Col>
+        </Row>
+        <Row align= "center">
           <Col xs={12} sm={4} className="image-wrap" align="center">
             <Image width={200} height={200} alt="200x200" src="https://i.imgur.com/H158r6O.jpg" circle align="center"/>
             <h3>Matthew Curtis</h3>
@@ -53,7 +55,7 @@ export default class About extends Component {
             <li class="list-group-item"><b>Commits:</b>35</li>
             <li class="list-group-item"><b>Issues:</b>18</li>
             <li class="list-group-item"><b>Unit Tests:</b>0</li>
-            </Col>
+          </Col>
           <Col xs={12} sm={4} className="image-wrap" align="center">
             <Image width={200} height={200} alt="100x100" src="https://i.imgur.com/BmRVX02.jpg" circle align="center"/>
             <h3>Patrick Dalisay</h3>

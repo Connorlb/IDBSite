@@ -2,7 +2,7 @@ import React from 'react'
 import RestaurantAPI from '../api'
 import { Link } from 'react-router-dom'
 import {Grid, Row, Col, Image, Button } from 'react-bootstrap' ;
-import { Player } from 'video-react';
+
 
 
 // The Restaurant looks up the restaurant using the number parsed from
@@ -17,11 +17,6 @@ const Restaurant = (props) => {
   }
   return (
     <Grid>
-    <Player
-      playsInline
-      poster="/assets/poster.png"
-      src="https://youtu.be/akA_Z9Xmnvc"
-    />
     <Row className="show-grid text-center">
 
       <Image width={500} height={500} alt="800x800" src={restaurant.image} circle className="contributor-pic" />

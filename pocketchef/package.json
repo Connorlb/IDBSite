@@ -12,6 +12,7 @@
     "start": "react-scripts start",
     "build": "webpack -p --progress --config webpack.config.js",
     "test": "react-scripts test --env=jsdom",
+    "mocha": "mocha",
     "eject": "react-scripts eject",
     "watch": "webpack --progress -d --config webpack.config.js --watch"
   },

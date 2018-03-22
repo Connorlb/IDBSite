@@ -1,8 +1,8 @@
-var pg = require('pg');
-
-var connectionString = "postgres://postgres:pocketchef@localhost/pocketchef";
-var client = new pg.Client(connectionString);
-client.connect();
+// var pg = require('pg');
+//
+// var connectionString = "postgres://postgres:pocketchef@localhost/pocketchef";
+// var client = new pg.Client(connectionString);
+// client.connect();
 // var data = pgClient.query("SELECT name, rating FROM api.restaurants WHERE cuisine='American'", (err, res) => {
 //     if (err) throw err;
 //     out = JSON.stringify(res);
@@ -10,18 +10,13 @@ client.connect();
 //     return out;
 // });
 // console.log(data)
-const query = {
-    text: 'SELECT $1::text, $2::text FROM $3::text',
-    values: ['name', 'rating', 'restaurants'],
-    rowMode: 'array'
-};
+const { Pool } = require('pg');
+const pool = new Pool()
 
-client.query(query, (err, res) => {
-    if (err) {
-        console.log(err.stack)
-    }
-    else {
-        console.log(res.felds.map(f => field.name))
-        console.log(res.rows[0])
-    }
+const client = pool.connect()
+const result = client.query({
+    rowMode: 'array',
+    text: 'SELECT name, address, rating FROM api.restaurants;'
 })
+console.log(result.rows)
+client.end()

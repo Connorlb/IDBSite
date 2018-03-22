@@ -7,6 +7,9 @@ export default class Restaurants extends Component {
   render(){
     return (
       <div>
+        <h2 align="center">Restaurants</h2> 
+        <Grid>
+        </Grid>
       </div>
     );
   }

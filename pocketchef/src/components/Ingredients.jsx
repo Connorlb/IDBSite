@@ -6,9 +6,11 @@ import './Ingredients.css'
 export default class Ingredients extends Component {
   render(){
     return (
-     <h2 align="center">Ingredients</h2> 
-     <Grid>
-     </Grid>
+      <div>
+        <h2 align="center">Ingredients</h2> 
+        <Grid>
+        </Grid>
+      </div>
     );
   }
 }

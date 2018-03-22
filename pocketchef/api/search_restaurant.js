@@ -5,8 +5,8 @@ var pgClient = new pg.Client(connectionString);
 pgClient.connect();
 var data = pgClient.query("SELECT name, rating FROM api.restaurants WHERE cuisine='American'", (err, res) => {
     if (err) throw err;
-    data = JSON.stringify(res);
+    out = JSON.stringify(res);
     pgClient.end();
-    return data;
+    return out;
 });
 console.log(data)

@@ -18,7 +18,7 @@ export default class IngredientsContainer extends Component {
         ['ReactJS','Bits',2],
         ['Hot sauce','Mexican',5],
         ['Pasta','Chinese',4]
-      ],
+      ]
     }
 
     this.addIngredient = this.addIngredient.bind(this)
@@ -31,6 +31,7 @@ export default class IngredientsContainer extends Component {
   render(){
     return (
     <Grid>
+    <h1 align="center">Ingredients</h1>
       <Row className="show-grid text-center">
         <AddIngredient addNew={this.addIngredient} />
         <CreateIngredient names={this.state.ingredients} />
@@ -82,9 +83,9 @@ class CreateIngredient extends React.Component {
           {this.props.names.map((ingredient) => {
             return <Col xs={12} sm={4} md={4} className="image-wrap">
             <li class="list-group-item">
-              <button className="square">
+
                 <Image width={200} height={200} alt="200x200" src='https://bloximages.chicago2.vip.townnews.com/fortworthbusiness.com/content/tncms/assets/v3/editorial/9/95/9955d95c-1c8f-11e7-8dc8-d344e9a7c007/58e936c0c6895.image.jpg' circle className="contributor-pic" />
-              </button>
+
             </li>
             <li class="list-group-item"><h3>{ingredient[0]}</h3></li>
             <li class="list-group-item"><b>Cuisine Type:</b> {ingredient[1]}</li>

@@ -9,6 +9,14 @@ export default class About extends Component {
   render(){
     return (
       <Grid>
+        <Row>
+          <h2>About PocketChef</h2>
+          <p>Pocketchef.me was created in hopes of streamlining the process of learning new recipes from recipes at their favorite restaurants so users can make them at home. The website offers data on popular menu items at restaurants, as well as recipes for these menu items and information including prep-time and nutritional facts on all the ingredients included in those recipes.</p>
+          <p>The website is useful for any aspring cook or anybody who has fallen in love with a particular dish (or few dishes) from a restaurant. Such a person can easily navigate the site to find recipes for those dishes as well as information regarding how much it would cost them to make at home and recipes including full instructions on how to prepare the dish.</p> 
+        </Row>
+        <Row>
+          <h2 align="center">Team SWEats</h2>
+        </Row>
         <Row className="show-grid text-center">
           <Col xs={12} sm={4} md={4} className="image-wrap">
             <Image width={200} height={200} alt="200x200" src="https://i.imgur.com/9iA21IL.jpg" circle className="contributor-pic" />
@@ -53,7 +61,22 @@ export default class About extends Component {
             <li class="list-group-item"><b>Major Responsibilities:</b> Full Stack, setting up server, writting html pages</li>
             <li class="list-group-item"><b>Commits:</b>16</li>
             <li class="list-group-item"><b>Issues:</b>0</li>
-            <li class="list-group-item"><b>Unit Tests:</b>0</li>          </Col>
+            <li class="list-group-item"><b>Unit Tests:</b>0</li>          
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={12} sm={4}>
+            <h3>Stats:</h3>
+          </Col>
+          <Col xs={12} sm={4}>
+            <h3>Data:</h3>
+          </Col>
+          <Col xs={12} sm={4}>
+            <h3>Tools:</h3>
+          </Col>
+          <Col xs={12} sm={4}>
+            <h3>Links:</h3>
+          </Col>
         </Row>
       </Grid>
     );

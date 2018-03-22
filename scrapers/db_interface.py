@@ -44,6 +44,7 @@ try:
  #            print(str(j_data["restaurants"][0]["restaurant"]["R"]["res_id"]) + " " + j_data["restaurants"][0]["restaurant"]["name"])
     cur.close()
     print(cuisine_list)
+    print(len(cuisine_list))
 except (Exception, psycopg2.DatabaseError) as error:
     print(error)
 finally:

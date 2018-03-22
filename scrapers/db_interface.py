@@ -3,13 +3,9 @@ import html
 import json
 import psycopg2
 import unidecode
+import formatter
 from string import punctuation
 from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String
-
-# Helper Functions
-def strip_punctuation(s) :
-    return ''.join(c for c in s if c not in punctuation)
-cuisine_list = set()
 
 # Database Connection
 conn = psycopg2.connect("dbname=pocketchef user=postgres")
@@ -35,7 +31,7 @@ try:
     rows = cur.fetchall()
     for row in rows :
         cuisine_list.add(row[0])
- #        url = get_req + q + strip_punctuation(unidecode.unidecode(row[0])).replace(' ', '%20') + lat + str(row[1]) + lon + str(row[2])
+ #        url = get_req + q + formatter.strip_punctuation(unidecode.unidecode(row[0])).replace(' ', '%20') + lat + str(row[1]) + lon + str(row[2])
  #        req = urllib.request.Request(url, headers={"user-key":api_key, "Accept":accept})
  #        data = urllib.request.urlopen(req)
  #        j_data = json.loads(data.read().decode("utf-8"))

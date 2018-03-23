@@ -22,8 +22,9 @@ pg.connect(function(err,client,done){
       console.log(rows)
    })
 });*/
-pgClient.query("SELECT name FROM api.restaurants WHERE cuisine=$1::text",['American'])
-   .then(result => console.log(result))
+data = pgClient.query("SELECT name FROM api.restaurants WHERE cuisine=$1::text",['American'])
+   .then(result => result)
    .catch(e => console.error(e.stack))
-   .then(() => client.end())
+   .then(() => pgClient.end())
+   .then(return result)
 console.log(data);

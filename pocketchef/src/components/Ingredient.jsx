@@ -3,7 +3,6 @@ import IngredientAPI from '../api'
 import { Link } from 'react-router-dom'
 import {Grid, Row, Col, Image, Button } from 'react-bootstrap' ;
 import YouTube from 'react-youtube'
-import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 
 
 

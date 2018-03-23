@@ -356,3 +356,20 @@ error: [Errno 32] Broken pipe
 72.177.48.113 - - [23/Mar/2018 00:33:46] "GET / HTTP/1.1" 200 -
 72.177.48.113 - - [23/Mar/2018 00:33:47] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
 72.177.48.113 - - [23/Mar/2018 00:37:53] "GET / HTTP/1.1" 200 -
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+72.177.48.113 - - [23/Mar/2018 01:43:31] "GET /ingredients HTTP/1.1" 200 -
+72.177.48.113 - - [23/Mar/2018 01:43:31] "GET /static/bundle.js HTTP/1.1" 200 -
+72.177.48.113 - - [23/Mar/2018 01:43:35] "GET /ingredients HTTP/1.1" 200 -
+72.177.48.113 - - [23/Mar/2018 01:43:35] "GET /static/bundle.js HTTP/1.1" 200 -
+64.189.109.72 - - [23/Mar/2018 01:46:09] "GET / HTTP/1.1" 200 -
+64.189.109.72 - - [23/Mar/2018 01:46:11] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+72.177.48.113 - - [23/Mar/2018 01:46:33] "GET /ingredients/Cabo_Bobs HTTP/1.1" 200 -
+72.177.48.113 - - [23/Mar/2018 01:46:34] "GET /static/bundle.js HTTP/1.1" 200 -
+72.177.48.113 - - [23/Mar/2018 01:46:35] "GET /ingredients/%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [23/Mar/2018 01:48:32] "GET / HTTP/1.1" 200 -
+72.177.48.113 - - [23/Mar/2018 01:48:33] "GET /static/bundle.js HTTP/1.1" 200 -
+72.177.48.113 - - [23/Mar/2018 01:48:34] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [23/Mar/2018 01:48:36] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [23/Mar/2018 01:48:36] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [23/Mar/2018 01:48:38] "GET /ingredients/%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -

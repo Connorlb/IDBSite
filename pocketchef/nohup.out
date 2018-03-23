@@ -373,3 +373,10 @@ error: [Errno 32] Broken pipe
 72.177.48.113 - - [23/Mar/2018 01:48:36] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
 72.177.48.113 - - [23/Mar/2018 01:48:36] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
 72.177.48.113 - - [23/Mar/2018 01:48:38] "GET /ingredients/%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [23/Mar/2018 01:48:57] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [23/Mar/2018 01:48:58] "GET /restaurants/%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [23/Mar/2018 01:48:59] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [23/Mar/2018 01:49:00] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [23/Mar/2018 01:49:00] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [23/Mar/2018 01:49:01] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [23/Mar/2018 01:49:03] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -

@@ -23,16 +23,16 @@ export default class About extends Component {
             <h3>Aditya Prasad</h3>
             <li class="list-group-item"><b>About:</b> Aditya is a third-year CS student who is super into playing instruments, but not one specific one. He plays four different ones. He really enjoys going to Halal Bros.</li>
             <li class="list-group-item"><b>Major Responsibilities:</b> Full Stack, setting up server</li>
-            <li class="list-group-item"><b>Commits:</b>32</li>
+            <li class="list-group-item"><b>Commits:</b>65</li>
             <li class="list-group-item"><b>Issues:</b>0</li>
-            <li class="list-group-item"><b>Unit Tests:</b>0</li>
+            <li class="list-group-item"><b>Unit Tests:</b>2</li>
           </Col>
           <Col xs={12} sm={4}>
             <Image width={200} height={200} alt="200x200" src="https://i.imgur.com/bXpurgB.jpg" circle align="center"/>
             <h3>Connor Burkman</h3>
             <li class="list-group-item"><b>About:</b> Connor is a fourth-year CS student who thinks Panda Express is too spicy. He's in love with some of the food at Song La.</li>
             <li class="list-group-item"><b>Major Responsibilities:</b> Full Stack, setting up server</li>
-            <li class="list-group-item"><b>Commits:</b>32</li>
+            <li class="list-group-item"><b>Commits:</b>47</li>
             <li class="list-group-item"><b>Issues:</b>0</li>
             <li class="list-group-item"><b>Unit Tests:</b>0</li>
           </Col>
@@ -41,7 +41,7 @@ export default class About extends Component {
             <h3>Jesus Romero</h3>
             <li class="list-group-item"><b>About:</b> Jesus is a fourth-year CS student who loves tamales. He's an advocate of Olive Garden and splurges at Sushi Junai.</li>
             <li class="list-group-item"><b>Major Responsibilities:</b> Full Stack, setting up server</li>
-            <li class="list-group-item"><b>Commits:</b>3</li>
+            <li class="list-group-item"><b>Commits:</b>36</li>
             <li class="list-group-item"><b>Issues:</b>0</li>
             <li class="list-group-item"><b>Unit Tests:</b>0</li>
           </Col>
@@ -52,7 +52,7 @@ export default class About extends Component {
             <h3>Matthew Curtis</h3>
             <li class="list-group-item"><b>About:</b> Matthew is a fourth-year CS students who has the misfortune of having first names for both first and last names. He loves the take on Asian cuisine at the local food truck Pinch.</li>
             <li class="list-group-item"><b>Major Responsibilities:</b> Full Stack, managing server redeployment, creating and tracking issues, writting user stories, writting html pages</li>
-            <li class="list-group-item"><b>Commits:</b>35</li>
+            <li class="list-group-item"><b>Commits:</b>49</li>
             <li class="list-group-item"><b>Issues:</b>18</li>
             <li class="list-group-item"><b>Unit Tests:</b>0</li>
           </Col>
@@ -61,17 +61,17 @@ export default class About extends Component {
             <h3>Patrick Dalisay</h3>
             <li class="list-group-item"><b>About:</b> Patrick is a third-year CS student who enjoys long walks on the beach and competitive dancing. His favorite place to eat is at basically any taco truck that serves some nice, cheap tacos al pastor.</li>
             <li class="list-group-item"><b>Major Responsibilities:</b> Full Stack, setting up server, writting html pages</li>
-            <li class="list-group-item"><b>Commits:</b>16</li>
-            <li class="list-group-item"><b>Issues:</b>0</li>
+            <li class="list-group-item"><b>Commits:</b>19</li>
+            <li class="list-group-item"><b>Issues:</b>10</li>
             <li class="list-group-item"><b>Unit Tests:</b>0</li>          
           </Col>
         </Row>
         <Row>
           <Col xs={12} sm={3}>
             <h3>Stats:</h3>
-            <p>Total no. of commits:</p>
-            <p>Total no. of issues:</p>
-            <p>Total no. of unit tests:</p>
+            <p>Total no. of commits:216</p>
+            <p>Total no. of issues:28</p>
+            <p>Total no. of unit tests:2</p>
           </Col>
           <Col xs={12} sm={3}>
             <h3>Data:</h3>

@@ -63,11 +63,11 @@ const Ingredient = (props) => {
       </Col>
       </Row>
       <Row>
-      <Col>
+      <div style={{ height: '100vh', width: '100%' }}>
           <GoogleMapReact bootstrapURLKeys={{ key: "AIzaSyBFObWyqlbpObdkdNE0k4JwX9AB66cTGKw"}}
             defaultCenter={{lat:30,lng:98}}
             defaultZoom={11} />
-        </Col>
+        </div>
       </Row>
 
     </Grid>

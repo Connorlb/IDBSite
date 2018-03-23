@@ -9,15 +9,15 @@ const FullIngredients = () => (
     <ul>
     <Row className="show-grid text-center">
       {
-        IngredientAPI.all().map(p => (
+        IngredientAPI.ing().map(p => (
 
             <Col xs={12} sm={4} md={4} className="image-wrap" key={p.name}>
             <li class="list-group-item">
             <Link to={`/ingredients/${p.name}`}>
-            <Image width={200} height={200} alt="200x200" src={p.image} circle className="contributor-pic" /></Link></li>
-            <li class="list-group-item"><h3>{p.name}</h3></li>
-            <li class="list-group-item"><b>Cuisine Type:</b> {p.number}</li>
-            <li class="list-group-item"><b>Stars </b>{p.number}</li>
+            <Image width={200} height={200} alt="200x200" src={p.picture} circle className="contributor-pic" /></Link></li>
+            <li class="list-group-item"><h3>Calories: {p.calories}</h3></li>
+            <li class="list-group-item"><b>Protein: </b> {p.protein}</li>
+            <li class="list-group-item"><b>fat: </b>{p.fat}</li>
             </Col>
 
         ))

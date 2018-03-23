@@ -9,8 +9,11 @@ pocketchef/app/password.py
 react/output/
 venv/
 pocketchef/node_modules
+pocketchef/nohup.out
 pocketchef/build
 pocketchef/coverage
+pocketchef/serverRestart.sh
 .DS_Store
 .env
 npm-debug.log*
+

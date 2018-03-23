@@ -3,7 +3,7 @@ import RestaurantAPI from '../api'
 import { Link } from 'react-router-dom'
 import {Grid, Row, Col, Image, Button } from 'react-bootstrap' ;
 import YouTube from 'react-youtube'
-
+import GoogleMapReact from 'google-map-react';
 
 
 // The Restaurant looks up the restaurant using the number parsed from
@@ -29,22 +29,20 @@ const Restaurant = (props) => {
     <Grid>
     <Row className="show-grid text-center">
 
-      <Image width={500} height={500} alt="800x800" src={restaurant.image} circle className="contributor-pic" />
+      <Image width={500} height={500} alt="800x800" src={restaurant.img_link} circle className="contributor-pic" />
       <h1><big>{restaurant.name}</big></h1>
       <h1></h1>
       <Col xs={12} sm={6}  className="image-wrap">
-      <h3>Address: {restaurant.position}</h3>
-      <h2>Stars: "restaurant.position"</h2>
-      <p>Description : isa p sdjf aksd pajspj pasp ijpjapksdn paspijs js  psjdanjpaj osjd;alskji kslksa;idf alskisdcmmd athis sus th gbest tingibatuahs fbuasdpiucusudnc  tuaspiduanndutapisdnuasdnntasdpuasn</p>
+      <h3>Address: {restaurant.address}</h3>
+      <h2>Rating: {restaurant.rating}</h2>
+      <h2>Phone: {restaurant.phone}</h2>
+      <h2>Cuisine: {restaurant.cuisine}</h2>
       </Col>
       <Col xs={12} sm={6} className="image-wrap">
 
-      <Link to='/'><h3>Link to incredients: {restaurant.position}</h3></Link>
-      <Link to='/'><h2>Link to Recipies:</h2></Link>
-      <h2>Stars: {restaurant.position}</h2>
+      <Link to='/'><h3>Restaurants {restaurant.position}</h3></Link>
       </Col>
       </Row>
-
 
       <Row className="show-grid text-center">
       <Col xs={12}  className="image-wrap">
@@ -53,15 +51,14 @@ const Restaurant = (props) => {
         opts={opts}
       />
       </Col>
-
-      <Col xs={12}className="image-wrap">
-      <YouTube
-        videoId="DkiyT-dnmv8"
-        opts={opts}
-      />
-      </Col>
       </Row>
-
+      <Row>
+      <div style={{ height: '100vh', width: '100%' }}>
+          <GoogleMapReact bootstrapURLKeys={{ key: "AIzaSyBFObWyqlbpObdkdNE0k4JwX9AB66cTGKw"}}
+            defaultCenter={{lat:30,lng:98}}
+            defaultZoom={11} />
+        </div>
+      </Row>
     </Grid>
   )
 }

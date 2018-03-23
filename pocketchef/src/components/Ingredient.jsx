@@ -12,7 +12,7 @@ import GoogleMapReact from 'google-map-react';
 // the URL's pathname. If no ingredient is found with the given
 // number, then a "ingredient not found" message is displayed.
 const Ingredient = (props) => {
-  const ingredient = IngredientAPI.get(
+  const ingredient = IngredientAPI.getIng(
     //parseInt(props.match.params.number, 10)
     props.match.params.name
   )
@@ -31,32 +31,20 @@ const Ingredient = (props) => {
     <Grid>
     <Row className="show-grid text-center">
 
-      <Image width={500} height={500} alt="800x800" src={ingredient.image} circle className="contributor-pic" />
+      <Image width={500} height={500} alt="800x800" src={ingredient.picture} circle className="contributor-pic" />
       <h1><big>{ingredient.name}</big></h1>
       <h1></h1>
       <Col xs={12} sm={6}  className="image-wrap">
-      <h3>Address: {ingredient.position}</h3>
-      <h2>Stars: "ingredient.position"</h2>
-      <p>Description : isa p sdjf aksd pajspj pasp ijpjapksdn paspijs js  psjdanjpaj osjd;alskji kslksa;idf alskisdcmmd athis sus th gbest tingibatuahs fbuasdpiucusudnc  tuaspiduanndutapisdnuasdnntasdpuasn</p>
+      <h2>Calories: {ingredient.calories}</h2>
+      <h2>Fat: {ingredient.fat}</h2>
+      <h2>Protein: {ingredient.protein}</h2>
+      <h2>Carbs: {ingredient.carbs}</h2>
       </Col>
       <Col xs={12} sm={6} className="image-wrap">
-
-      <Link to='/'><h3>Link to incredients: {ingredient.position}</h3></Link>
-      <Link to='/'><h2>Link to Recipies:</h2></Link>
-      <h2>Stars: {ingredient.position}</h2>
       </Col>
       </Row>
-
-
       <Row className="show-grid text-center">
       <Col xs={12}  className="image-wrap">
-      <YouTube
-        videoId="DkiyT-dnmv8"
-        opts={opts}
-      />
-      </Col>
-
-      <Col xs={12}className="image-wrap">
       <YouTube
         videoId="DkiyT-dnmv8"
         opts={opts}

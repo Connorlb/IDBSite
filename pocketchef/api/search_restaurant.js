@@ -11,12 +11,12 @@
 // });
 // console.log(data)
 const { Pool } = require('pg');
-const pool = new Pool()
+const pool = new Pool();
 
-const client = pool.connect()
+const client = pool.connect();
 const result = client.query({
     rowMode: 'array',
     text: 'SELECT name, address, rating FROM api.restaurants;'
-})
-console.log(result.rows)
-client.end()
+});
+console.log(result.rows);
+client.end();

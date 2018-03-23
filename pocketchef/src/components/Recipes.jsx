@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Jumbotron, Grid, Row, Col, Image, Button } from 'react-bootstrap' ;
 import './Recipes.css'
+import GoogleMapReact from 'google-map-react'
 
 export default class RecipesContainer extends Component {
   constructor(props) {
@@ -91,6 +92,11 @@ class CreateRecipe extends React.Component {
             </Col>
           })}
         </ul>
+        <Col>
+          <GoogleMapReact bootstrapURLKeys={{ key: "AIzaSyBFObWyqlbpObdkdNE0k4JwX9AB66cTGKw"}}
+            defaultCenter={{lat:30,lng:98}}
+            defaultZoom={11} />
+        </Col>
       </div>
     )
   }

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Jumbotron, Grid, Row, Col, Image, Button } from 'react-bootstrap' ;
 import './Recipes.css'
-import GoogleMapReact from 'google-map-react'
 
 export default class RecipesContainer extends Component {
   constructor(props) {
@@ -32,7 +31,7 @@ export default class RecipesContainer extends Component {
   render(){
     return (
     <Grid>
-    <h1 align="center">Recipes</h1> 
+    <h1 align="center">Recipes</h1>
       <Row className="show-grid text-center">
         <AddRecipe addNew={this.addRecipe} />
         <CreateRecipe names={this.state.recipes} />
@@ -93,9 +92,6 @@ class CreateRecipe extends React.Component {
           })}
         </ul>
         <Col>
-          <GoogleMapReact bootstrapURLKeys={{ key: "AIzaSyBFObWyqlbpObdkdNE0k4JwX9AB66cTGKw"}}
-            defaultCenter={{lat:30,lng:98}}
-            defaultZoom={11} />
         </Col>
       </div>
     )

@@ -306,3 +306,52 @@ error: [Errno 32] Broken pipe
 72.177.48.113 - - [22/Mar/2018 21:47:48] "GET / HTTP/1.1" 200 -
 72.177.48.113 - - [22/Mar/2018 21:47:49] "GET /static/bundle.js HTTP/1.1" 200 -
 72.177.48.113 - - [22/Mar/2018 21:47:50] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+94.102.49.193 - - [22/Mar/2018 21:50:15] "GET / HTTP/1.1" 200 -
+94.102.49.193 - - [22/Mar/2018 21:50:22] "GET /robots.txt HTTP/1.1" 200 -
+94.102.49.193 - - [22/Mar/2018 21:50:32] "GET /.well-known/security.txt HTTP/1.1" 200 -
+72.177.48.113 - - [22/Mar/2018 21:50:46] "GET / HTTP/1.1" 200 -
+72.177.48.113 - - [22/Mar/2018 21:50:46] "GET /static/bundle.js HTTP/1.1" 200 -
+66.249.66.193 - - [22/Mar/2018 21:57:02] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+66.249.66.196 - - [22/Mar/2018 21:57:03] "GET /favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [22/Mar/2018 21:58:14] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [22/Mar/2018 21:58:34] "GET /restaurants HTTP/1.1" 200 -
+72.177.48.113 - - [22/Mar/2018 21:58:53] "GET /restaurants HTTP/1.1" 200 -
+72.177.48.113 - - [22/Mar/2018 21:58:53] "GET /static/bundle.js HTTP/1.1" 200 -
+72.177.48.113 - - [22/Mar/2018 21:58:55] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [22/Mar/2018 22:11:54] "GET /about HTTP/1.1" 200 -
+72.177.48.113 - - [22/Mar/2018 22:11:54] "GET /static/bundle.js HTTP/1.1" 200 -
+72.177.48.113 - - [22/Mar/2018 22:13:15] "GET /restaurants HTTP/1.1" 200 -
+72.177.48.113 - - [22/Mar/2018 22:13:16] "GET /static/bundle.js HTTP/1.1" 200 -
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+72.177.48.113 - - [22/Mar/2018 22:33:32] "GET /restaurants HTTP/1.1" 200 -
+72.177.48.113 - - [22/Mar/2018 22:33:32] "GET / HTTP/1.1" 200 -
+72.177.48.113 - - [22/Mar/2018 22:33:32] "GET /static/bundle.js HTTP/1.1" 200 -
+72.177.48.113 - - [22/Mar/2018 22:37:29] "GET /restaurant HTTP/1.1" 200 -
+72.177.48.113 - - [22/Mar/2018 22:37:29] "GET /static/bundle.js HTTP/1.1" 200 -
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+66.249.66.199 - - [22/Mar/2018 22:40:17] "GET /favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [22/Mar/2018 22:40:18] "GET /ingredients HTTP/1.1" 200 -
+72.177.48.113 - - [22/Mar/2018 22:40:18] "GET /static/bundle.js HTTP/1.1" 200 -
+72.177.48.113 - - [22/Mar/2018 22:40:21] "GET /ingredients HTTP/1.1" 200 -
+72.177.48.113 - - [22/Mar/2018 22:40:21] "GET /static/bundle.js HTTP/1.1" 200 -
+54.92.134.206 - - [22/Mar/2018 23:14:44] "HEAD / HTTP/1.1" 200 -
+66.249.66.193 - - [22/Mar/2018 23:32:24] "GET / HTTP/1.1" 200 -
+72.177.48.113 - - [22/Mar/2018 23:32:39] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+72.177.48.113 - - [22/Mar/2018 23:37:02] "GET /about HTTP/1.1" 200 -
+72.177.48.113 - - [22/Mar/2018 23:37:02] "GET /static/bundle.js HTTP/1.1" 200 -
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+72.177.48.113 - - [22/Mar/2018 23:43:02] "GET /about HTTP/1.1" 200 -
+72.177.48.113 - - [22/Mar/2018 23:43:02] "GET /static/bundle.js HTTP/1.1" 200 -
+72.177.48.113 - - [23/Mar/2018 00:21:02] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [23/Mar/2018 00:21:05] "GET /about HTTP/1.1" 200 -
+72.177.48.113 - - [23/Mar/2018 00:21:06] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [23/Mar/2018 00:21:56] "GET /about HTTP/1.1" 200 -
+72.177.48.113 - - [23/Mar/2018 00:21:56] "GET /static/bundle.js HTTP/1.1" 200 -
+72.177.48.113 - - [23/Mar/2018 00:21:58] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+66.249.66.128 - - [23/Mar/2018 00:26:50] "GET / HTTP/1.1" 200 -
+72.177.48.113 - - [23/Mar/2018 00:33:09] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [23/Mar/2018 00:33:10] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [23/Mar/2018 00:33:44] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [23/Mar/2018 00:33:46] "GET / HTTP/1.1" 200 -
+72.177.48.113 - - [23/Mar/2018 00:33:47] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -

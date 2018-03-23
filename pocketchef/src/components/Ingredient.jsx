@@ -3,6 +3,7 @@ import IngredientAPI from '../api'
 import { Link } from 'react-router-dom'
 import {Grid, Row, Col, Image, Button } from 'react-bootstrap' ;
 import YouTube from 'react-youtube'
+import GoogleMapReact from 'google-map-react';
 
 
 
@@ -63,8 +64,16 @@ const Ingredient = (props) => {
       </Col>
       </Row>
       <Row>
+<<<<<<< HEAD
       <Col>
         </Col>
+=======
+      <div style={{ height: '100vh', width: '100%' }}>
+          <GoogleMapReact bootstrapURLKeys={{ key: "AIzaSyBFObWyqlbpObdkdNE0k4JwX9AB66cTGKw"}}
+            defaultCenter={{lat:30,lng:98}}
+            defaultZoom={11} />
+        </div>
+>>>>>>> 1183e88ad618eb5ec2dfb80b41eade3c6e1021b3
       </Row>
 
     </Grid>

@@ -4,6 +4,7 @@
   "private": true,
   "main": "index.js",
   "dependencies": {
+    "google-map-react": "^0.34.0",
     "pg": "^7.4.1",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.2.0",

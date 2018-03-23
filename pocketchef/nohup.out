@@ -444,3 +444,7 @@ error: [Errno 32] Broken pipe
 72.177.48.113 - - [23/Mar/2018 02:50:08] "GET /static/bundle.js HTTP/1.1" 200 -
 72.177.48.113 - - [23/Mar/2018 02:50:08] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
 72.177.48.113 - - [23/Mar/2018 02:50:08] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+66.102.7.33 - - [23/Mar/2018 02:57:00] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [23/Mar/2018 02:57:01] "GET / HTTP/1.1" 200 -
+72.177.48.113 - - [23/Mar/2018 02:57:01] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [23/Mar/2018 02:57:04] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -

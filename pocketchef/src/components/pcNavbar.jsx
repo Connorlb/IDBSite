@@ -30,6 +30,12 @@ export default class pcNavbar extends Component {
               About
             </NavItem>
           </Nav>
+          <Navbar.Form pullLeft>
+            <FormGroup>
+              <FormControl type="text" placeholder="Search" />
+            </FormGroup>{' '}
+            <Button type="submit">Submit</Button>
+          </Navbar.Form>
         </Navbar.Collapse>
       </Navbar>
     );

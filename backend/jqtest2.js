@@ -4,7 +4,7 @@ require('../pocketchef/node_modules/jsdom').env("", function(err, window) {
         return;
     }
 
-    var $ = require('../pocketchef/node_modules/jquery'(window);
+    var $ = require('../pocketchef/node_modules/jquery')(window);
 });
 
 var name_filter = [{"name": "name", "op": "like", "val": "%halal%"}];

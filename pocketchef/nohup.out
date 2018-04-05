@@ -3525,3 +3525,16 @@ NameError: name 'anager' is not defined
 128.62.47.59 - - [05/Apr/2018 21:41:57] "GET /apple-touch-icon-precomposed.png HTTP/1.1" 200 -
 128.62.47.59 - - [05/Apr/2018 21:41:57] "GET /apple-touch-icon.png HTTP/1.1" 200 -
 128.62.47.59 - - [05/Apr/2018 21:41:57] "GET /favicon.ico HTTP/1.1" 200 -
+34.193.245.68 - - [05/Apr/2018 21:43:54] "GET /api/ingredients2 HTTP/1.1" 200 -
+app/main.py:2: ExtDeprecationWarning: Importing flask.ext.sqlalchemy is deprecated, use flask_sqlalchemy instead.
+  import flask.ext.sqlalchemy
+app/main.py:3: ExtDeprecationWarning: Importing flask.ext.restless is deprecated, use flask_restless instead.
+  import flask.ext.restless
+/usr/local/lib/python3.5/dist-packages/flask_sqlalchemy/__init__.py:794: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/usr/local/lib/python3.5/dist-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+Traceback (most recent call last):
+  File "app/main.py", line 64, in <module>
+    anager.create_api(recipes2, methods=['GET'], results_per_page=9)
+NameError: name 'anager' is not defined

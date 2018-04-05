@@ -2580,3 +2580,138 @@ Traceback (most recent call last):
   File "/usr/lib/python3.5/socketserver.py", line 454, in server_bind
     self.socket.bind(self.server_address)
 OSError: [Errno 98] Address already in use
+app/main.py:2: ExtDeprecationWarning: Importing flask.ext.sqlalchemy is deprecated, use flask_sqlalchemy instead.
+  import flask.ext.sqlalchemy
+app/main.py:3: ExtDeprecationWarning: Importing flask.ext.restless is deprecated, use flask_restless instead.
+  import flask.ext.restless
+/usr/local/lib/python3.5/dist-packages/flask_sqlalchemy/__init__.py:794: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/usr/local/lib/python3.5/dist-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+72.177.48.113 - - [05/Apr/2018 04:10:00] "GET /about HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:10:01] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:10:03] "GET /about HTTP/1.1" 200 -
+18.219.198.15 - - [05/Apr/2018 04:10:03] "GET /api/ingredients2?q={"filters":[{"name":"name","op":"like","val":"%"}]} HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:10:03] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:10:04] "GET /about HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:10:04] "GET /static/bundle.js HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:10:05] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+18.219.198.15 - - [05/Apr/2018 04:10:11] "GET /api/restaurants2 HTTP/1.1" 200 -
+18.219.198.15 - - [05/Apr/2018 04:11:39] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:12:49] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:12:52] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+app/main.py:2: ExtDeprecationWarning: Importing flask.ext.sqlalchemy is deprecated, use flask_sqlalchemy instead.
+  import flask.ext.sqlalchemy
+app/main.py:3: ExtDeprecationWarning: Importing flask.ext.restless is deprecated, use flask_restless instead.
+  import flask.ext.restless
+/usr/local/lib/python3.5/dist-packages/flask_sqlalchemy/__init__.py:794: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/usr/local/lib/python3.5/dist-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+72.177.48.113 - - [05/Apr/2018 04:23:50] "GET /restaurants HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:23:50] "GET /static/bundle.js HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:23:51] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+18.219.198.15 - - [05/Apr/2018 04:24:19] "GET /api/restaurants2 HTTP/1.1" 200 -
+18.219.198.15 - - [05/Apr/2018 04:25:22] "GET /api/restaurants2 HTTP/1.1" 200 -
+app/main.py:2: ExtDeprecationWarning: Importing flask.ext.sqlalchemy is deprecated, use flask_sqlalchemy instead.
+  import flask.ext.sqlalchemy
+app/main.py:3: ExtDeprecationWarning: Importing flask.ext.restless is deprecated, use flask_restless instead.
+  import flask.ext.restless
+/usr/local/lib/python3.5/dist-packages/flask_sqlalchemy/__init__.py:794: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/usr/local/lib/python3.5/dist-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+18.219.198.15 - - [05/Apr/2018 04:27:55] "GET /api/restaurants2 HTTP/1.1" 500 -
+app/main.py:2: ExtDeprecationWarning: Importing flask.ext.sqlalchemy is deprecated, use flask_sqlalchemy instead.
+  import flask.ext.sqlalchemy
+app/main.py:3: ExtDeprecationWarning: Importing flask.ext.restless is deprecated, use flask_restless instead.
+  import flask.ext.restless
+/usr/local/lib/python3.5/dist-packages/flask_sqlalchemy/__init__.py:794: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/usr/local/lib/python3.5/dist-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+72.177.48.113 - - [05/Apr/2018 04:30:53] "GET /restaurants HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:31:04] "GET /static/bundle.js HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:31:10] "GET / HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:31:10] "GET / HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:31:10] "GET /static/bundle.js HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:31:12] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+app/main.py:2: ExtDeprecationWarning: Importing flask.ext.sqlalchemy is deprecated, use flask_sqlalchemy instead.
+  import flask.ext.sqlalchemy
+app/main.py:3: ExtDeprecationWarning: Importing flask.ext.restless is deprecated, use flask_restless instead.
+  import flask.ext.restless
+/usr/local/lib/python3.5/dist-packages/flask_sqlalchemy/__init__.py:794: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/usr/local/lib/python3.5/dist-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+72.177.48.113 - - [05/Apr/2018 04:32:34] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:32:35] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:32:36] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+18.219.198.15 - - [05/Apr/2018 04:32:36] "GET /api/restaurants2 HTTP/1.1" 200 -
+18.219.198.15 - - [05/Apr/2018 04:37:15] "GET /api/restaurants2 HTTP/1.1" 200 -
+18.219.198.15 - - [05/Apr/2018 04:37:27] "GET /api/restaurants2 HTTP/1.1" 200 -
+18.219.198.15 - - [05/Apr/2018 04:38:42] "GET /api/restaurants2 HTTP/1.1" 200 -
+18.219.198.15 - - [05/Apr/2018 04:39:24] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:40:51] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:40:52] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:40:53] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:40:54] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:40:56] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:43:45] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:43:46] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:43:47] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:43:48] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+52.5.98.73 - - [05/Apr/2018 04:44:35] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:46:13] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:47:33] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:47:54] "GET /recipes/%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:47:57] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:47:59] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:48:00] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:48:01] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:48:03] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:48:10] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:48:10] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:48:17] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+141.212.122.48 - - [05/Apr/2018 04:51:35] "GET / HTTP/1.1" 200 -
+139.162.119.197 - - [05/Apr/2018 04:52:25] "GET / HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:53:57] "OPTIONS /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:57:16] "OPTIONS /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:57:23] "OPTIONS /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 04:58:35] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 05:00:25] "OPTIONS /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 05:01:04] "OPTIONS /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 05:01:09] "OPTIONS /api/restaurants2 HTTP/1.1" 200 -
+18.219.198.15 - - [05/Apr/2018 05:01:11] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 05:01:16] "OPTIONS /api/restaurants2 HTTP/1.1" 200 -
+18.219.198.15 - - [05/Apr/2018 05:01:27] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 05:01:52] "OPTIONS /api/restaurants2 HTTP/1.1" 200 -
+18.219.198.15 - - [05/Apr/2018 05:02:05] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 05:02:31] "OPTIONS /api/restaurants2 HTTP/1.1" 200 -
+18.219.198.15 - - [05/Apr/2018 05:02:35] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 05:02:38] "OPTIONS /api/restaurants2 HTTP/1.1" 200 -
+18.219.198.15 - - [05/Apr/2018 05:02:51] "GET /api/restaurants2?0=%7B&1=%22&2=f&3=i&4=l&5=t&6=e&7=r&8=s&9=%22&10=%3A&11=%5B&12=%7B&13=%22&14=n&15=a&16=m&17=e&18=%22&19=%3A&20=%22&21=n&22=a&23=m&24=e&25=%22&26=%2C&27=%22&28=o&29=p&30=%22&31=%3A&32=%22&33=l&34=i&35=k&36=e&37=%22&38=%2C&39=%22&40=v&41=a&42=l&43=%22&44=%3A&45=%22&46=%25&47=h&48=a&49=l&50=a&51=l&52=%25&53=%22&54=%7D&55=%5D&56=%7D HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 05:02:52] "OPTIONS /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 05:03:03] "OPTIONS /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 05:03:18] "OPTIONS /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 05:04:44] "OPTIONS /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 05:05:09] "GET /restaurants HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 05:05:09] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+18.219.198.15 - - [05/Apr/2018 05:07:21] "GET /api/restaurants2?0=%7B&1=%22&2=f&3=i&4=l&5=t&6=e&7=r&8=s&9=%22&10=%3A&11=%5B&12=%7B&13=%22&14=n&15=a&16=m&17=e&18=%22&19=%3A&20=%22&21=n&22=a&23=m&24=e&25=%22&26=%2C&27=%22&28=o&29=p&30=%22&31=%3A&32=%22&33=l&34=i&35=k&36=e&37=%22&38=%2C&39=%22&40=v&41=a&42=l&43=%22&44=%3A&45=%22&46=%25&47=h&48=a&49=l&50=a&51=l&52=%25&53=%22&54=%7D&55=%5D&56=%7D HTTP/1.1" 200 -
+18.219.198.15 - - [05/Apr/2018 05:08:32] "GET /api/restaurants2?filters%5B0%5D%5Bname%5D=name&filters%5B0%5D%5Bop%5D=like&filters%5B0%5D%5Bval%5D=%25halal%25 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 05:08:44] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 05:11:33] "OPTIONS /api/restaurants2 HTTP/1.1" 200 -
+18.219.198.15 - - [05/Apr/2018 05:11:47] "GET /api/restaurants2?filters=filters HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 05:13:22] "OPTIONS /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 05:14:19] "OPTIONS /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 05:14:22] "OPTIONS /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 05:16:04] "OPTIONS /api/restaurants2 HTTP/1.1" 200 -
+18.219.198.15 - - [05/Apr/2018 05:19:54] "GET /api/restaurants2 HTTP/1.1" 200 -
+66.102.7.36 - - [05/Apr/2018 05:20:14] "GET / HTTP/1.1" 200 -
+66.102.7.33 - - [05/Apr/2018 05:20:15] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 05:21:20] "GET / HTTP/1.1" 200 -

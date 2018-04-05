@@ -1,7 +1,6 @@
 import React from 'react'
 import RestaurantAPI from '../api'
 import { Link } from 'react-router-dom'
-import './FullRestaurants.css'
 import RestaurantCard from './RestaurantCard'
 import Pagination from "react-js-pagination";
 import {Grid, Row, Col, Image, Button } from 'react-bootstrap' ;

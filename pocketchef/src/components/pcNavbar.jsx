@@ -3,6 +3,15 @@ import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 export default class pcNavbar extends Component {
+  constructor() {
+    super();
+    this.state = {
+      search: ''
+    };
+  }
+  updateSearch(event){
+    this.setState({search: event.target.value});
+  }
   render(){
     return (
       <Navbar default collapseOnSelect>
@@ -29,6 +38,15 @@ export default class pcNavbar extends Component {
             <NavItem eventKey={5} componentClass={Link} href="/about" to="/about">
               About
             </NavItem>
+
+          </Nav>
+          <Nav pullRight>
+            <NavItem>
+                Search: 
+                <input type="text"
+                  value={this.state.search}
+                  onChange={this.updateSearch.bind(this)}/>
+              </NavItem>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

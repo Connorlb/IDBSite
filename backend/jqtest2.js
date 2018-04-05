@@ -1,4 +1,4 @@
-require('../pocketchef/node_modules/jsdom').env("", function(err, window) {
+require('../pocketchef/node_modules/jsdom/lib/old-api').env("", function(err, window) {
     if (err) {
         console.error(err);
         return;

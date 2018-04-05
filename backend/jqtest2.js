@@ -5,6 +5,8 @@ require('../pocketchef/node_modules/jsdom/lib/old-api').env("", function(err, wi
     }
     var $ = require('../pocketchef/node_modules/jquery')(window);
 
+    var xhr = new XMLHttpRequest();
+
     var name_filter = [{"name": "name", "op": "like", "val": "%Halal%"}];
     var cuisine_filter = [{"name": "cuisine", "op": "equals", "val": "American"}];
     var ords = [{"field": "name", "direction": "asc"}];
@@ -14,7 +16,8 @@ require('../pocketchef/node_modules/jsdom/lib/old-api').env("", function(err, wi
       dataType: "json",
       contentType: "application/json",
       headers: {"Access-Control-Allow-Origin": "*"},
-      success: function(data) { console.log(data); },
+      xhr: function () { return xhr; },
+      success: function(data) { console.log(xhr.responseURL); },
       error: function(data) { console.log(data); }
     });
 });

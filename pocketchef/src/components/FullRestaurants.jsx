@@ -23,6 +23,9 @@ class FullRestaurants extends React.Component {
       this.componentDidMount = this.componentDidMount.bind(this)
       this.handleClick = this.handleClick.bind(this)
   }
+  updateValue(newValue){
+    this.setState({selectValue: newValue});
+  }
 
   handleClick () {
   axios.get('https://api.github.com/users/maecapozzi')
@@ -64,9 +67,19 @@ class FullRestaurants extends React.Component {
              <Row className="show-grid">
     	        <Col xs={6} xsOffset={3}>
 		   <b>Filter by Cuisine</b>
-            <CuisinesFilterComponent/>
+            <VirtualizedSelect ref="cuisineSelect"
+              options={options}
+              simpleValue
+              clearable
+              name="select-cuisine"
+              value={this.state.selectValue}
+              onChange={this.updateValue}
+              searchable
+              labelKey="cuisine"
+              valueKey="cuisine"
+		      		/>
 		</Col>
-    <Col xs={3}>
+    <Col xs={6}>
       <DropdownButton
         title={'Sort by...'}
         key={1}

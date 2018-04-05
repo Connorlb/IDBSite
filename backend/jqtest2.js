@@ -14,7 +14,7 @@ require('../pocketchef/node_modules/jsdom/lib/old-api').env("", function(err, wi
     $.ajax({
       url: 'pocketchef.me/api/restaurants2',
       type: "GET",
-      data: {"q": JSON.stringify({"filters": name_filter})},
+      // data: {"q": JSON.stringify({"filters": name_filter})},
       dataType: "json",
       contentType: "application/json",
       success: function(data) { console.log(data); },

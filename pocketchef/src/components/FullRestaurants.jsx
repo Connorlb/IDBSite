@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import RestaurantCard from './RestaurantCard'
 import './FullRestaurants.css'
 import Pagination from "react-js-pagination";
-import {Grid, Row, Col, Image, Button } from 'react-bootstrap' ;
+import {Grid, Row, Col, Image, Button, MenuItem, DropdownButton} from 'react-bootstrap' ;
 import axios from 'axios'
 const DATA = require('../../../frontend/cuisines');
 
@@ -67,18 +67,19 @@ class FullRestaurants extends React.Component {
              <Row className="show-grid">
     	        <Col xs={6} xsOffset={3}>
 		   <b>Filter by Cuisine</b>
-            <VirtualizedSelect ref="cuisineSelect"
-              options={options}
-              simpleValue
-              clearable
-              name="select-cuisine"
-              value={this.state.selectValue}
-              onChange={this.updateValue}
-              searchable
-              labelKey="cuisine"
-              valueKey="cuisine"
-		      		/>
+            <CuisinesFilterComponent/>
 		</Col>
+    <Col xs={6}>
+      <DropdownButton
+        title={'Sort by...'}
+        key={1}
+        id={'recipe-sort-button'}>
+        <MenuItem eventKey="1"> Rating DESC </MenuItem>
+        <MenuItem eventKey="2"> Rating ASC </MenuItem>
+        <MenuItem eventKey="3"> Name DESC </MenuItem>
+        <MenuItem eventKey="4"> NAM ASC </MenuItem>
+      </DropdownButton>
+      </Col>
 	      </Row>
           <div className='button__container'>
               <button className='button' onClick={this.handleClick}>

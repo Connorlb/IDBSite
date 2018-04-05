@@ -162,3 +162,108 @@ json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
 72.177.48.113 - - [05/Apr/2018 20:30:17] "GET /api/restaurants2 HTTP/1.1" 200 -
 72.177.48.113 - - [05/Apr/2018 20:30:28] "GET /api/restaurants2 HTTP/1.1" 200 -
 18.219.198.15 - - [05/Apr/2018 20:30:30] "GET /api/restaurants2 HTTP/1.1" 200 -
+18.219.198.15 - - [05/Apr/2018 20:31:33] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:32:11] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:32:16] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:32:22] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:32:53] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:32:54] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:33:13] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:33:24] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:33:36] "GET / HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:33:37] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:33:38] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:33:38] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:33:39] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:33:40] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:33:40] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:33:41] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:33:42] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+18.219.198.15 - - [05/Apr/2018 20:33:46] "OPTIONS /api/restaurants2?q%5Bfilters%5D%5B0%5D%5Bname%5D=name&q%5Bfilters%5D%5B0%5D%5Bop%5D=like&q%5Bfilters%5D%5B0%5D%5Bval%5D=%25halal%25 HTTP/1.1" 200 -
+18.219.198.15 - - [05/Apr/2018 20:33:46] "GET /api/restaurants2?q%5Bfilters%5D%5B0%5D%5Bname%5D=name&q%5Bfilters%5D%5B0%5D%5Bop%5D=like&q%5Bfilters%5D%5B0%5D%5Bval%5D=%25halal%25 HTTP/1.1" 200 -
+18.219.198.15 - - [05/Apr/2018 20:34:28] "OPTIONS /api/restaurants2?q%5Bfilters%5D%5B0%5D%5Bname%5D=cuisine&q%5Bfilters%5D%5B0%5D%5Bop%5D=equals&q%5Bfilters%5D%5B0%5D%5Bval%5D=American HTTP/1.1" 200 -
+18.219.198.15 - - [05/Apr/2018 20:34:28] "GET /api/restaurants2?q%5Bfilters%5D%5B0%5D%5Bname%5D=cuisine&q%5Bfilters%5D%5B0%5D%5Bop%5D=equals&q%5Bfilters%5D%5B0%5D%5Bval%5D=American HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:34:45] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:34:55] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:35:26] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:35:32] "GET /api/restaurants2 HTTP/1.1" 200 -
+18.219.198.15 - - [05/Apr/2018 20:35:35] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:35:45] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:35:46] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:35:46] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:35:47] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:35:48] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:35:48] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:36:07] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:36:08] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:36:09] "GET /api/restaurants2 HTTP/1.1" 200 -
+18.219.198.15 - - [05/Apr/2018 20:36:11] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:37:40] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:37:43] "GET /api/restaurants2?page=2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:37:46] "GET /api/restaurants2?page=2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:37:47] "GET /api/restaurants2?page=2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:37:48] "GET /api/restaurants2?page=2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:37:51] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:38:49] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:38:51] "GET /api/restaurants2?page=&page=2 HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.5/dist-packages/flask_restless/views.py", line 157, in decorator
+    return func(*args, **kw)
+  File "/usr/local/lib/python3.5/dist-packages/mimerender.py", line 244, in wrapper
+    result = target(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/flask/views.py", line 149, in dispatch_request
+    return meth(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/flask_restless/views.py", line 189, in wrapped
+    return func(*args, **kw)
+  File "/usr/local/lib/python3.5/dist-packages/flask_restless/views.py", line 1239, in get
+    return self._search()
+  File "/usr/local/lib/python3.5/dist-packages/flask_restless/views.py", line 1194, in _search
+    result = self._paginated(result, deep)
+  File "/usr/local/lib/python3.5/dist-packages/flask_restless/views.py", line 967, in _paginated
+    page_num = int(request.args.get('page', 1))
+ValueError: invalid literal for int() with base 10: ''
+72.177.48.113 - - [05/Apr/2018 20:39:07] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:39:09] "GET /api/restaurants2?page=2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:39:11] "GET /api/restaurants2?page=3 HTTP/1.1" 200 -
+18.219.198.15 - - [05/Apr/2018 20:40:37] "OPTIONS /api/restaurants2?q%5Bfilters%5D%5B0%5D%5Bname%5D=cuisine&q%5Bfilters%5D%5B0%5D%5Bop%5D=equals&q%5Bfilters%5D%5B0%5D%5Bval%5D=American HTTP/1.1" 200 -
+18.219.198.15 - - [05/Apr/2018 20:40:37] "GET /api/restaurants2?q%5Bfilters%5D%5B0%5D%5Bname%5D=cuisine&q%5Bfilters%5D%5B0%5D%5Bop%5D=equals&q%5Bfilters%5D%5B0%5D%5Bval%5D=American HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:41:45] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:41:45] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:41:57] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:42:03] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:42:14] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:42:16] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:43:07] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:43:08] "GET /ingredients/%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:43:10] "GET /api/ingredients HTTP/1.1" 200 -
+128.62.47.59 - - [05/Apr/2018 20:43:15] "GET / HTTP/1.1" 200 -
+18.219.198.15 - - [05/Apr/2018 20:43:19] "OPTIONS /api/restaurants2 HTTP/1.1" 200 -
+18.219.198.15 - - [05/Apr/2018 20:43:19] "POST /api/restaurants2 HTTP/1.1" 405 -
+128.62.47.59 - - [05/Apr/2018 20:43:25] "GET /restaurants HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:44:07] "GET /api/restaurants2 HTTP/1.1" 200 -

@@ -5,6 +5,7 @@ import RestaurantCard from './RestaurantCard'
 import './FullRestaurants.css'
 import Pagination from "react-js-pagination";
 import {Grid, Row, Col, Image, Button } from 'react-bootstrap' ;
+import axios from 'axios'
 
 
 class FullRestaurants extends React.Component {
@@ -12,16 +13,22 @@ class FullRestaurants extends React.Component {
         super();
         this.state = {
               activePage: 1,
-              cards:[]
+              cards:[],
+              username: ''
 
             };
 
       this.handlePageChange = this.handlePageChange.bind(this)
-      this.componentWillMount = this.componentWillMount.bind(this)
+      this.componentDidMount = this.componentDidMount.bind(this)
+      this.handleClick = this.handleClick.bind(this)
       }
 
+  handleClick () {
+  axios.get('https://api.github.com/users/maecapozzi')
+    .then(response => this.setState({username: response.data.id}))
+  }
+
   handlePageChange(pageNumber) {
-        //console.log(`active page is ${pageNumber}`);
         var arr = [];
         var start = (pageNumber - 1) * 9;
         var end  = start + 8;
@@ -35,7 +42,10 @@ class FullRestaurants extends React.Component {
         this.setState({activePage: pageNumber});
       }
 
-  componentWillMount() {
+  componentDidMount() {
+    axios.get('http://pocketchef.me/api/restaurants2')
+      .then(response => { console.log(response.data.objects); })
+
     var arr = [];
      for (var i = 0; i <= 8; i++) {
        if(RestaurantAPI.all()[i] != null){
@@ -46,13 +56,15 @@ class FullRestaurants extends React.Component {
     this.setState({cards: arr});
   }
 
-  componentDidMount(){
-
-  }
-
    render() {
 return(
   <div>
+  <div className='button__container'>
+      <button className='button' onClick={this.handleClick}>
+        Click Me
+      </button>
+      <p>{this.state.username}</p>
+    </div>
     <Row className="show-grid text-center">
       {
 
@@ -67,7 +79,7 @@ return(
     }
 
       </Row>
-      <div class = "pagination">
+      <div class = "center">
       <Pagination
           activePage={this.state.activePage}
           itemsCountPerPage={9}

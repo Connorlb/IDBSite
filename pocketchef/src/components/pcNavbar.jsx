@@ -38,11 +38,15 @@ export default class pcNavbar extends Component {
             <NavItem eventKey={5} componentClass={Link} href="/about" to="/about">
               About
             </NavItem>
+
+          </Nav>
+          <Nav pullRight>
             <NavItem>
-              <input type="text"
-                value={this.state.search}
-                onChange={this.updateSearch.bind(this)}/>
-            </NavItem>
+                Search: 
+                <input type="text"
+                  value={this.state.search}
+                  onChange={this.updateSearch.bind(this)}/>
+              </NavItem>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

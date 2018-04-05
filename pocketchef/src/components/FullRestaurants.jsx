@@ -73,7 +73,7 @@ class FullRestaurants extends React.Component {
         console.log(error);})
 
     var arr = [];
-     for (var i = 0; i <= 8; i++) {
+     for (var i = 0; i <= 3; i++) {
        if(RestaurantAPI.all()[i] != null){
        arr.push(RestaurantAPI.all()[i]);
      }

@@ -5,7 +5,7 @@ import RestaurantCard from './RestaurantCard'
 import './FullRestaurants.css'
 import Pagination from "react-js-pagination";
 import {Grid, Row, Col, Image, Button } from 'react-bootstrap' ;
-//import axios from 'axios'
+import axios from 'axios'
 
 
 class FullRestaurants extends React.Component {
@@ -14,19 +14,19 @@ class FullRestaurants extends React.Component {
         this.state = {
               activePage: 1,
               cards:[],
-              //username: ''
+              username: ''
 
             };
 
       this.handlePageChange = this.handlePageChange.bind(this)
       this.componentDidMount = this.componentDidMount.bind(this)
-      //this.handleClick = this.handleClick.bind(this)
+      this.handleClick = this.handleClick.bind(this)
       }
 
-  // handleClick () {
-  // axios.get('https://api.github.com/users/maecapozzi')
-  //   .then(response => this.setState({username: response.data.id}))
-  // }
+  handleClick () {
+  axios.get('https://api.github.com/users/maecapozzi')
+    .then(response => this.setState({username: response.data.id}))
+  }
 
   handlePageChange(pageNumber) {
         var arr = [];
@@ -59,6 +59,12 @@ class FullRestaurants extends React.Component {
    render() {
 return(
   <div>
+  <div className='button__container'>
+      <button className='button' onClick={this.handleClick}>
+        Click Me
+      </button>
+      <p>{this.state.username}</p>
+    </div>
     <Row className="show-grid text-center">
       {
 

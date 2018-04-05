@@ -10,7 +10,7 @@ export default class pcNavbar extends Component {
     };
   }
   updateSearch(event){
-    this.setState({search: event.targe.value});
+    this.setState({search: event.target.value});
   }
   render(){
     return (

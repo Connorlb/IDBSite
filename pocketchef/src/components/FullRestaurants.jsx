@@ -2,6 +2,7 @@ import React from 'react'
 import RestaurantAPI from '../api'
 import { Link } from 'react-router-dom'
 import RestaurantCard from './RestaurantCard'
+import "./FullRestaurants.css"
 import Pagination from "react-js-pagination";
 import {Grid, Row, Col, Image, Button } from 'react-bootstrap' ;
 
@@ -18,6 +19,7 @@ class FullRestaurants extends React.Component {
       this.handlePageChange = this.handlePageChange.bind(this)
       this.componentWillMount = this.componentWillMount.bind(this)
       }
+
   handlePageChange(pageNumber) {
         //console.log(`active page is ${pageNumber}`);
         var arr = [];
@@ -46,28 +48,31 @@ class FullRestaurants extends React.Component {
 
    render() {
 return(
-  <div >
+  <div>
     <Row className="show-grid text-center">
       {
 
         this.state.cards.map(rest => (
+
            <Col xs={12} sm={4} md={4} className="image-wrap" key={rest.name}>
            <RestaurantCard name={rest.name} image={rest.img_link} cuisine={rest.cuisine} rating={rest.rating} phone={rest.phone}/>
            </Col>
 
+
       ))
     }
+
       </Row>
-      <div class="center">
-    <Pagination
+      <div className = "pagination">
+      <Pagination
           activePage={this.state.activePage}
           itemsCountPerPage={9}
           totalItemsCount={20}
           pageRangeDisplayed={5}
           onChange={this.handlePageChange}
         />
-    </div>
-  </div>
+      </div>
+      </div>
 );
 }
 }

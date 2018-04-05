@@ -1,9 +1,19 @@
-var $ = require('jquery');
+var request = require('../pocketchef/node_modules/request');
 var filters = [{"name": "name", "op": "like", "val": "%halal%"}];
-$.ajax({
+
+var options = {
   url: 'http://pocketchef.me/api/restaurants2',
-  data: {"q": JSON.stringify({"filters": filters})},
-  dataType: "json",
-  contentType: "application/json",
-  success: function(data) { console.log(data.objects); }
-});
+  headers: { 'Content-type': 'application/json'},
+  method: 'GET'
+};
+
+function callback(error, response, body){
+  if(!error && response.statusCode == 200){
+    var info = JSON.parse(body);
+    console.log(info['objects'][293]);
+  }else{
+     console.log(error);
+  }
+}
+
+request(options,callback);

@@ -5,6 +5,7 @@ require('../pocketchef/node_modules/jsdom/lib/old-api').env("", function(err, wi
     }
     var $ = require('../pocketchef/node_modules/jquery')(window);
 
+    var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
     var xhr = new XMLHttpRequest();
 
     var name_filter = [{"name": "name", "op": "like", "val": "%Halal%"}];

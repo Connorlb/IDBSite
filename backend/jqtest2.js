@@ -1,10 +1,10 @@
-require("jsdom").env("", function(err, window) {
+require('../pocketchef/node_modules/jsdom').env("", function(err, window) {
     if (err) {
         console.error(err);
         return;
     }
 
-    var $ = require("jquery")(window);
+    var $ = require('../pocketchef/node_modules/jquery'(window);
 });
 
 var name_filter = [{"name": "name", "op": "like", "val": "%halal%"}];

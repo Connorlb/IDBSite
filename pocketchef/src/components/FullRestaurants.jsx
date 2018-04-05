@@ -2,6 +2,7 @@ import React from 'react'
 import RestaurantAPI from '../api'
 import { Link } from 'react-router-dom'
 import RestaurantCard from './RestaurantCard'
+import './FullRestaurants.css'
 import Pagination from "react-js-pagination";
 import {Grid, Row, Col, Image, Button } from 'react-bootstrap' ;
 
@@ -43,7 +44,11 @@ class FullRestaurants extends React.Component {
      }
 
     this.setState({cards: arr});
-}
+  }
+
+  componentDidMount(){
+
+  }
 
    render() {
 return(
@@ -62,7 +67,7 @@ return(
     }
 
       </Row>
-      <div className = "pagination">
+      <div class = "pagination">
       <Pagination
           activePage={this.state.activePage}
           itemsCountPerPage={9}

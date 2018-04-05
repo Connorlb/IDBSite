@@ -57,7 +57,7 @@ manager = flask.ext.restless.APIManager(app, flask_sqlalchemy_db=db)
 # default. Allowed HTTP methods can be specified as well.
 manager.create_api(restaurants2, methods=['GET'])
 manager.create_api(ingredients2, methods=['GET'])
-manager.create_api(recipes2, methods=['GET'])
+manager.create_api(recipes2, methods=['GET'], results_per_page=300)
 
 
 # start the flask loop

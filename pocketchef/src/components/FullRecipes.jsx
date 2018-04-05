@@ -1,13 +1,13 @@
 import React from 'react'
 import RecipeAPI from '../api'
 import { Link } from 'react-router-dom'
-import {Grid, Row, Col, Image, Button } from 'react-bootstrap' ;
+import {Grid, Row, Col, Image, Button, MenuItem, DropdownButton } from 'react-bootstrap' ;
 
 
 const FullRecipes = () => (
   <div>
     <DropdownButton
-      title={Sort}
+      title={'Sort'}
       key={1}
       id={'recipe-sort-button'}>
       <MenuItem eventKey="1"> DESC </MenuItem>

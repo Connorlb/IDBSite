@@ -23,9 +23,6 @@ class FullRestaurants extends React.Component {
       this.componentDidMount = this.componentDidMount.bind(this)
       this.handleClick = this.handleClick.bind(this)
   }
-  updateValue(newValue){
-    this.setState({selectValue: newValue});
-  }
 
   handleClick () {
   axios.get('https://api.github.com/users/maecapozzi')

@@ -7,9 +7,21 @@ import {Grid, Row, Col, Image, Button, MenuItem, DropdownButton} from 'react-boo
 const DATA = require('../../../frontend/cuisines');
 
 class CuisinesFilterComponent extends React.Component{
+    constructor(){
+        super();
+        super();
+        this.state = {
+              selectValue: ''
+  
+        };
+    }
+    updateValue(newValue){
+        this.setState({selectValue: newValue});
+      }
 
     render() {
         var options = DATA.CUISINES;
+        
         return(
             <div>
             <VirtualizedSelect ref="cuisineSelect"
@@ -27,3 +39,5 @@ class CuisinesFilterComponent extends React.Component{
         );
     }
 }
+
+export default CuisinesFilterComponent

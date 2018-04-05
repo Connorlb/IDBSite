@@ -28,55 +28,35 @@ class FullRestaurants extends React.Component {
 
       this.handlePageChange = this.handlePageChange.bind(this)
       this.componentDidMount = this.componentDidMount.bind(this)
-      this.handleClick = this.handleClick.bind(this)
   }
   updateValue(newValue){
     this.setState({selectValue: newValue});
   }
 
-  handleClick () {
-  //   axios.get('/user', {
-  //   params: {
-  //     ID: 12345
-  //   }
-  // })
-  axios.get('https://api.github.com/users/maecapozzi')
-    .then(response => this.setState({username: response.data.id}))
-    .catch(function (error) {
-      console.log(error);})
-  }
-
   handlePageChange(pageNumber) {
-        var arr = [];
-        var start = (pageNumber - 1) * 9;
-        var end  = start + 8;
-         for (var i = start; i <= end; i++) {
-           if(RestaurantAPI.all()[i] != null){
-           arr.push(RestaurantAPI.all()[i]);
-         }
-         }
-
-        this.setState({cards: arr});
+    //   axios.get('/user', {
+    //   params: {
+    //     ID: 12345
+    //   }
+    // })
+    axios.get('http://pocketchef.me/api/restaurants2',{
+    params: {
+      page: pageNumber
+    }
+  })
+      .then(response => {
+      this.setState({cards: response.data.objects});})
+      .catch(function (error) {
+        console.log(error);})
         this.setState({activePage: pageNumber});
       }
 
   componentDidMount() {
     axios.get('http://pocketchef.me/api/restaurants2')
       .then(response => {
-      //console.log(response.data.objects);
-      console.log("THis");
-      this.setState({cards: [response.data.objects]});})
+      this.setState({cards: response.data.objects});})
       .catch(function (error) {
         console.log(error);})
-
-    var arr = [];
-     for (var i = 0; i <= 8; i++) {
-       if(RestaurantAPI.all()[i] != null){
-       arr.push(RestaurantAPI.all()[i]);
-     }
-     }
-
-    //this.setState({cards: arr});
   }
 
    render() {
@@ -110,12 +90,6 @@ class FullRestaurants extends React.Component {
       </DropdownButton>
       </Col>
 	      </Row>
-          <div className='button__container'>
-              <button className='button' onClick={this.handleClick}>
-                Click Me
-              </button>
-              <p>{this.state.username}</p>
-            </div>
             <Row className="show-grid text-center">
               {
 

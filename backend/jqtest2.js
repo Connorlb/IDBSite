@@ -18,7 +18,7 @@ require('../pocketchef/node_modules/jsdom/lib/old-api').env("", function(err, wi
       dataType: "json",
       contentType: "application/json",
       success: function(data) { console.log(data); },
-      error: function(data) { console.log("error"); }
+      error: function(data) { console.log(data); }
     });
 
     console.log('post query')

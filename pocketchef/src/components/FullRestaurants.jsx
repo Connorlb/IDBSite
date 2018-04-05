@@ -62,10 +62,11 @@ class FullRestaurants extends React.Component {
 
   componentDidMount() {
     axios.get('http://www.pocketchef.me/api/restaurants2')
-      .then(response => { console.log(response.data.objects); })
+      .then(response => { console.log(response.data.objects);
+      this.setState({cards: response.data.objects});})
       .catch(function (error) {
         console.log(error);})
-        
+
     axios.get('http://pocketchef.me/api/restaurants2')
       .then(response => { console.log(response.data); })
       .catch(function (error) {
@@ -78,7 +79,7 @@ class FullRestaurants extends React.Component {
      }
      }
 
-    this.setState({cards: arr});
+    //this.setState({cards: arr});
   }
 
    render() {

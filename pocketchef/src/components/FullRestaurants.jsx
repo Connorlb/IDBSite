@@ -69,7 +69,7 @@ class FullRestaurants extends React.Component {
 		   <b>Filter by Cuisine</b>
             <CuisinesFilterComponent/>
 		</Col>
-    <Col xs={6}>
+    <Col xs={3}>
       <DropdownButton
         title={'Sort by...'}
         key={1}
@@ -77,7 +77,7 @@ class FullRestaurants extends React.Component {
         <MenuItem eventKey="1"> Rating DESC </MenuItem>
         <MenuItem eventKey="2"> Rating ASC </MenuItem>
         <MenuItem eventKey="3"> Name DESC </MenuItem>
-        <MenuItem eventKey="4"> NAM ASC </MenuItem>
+        <MenuItem eventKey="4"> Name ASC </MenuItem>
       </DropdownButton>
       </Col>
 	      </Row>

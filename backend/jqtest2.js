@@ -17,7 +17,8 @@ require('../pocketchef/node_modules/jsdom/lib/old-api').env("", function(err, wi
       data: {"q": JSON.stringify({"filters": name_filter})},
       dataType: "json",
       contentType: "application/json",
-      success: function(data) { console.log(data); }
+      success: function(data) { console.log(data); },
+      error: function(data) { console.log("error"); }
     });
 
     console.log('post query')

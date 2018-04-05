@@ -1,27 +1,31 @@
 import React from 'react'
 import RestaurantAPI from '../api'
+import VirtualizedSelect from 'react-virtualized-select';
 import { Link } from 'react-router-dom'
 import RestaurantCard from './RestaurantCard'
 import './FullRestaurants.css'
 import Pagination from "react-js-pagination";
 import {Grid, Row, Col, Image, Button } from 'react-bootstrap' ;
 import axios from 'axios'
-
+const DATA = require('../../frontend/cuisines');
 
 class FullRestaurants extends React.Component {
   constructor() {
-        super();
-        this.state = {
-              activePage: 1,
-              cards:[],
-              username: ''
+      super();
+      this.state = {
+            activePage: 1,
+            cards:[],
+            username: ''
 
-            };
+      };
 
       this.handlePageChange = this.handlePageChange.bind(this)
       this.componentDidMount = this.componentDidMount.bind(this)
       this.handleClick = this.handleClick.bind(this)
-      }
+  }
+  updateValue(newValue){
+    this.setState({selectValue: newValue});
+  }
 
   handleClick () {
   axios.get('https://api.github.com/users/maecapozzi')
@@ -57,40 +61,53 @@ class FullRestaurants extends React.Component {
   }
 
    render() {
-return(
-  <div>
-  <div className='button__container'>
-      <button className='button' onClick={this.handleClick}>
-        Click Me
-      </button>
-      <p>{this.state.username}</p>
-    </div>
-    <Row className="show-grid text-center">
-      {
+        var options = DATA.CUISINES;
+        return(
+          <div>
+            <b>Cities</b> 
+            <VirtualizedSelect ref="cuisineSelect"
+              options={options}
+              simpleValue
+              clearable
+              name="select-cuisine"
+              value={this.state.selectValue}
+              onChange={this.updateValue}
+              searchable
+              labelKey="type"
+              valueKey="type"
+		      		/>
+          <div className='button__container'>
+              <button className='button' onClick={this.handleClick}>
+                Click Me
+              </button>
+              <p>{this.state.username}</p>
+            </div>
+            <Row className="show-grid text-center">
+              {
 
-        this.state.cards.map(rest => (
+                this.state.cards.map(rest => (
 
-           <Col xs={12} sm={4} md={4} className="image-wrap" key={rest.name}>
-           <RestaurantCard name={rest.name} image={rest.img_link} cuisine={rest.cuisine} rating={rest.rating} phone={rest.phone}/>
-           </Col>
+                  <Col xs={12} sm={4} md={4} className="image-wrap" key={rest.name}>
+                  <RestaurantCard name={rest.name} image={rest.img_link} cuisine={rest.cuisine} rating={rest.rating} phone={rest.phone}/>
+                  </Col>
 
 
-      ))
-    }
+              ))
+            }
 
-      </Row>
-      <div class = "center">
-      <Pagination
-          activePage={this.state.activePage}
-          itemsCountPerPage={9}
-          totalItemsCount={20}
-          pageRangeDisplayed={5}
-          onChange={this.handlePageChange}
-        />
-      </div>
-      </div>
-);
-}
+              </Row>
+              <div class = "center">
+              <Pagination
+                  activePage={this.state.activePage}
+                  itemsCountPerPage={9}
+                  totalItemsCount={20}
+                  pageRangeDisplayed={5}
+                  onChange={this.handlePageChange}
+                />
+              </div>
+              </div>
+        );
+        }
 }
 
 export default FullRestaurants

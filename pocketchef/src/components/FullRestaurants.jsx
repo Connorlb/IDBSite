@@ -12,7 +12,7 @@ import 'react-select/dist/react-select.css'
 import 'react-virtualized/styles.css'
 import 'react-virtualized-select/styles.css'
 
-const DATA = require('../../../frontend/cuisines');
+const DATA = require('../cuisines.js');
 
 
 class FullRestaurants extends React.Component {
@@ -35,8 +35,15 @@ class FullRestaurants extends React.Component {
   }
 
   handleClick () {
+  //   axios.get('/user', {
+  //   params: {
+  //     ID: 12345
+  //   }
+  // })
   axios.get('https://api.github.com/users/maecapozzi')
     .then(response => this.setState({username: response.data.id}))
+    .catch(function (error) {
+      console.log(error);})
   }
 
   handlePageChange(pageNumber) {
@@ -54,8 +61,15 @@ class FullRestaurants extends React.Component {
       }
 
   componentDidMount() {
-    //axios.get('http://pocketchef.me/api/restaurants2')
-    //  .then(response => { console.log(response.data.objects); })
+    axios.get('http://www.pocketchef.me/api/restaurants2')
+      .then(response => { console.log(response.data.objects); })
+      .catch(function (error) {
+        console.log(error);})
+        
+    axios.get('http://pocketchef.me/api/restaurants2')
+      .then(response => { console.log(response.data); })
+      .catch(function (error) {
+        console.log(error);})
 
     var arr = [];
      for (var i = 0; i <= 8; i++) {
@@ -129,7 +143,7 @@ class FullRestaurants extends React.Component {
                 />
 		</Col>
 	     </Row>
-              
+
               </div>
         );
         }

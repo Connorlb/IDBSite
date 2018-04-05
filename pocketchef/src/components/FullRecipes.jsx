@@ -140,7 +140,7 @@ class FullRecipes extends React.Component {
               <Pagination
                   activePage={this.state.activePage}
                   itemsCountPerPage={9}
-                  totalItemsCount={20}
+                  totalItemsCount={100}
                   pageRangeDisplayed={5}
                   onChange={this.handlePageChange}
                 />

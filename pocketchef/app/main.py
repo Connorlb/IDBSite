@@ -1,9 +1,12 @@
 from flask import Flask, render_template
 import flask.ext.sqlalchemy
 import flask.ext.restless
+from flask_cors import CORS
 
 # the all-important app variable:
 app = Flask(__name__, static_folder="../static", template_folder="../public")
+
+CORS(app)
 
 app.config['DEBUG'] = True
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://postgres:pocketchef@localhost/ver2'

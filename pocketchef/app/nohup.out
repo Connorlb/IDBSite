@@ -103,3 +103,62 @@ main.py:3: ExtDeprecationWarning: Importing flask.ext.restless is deprecated, us
 72.177.48.113 - - [05/Apr/2018 03:55:42] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
 72.177.48.113 - - [05/Apr/2018 03:55:45] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
 72.177.48.113 - - [05/Apr/2018 03:55:54] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+main.py:2: ExtDeprecationWarning: Importing flask.ext.sqlalchemy is deprecated, use flask_sqlalchemy instead.
+  import flask.ext.sqlalchemy
+main.py:3: ExtDeprecationWarning: Importing flask.ext.restless is deprecated, use flask_restless instead.
+  import flask.ext.restless
+/usr/local/lib/python3.5/dist-packages/flask_sqlalchemy/__init__.py:794: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/usr/local/lib/python3.5/dist-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+141.8.143.132 - - [05/Apr/2018 20:29:00] "GET /robots.txt HTTP/1.1" 200 -
+93.158.161.172 - - [05/Apr/2018 20:29:05] "GET /about HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:29:11] "GET /restaurants HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:29:11] "GET /static/bundle.js HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:29:12] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:29:12] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+18.219.198.15 - - [05/Apr/2018 20:29:16] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:29:38] "GET /restaurants/%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:29:39] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:29:39] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:29:45] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:29:47] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:29:47] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+--------------------------------------------------------------------------------
+ERROR in views [/usr/local/lib/python3.5/dist-packages/flask_restless/views.py:1140]:
+Expecting value: line 1 column 1 (char 0)
+--------------------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask_restless/views.py", line 1138, in _search
+    search_params = json.loads(request.args.get('q', '{}'))
+  File "/usr/local/lib/python3.5/dist-packages/flask/json.py", line 146, in loads
+    return _json.loads(s, **kwargs)
+  File "/usr/lib/python3.5/json/__init__.py", line 332, in loads
+    return cls(**kw).decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+72.177.48.113 - - [05/Apr/2018 20:29:54] "GET /api/restaurants2?q=name%20like%20y HTTP/1.1" 400 -
+--------------------------------------------------------------------------------
+ERROR in views [/usr/local/lib/python3.5/dist-packages/flask_restless/views.py:1140]:
+Expecting value: line 1 column 1 (char 0)
+--------------------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask_restless/views.py", line 1138, in _search
+    search_params = json.loads(request.args.get('q', '{}'))
+  File "/usr/local/lib/python3.5/dist-packages/flask/json.py", line 146, in loads
+    return _json.loads(s, **kwargs)
+  File "/usr/lib/python3.5/json/__init__.py", line 332, in loads
+    return cls(**kw).decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+72.177.48.113 - - [05/Apr/2018 20:30:01] "GET /api/restaurants2?q=name%20like%20%halal% HTTP/1.1" 400 -
+72.177.48.113 - - [05/Apr/2018 20:30:17] "GET /api/restaurants2 HTTP/1.1" 200 -
+72.177.48.113 - - [05/Apr/2018 20:30:28] "GET /api/restaurants2 HTTP/1.1" 200 -
+18.219.198.15 - - [05/Apr/2018 20:30:30] "GET /api/restaurants2 HTTP/1.1" 200 -

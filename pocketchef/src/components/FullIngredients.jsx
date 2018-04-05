@@ -2,7 +2,7 @@ import React from 'react'
 import RestaurantAPI from '../api'
 import VirtualizedSelect from 'react-virtualized-select';
 import { Link } from 'react-router-dom'
-import RestaurantCard from './RestaurantCard'
+import IngredientCard from './IngredientCard'
 import './FullRestaurants.css'
 import Pagination from "react-js-pagination";
 import {Grid, Row, Col, Image, Button, MenuItem, DropdownButton} from 'react-bootstrap' ;
@@ -32,7 +32,7 @@ class FullIngredients extends React.Component {
   }
 
   handlePageChange(pageNumber) {
-    axios.get('http://pocketchef.me/api/restaurants2',{
+    axios.get('http://pocketchef.me/api/ingredients2',{
     params: {
       page: pageNumber
     }
@@ -45,7 +45,7 @@ class FullIngredients extends React.Component {
       }
 
   componentDidMount() {
-    axios.get('http://pocketchef.me/api/restaurants2')
+    axios.get('http://pocketchef.me/api/ingredients2')
       .then(response => {
       this.setState({cards: response.data.objects});})
       .catch(function (error) {
@@ -87,9 +87,8 @@ class FullIngredients extends React.Component {
               {
 
                 this.state.cards.map(rest => (
-
                   <Col xs={12} sm={4} md={4} className="image-wrap" key={rest.name}>
-                  <RestaurantCard name={rest.name} image={rest.img_link} cuisine={rest.cuisine} rating={rest.rating} phone={rest.phone}/>
+                  <IngredientCard name={rest.name} image={rest.picture} calories={rest.calories} protein={rest.carbs} fat={rest.carbs}/>
                   </Col>
 
 

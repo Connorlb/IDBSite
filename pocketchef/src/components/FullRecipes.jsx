@@ -7,13 +7,17 @@ import {Grid, Row, Col, Image, Button, MenuItem, DropdownButton } from 'react-bo
 const FullRecipes = () => (
   <div>
     <Row>
+      <Col xs={6} xsOffset={3}>
       <DropdownButton
-        title={'Sort'}
+        title={'Sort by...'}
         key={1}
         id={'recipe-sort-button'}>
-        <MenuItem eventKey="1"> DESC </MenuItem>
-        <MenuItem eventKey="2"> ASC </MenuItem>
+        <MenuItem eventKey="1"> Servings DESC </MenuItem>
+        <MenuItem eventKey="2"> Servings ASC </MenuItem>
+        <MenuItem eventKey="3"> Prep Time DESC </MenuItem>
+        <MenuItem eventKey="4"> Prep Time ASC </MenuItem>
       </DropdownButton>
+      </Col>
     </Row>
     <ul>
     <Row className="show-grid text-center">

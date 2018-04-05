@@ -7,7 +7,7 @@ import './FullRestaurants.css'
 import Pagination from "react-js-pagination";
 import {Grid, Row, Col, Image, Button } from 'react-bootstrap' ;
 import axios from 'axios'
-const DATA = require('../../frontend/cuisines');
+const DATA = require('../../../frontend/cuisines');
 
 class FullRestaurants extends React.Component {
   constructor() {
@@ -64,7 +64,9 @@ class FullRestaurants extends React.Component {
         var options = DATA.CUISINES;
         return(
           <div>
-            <b>Cities</b> 
+             <Row className="show-grid">
+    	        <Col xs={6} xsOffset={3}>
+		   <b>Filter by Cuisine</b>
             <VirtualizedSelect ref="cuisineSelect"
               options={options}
               simpleValue
@@ -73,9 +75,11 @@ class FullRestaurants extends React.Component {
               value={this.state.selectValue}
               onChange={this.updateValue}
               searchable
-              labelKey="type"
-              valueKey="type"
+              labelKey="cuisine"
+              valueKey="cuisine"
 		      		/>
+		</Col>
+	      </Row>
           <div className='button__container'>
               <button className='button' onClick={this.handleClick}>
                 Click Me
@@ -96,7 +100,8 @@ class FullRestaurants extends React.Component {
             }
 
               </Row>
-              <div class = "center">
+            <Row className="show-grid">
+                <Col xs={6} xsOffset={6}>
               <Pagination
                   activePage={this.state.activePage}
                   itemsCountPerPage={9}
@@ -104,7 +109,9 @@ class FullRestaurants extends React.Component {
                   pageRangeDisplayed={5}
                   onChange={this.handlePageChange}
                 />
-              </div>
+		</Col>
+	     </Row>
+              
               </div>
         );
         }

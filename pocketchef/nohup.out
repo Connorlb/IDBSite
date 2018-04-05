@@ -3011,3 +3011,201 @@ app/main.py:3: ExtDeprecationWarning: Importing flask.ext.restless is deprecated
 172.1.77.214 - - [05/Apr/2018 10:22:25] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
 172.1.77.214 - - [05/Apr/2018 10:22:26] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
 172.1.77.214 - - [05/Apr/2018 10:22:30] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 10:32:08] "GET /static/bundle.js HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 10:32:10] "GET / HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 10:32:35] "GET / HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 10:43:02] "GET / HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 10:43:03] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 10:43:05] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 10:43:12] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 10:43:15] "GET /restaurants HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 10:43:15] "GET /static/bundle.js HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 10:43:17] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 10:43:31] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 10:43:42] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 10:43:43] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 10:43:46] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 10:49:17] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+95.37.205.51 - - [05/Apr/2018 11:37:33] "GET / HTTP/1.0" 200 -
+108.33.213.8 - - [05/Apr/2018 12:36:55] "GET / HTTP/1.1" 200 -
+108.33.213.8 - - [05/Apr/2018 12:36:56] "GET /HNAP1/ HTTP/1.1" 200 -
+202.46.49.149 - - [05/Apr/2018 12:44:19] "GET / HTTP/1.1" 200 -
+123.232.109.198 - - [05/Apr/2018 15:10:21] "POST /wls-wsat/CoordinatorPortType HTTP/1.1" 405 -
+app/main.py:2: ExtDeprecationWarning: Importing flask.ext.sqlalchemy is deprecated, use flask_sqlalchemy instead.
+  import flask.ext.sqlalchemy
+app/main.py:3: ExtDeprecationWarning: Importing flask.ext.restless is deprecated, use flask_restless instead.
+  import flask.ext.restless
+/usr/local/lib/python3.5/dist-packages/flask_sqlalchemy/__init__.py:794: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/usr/local/lib/python3.5/dist-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+172.1.77.214 - - [05/Apr/2018 15:13:27] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:13:28] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:13:30] "GET / HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:13:59] "GET /static/bundle.js HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:14:01] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:14:47] "GET / HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:15:07] "GET /static/bundle.js HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:15:07] "GET / HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:15:08] "GET /static/bundle.js HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:15:09] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:15:11] "GET / HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:15:11] "GET /static/bundle.js HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:15:13] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:15:14] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:15:16] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:15:19] "GET /restaurants HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:15:19] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:15:21] "GET /restaurants HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:15:21] "GET /static/bundle.js HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:15:23] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:15:27] "GET /restaurants HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:15:27] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:15:30] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:15:32] "GET / HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:15:32] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:15:34] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:15:35] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:15:37] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:15:39] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.182.105.213 - - [05/Apr/2018 15:23:13] "GET / HTTP/1.1" 200 -
+72.182.105.213 - - [05/Apr/2018 15:23:13] "GET /static/bundle.js HTTP/1.1" 200 -
+72.182.105.213 - - [05/Apr/2018 15:23:14] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.182.105.213 - - [05/Apr/2018 15:23:17] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.182.105.213 - - [05/Apr/2018 15:23:24] "GET /restaurants HTTP/1.1" 200 -
+72.182.105.213 - - [05/Apr/2018 15:23:24] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.182.105.213 - - [05/Apr/2018 15:23:29] "GET /restaurants HTTP/1.1" 200 -
+72.182.105.213 - - [05/Apr/2018 15:23:29] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.182.105.213 - - [05/Apr/2018 15:23:30] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.182.105.213 - - [05/Apr/2018 15:23:33] "GET / HTTP/1.1" 200 -
+72.182.105.213 - - [05/Apr/2018 15:23:33] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.182.105.213 - - [05/Apr/2018 15:23:40] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.182.105.213 - - [05/Apr/2018 15:23:42] "GET /recipes/%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+72.182.105.213 - - [05/Apr/2018 15:23:52] "GET /recipes/The%20Lucky%20Penny%20Blog:%20The%20BEST%20Cauliflower%20Crust%20Pizza HTTP/1.1" 200 -
+72.182.105.213 - - [05/Apr/2018 15:23:53] "GET /recipes/%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+app/main.py:2: ExtDeprecationWarning: Importing flask.ext.sqlalchemy is deprecated, use flask_sqlalchemy instead.
+  import flask.ext.sqlalchemy
+app/main.py:3: ExtDeprecationWarning: Importing flask.ext.restless is deprecated, use flask_restless instead.
+  import flask.ext.restless
+/usr/local/lib/python3.5/dist-packages/flask_sqlalchemy/__init__.py:794: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/usr/local/lib/python3.5/dist-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+172.1.77.214 - - [05/Apr/2018 15:25:16] "GET / HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:25:16] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:25:23] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:25:26] "GET /restaurants HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:25:26] "GET /static/bundle.js HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:25:27] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:25:28] "GET /restaurants HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:25:28] "GET /static/bundle.js HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:25:29] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:25:30] "GET /restaurants HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:25:30] "GET /static/bundle.js HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:25:31] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:25:39] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:25:40] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:25:41] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:25:43] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:25:44] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:25:46] "GET /recipes HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:25:46] "GET /static/bundle.js HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:25:47] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+app/main.py:2: ExtDeprecationWarning: Importing flask.ext.sqlalchemy is deprecated, use flask_sqlalchemy instead.
+  import flask.ext.sqlalchemy
+app/main.py:3: ExtDeprecationWarning: Importing flask.ext.restless is deprecated, use flask_restless instead.
+  import flask.ext.restless
+/usr/local/lib/python3.5/dist-packages/flask_sqlalchemy/__init__.py:794: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/usr/local/lib/python3.5/dist-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+172.1.77.214 - - [05/Apr/2018 15:31:35] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:31:38] "GET / HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:31:38] "GET /static/bundle.js HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:31:40] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:31:41] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+app/main.py:2: ExtDeprecationWarning: Importing flask.ext.sqlalchemy is deprecated, use flask_sqlalchemy instead.
+  import flask.ext.sqlalchemy
+app/main.py:3: ExtDeprecationWarning: Importing flask.ext.restless is deprecated, use flask_restless instead.
+  import flask.ext.restless
+/usr/local/lib/python3.5/dist-packages/flask_sqlalchemy/__init__.py:794: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/usr/local/lib/python3.5/dist-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+172.1.77.214 - - [05/Apr/2018 15:35:05] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:35:06] "GET / HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:35:06] "GET /static/bundle.js HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:35:07] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:35:09] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:35:11] "GET /restaurants HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:35:29] "GET /static/bundle.js HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:35:39] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:35:54] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:35:56] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:35:57] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:35:59] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:36:01] "GET / HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:36:01] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:40:38] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+app/main.py:2: ExtDeprecationWarning: Importing flask.ext.sqlalchemy is deprecated, use flask_sqlalchemy instead.
+  import flask.ext.sqlalchemy
+app/main.py:3: ExtDeprecationWarning: Importing flask.ext.restless is deprecated, use flask_restless instead.
+  import flask.ext.restless
+/usr/local/lib/python3.5/dist-packages/flask_sqlalchemy/__init__.py:794: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/usr/local/lib/python3.5/dist-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+172.1.77.214 - - [05/Apr/2018 15:42:41] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:42:42] "GET / HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:42:42] "GET /static/bundle.js HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:42:48] "GET /restaurants HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:42:48] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:42:48] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:42:48] "GET /static/bundle.js HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:42:51] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:43:02] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:43:03] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:43:04] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:43:05] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:43:06] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:43:07] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:43:08] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:43:08] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+app/main.py:2: ExtDeprecationWarning: Importing flask.ext.sqlalchemy is deprecated, use flask_sqlalchemy instead.
+  import flask.ext.sqlalchemy
+app/main.py:3: ExtDeprecationWarning: Importing flask.ext.restless is deprecated, use flask_restless instead.
+  import flask.ext.restless
+/usr/local/lib/python3.5/dist-packages/flask_sqlalchemy/__init__.py:794: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/usr/local/lib/python3.5/dist-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+172.1.77.214 - - [05/Apr/2018 15:56:23] "GET / HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:56:23] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:56:25] "GET / HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:56:25] "GET /static/bundle.js HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:56:27] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:56:31] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:57:56] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:57:57] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:58:33] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:58:48] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:58:52] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:58:56] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:59:29] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:59:30] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:59:31] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:59:32] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:59:33] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:59:41] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:59:43] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:59:45] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 15:59:48] "GET /restaurants/%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 16:00:00] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 16:00:05] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -
+172.1.77.214 - - [05/Apr/2018 16:00:24] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 200 -

@@ -9,6 +9,8 @@ require('../pocketchef/node_modules/jsdom/lib/old-api').env("", function(err, wi
     var name_filter = [{"name": "name", "op": "like", "val": "%halal%"}];
     var cuisine_filter = [{"name": "cuisine", "op": "equals", "val": "American"}];
 
+    console.log('pre query');
+
     $.ajax({
       url: 'http://pocketchef.me/api/restaurants2',
       data: {"q": JSON.stringify({"filters": name_filter})},
@@ -16,4 +18,6 @@ require('../pocketchef/node_modules/jsdom/lib/old-api').env("", function(err, wi
       contentType: "application/json",
       success: function(data) { console.log(data.objects); }
     });
+
+    console.log('post query')
 });

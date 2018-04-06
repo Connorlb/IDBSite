@@ -13,7 +13,7 @@ class IngredientCard extends React.Component {
       return(
                 <div class="card">
                 <li class="list-group-item">
-                <Link to={`/restaurants/${this.props.name}`}>
+                <Link to={`/ingredients/${this.props.name}`}>
                 <Image width={200} height={200} alt="200x200" src={this.props.image} circle className="contributor-pic" /></Link>
                 <li class="list-group-item"><h3 class="name">{this.props.name}</h3></li>
                 <li class="list-group-item"><b>Calories</b> {this.props.calories}</li>

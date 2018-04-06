@@ -37,8 +37,11 @@ class FullRestaurants extends React.Component {
   }
 
   handleDrops (e, evt){
-    this.setState({sortVal: evt[0]});
-    this.setState({sortDir: evt[1]});
+    var t = "";
+    t = t+evt
+    var args = t.split(" ");
+    this.setState({sortVal: args[0]});
+    this.setState({sortDir: args[1]});
     this.updateValue(this.state.selectValue);
   }
 

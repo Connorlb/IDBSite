@@ -1,24 +1,37 @@
 import React from 'react'
-import IngredientAPI from '../api'
+import RestaurantAPI from '../api'
 import { Link } from 'react-router-dom'
 import {Grid, Row, Col, Image, Button } from 'react-bootstrap' ;
 import YouTube from 'react-youtube'
 import GoogleMapReact from 'google-map-react';
+import axios from 'axios'
 
-
-
-
-// The Ingredient looks up the ingredient using the number parsed from
-// the URL's pathname. If no ingredient is found with the given
-// number, then a "ingredient not found" message is displayed.
-const Ingredient = (props) => {
-  const ingredient = IngredientAPI.getIng(
-    //parseInt(props.match.params.number, 10)
-    props.match.params.name
-  )
-  if (!ingredient) {
-    return <div>Sorry, the ingredient was not found</div>
+class Ingredient extends React.Component {
+  constructor() {
+      super();
+      this.state = {
+            ingredient: {},
+      };
+      this.componentDidMount = this.componentDidMount.bind(this)
   }
+
+componentDidMount() {
+  var cuisine_filter = [{"name": "name", "op": "equals", "val": this.props.match.params.name}];
+  var ords = [{"field": "name", "direction": "asc"}];
+  let data = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
+  axios({
+    method: 'get',
+    url: 'http://pocketchef.me/api/ingredients2',
+    params: {
+      q: data
+    },
+    config: { headers: {'Content-Type': "application/json", "Access-Control-Allow-Origin": "*"}}
+    }).then(response => {
+    console.log(response.data.objects);
+    this.setState({ingredient: response.data.objects[0]});});
+}
+
+  render(){
   const opts = {
     height: '390',
     width: '640',
@@ -31,14 +44,14 @@ const Ingredient = (props) => {
     <Grid>
     <Row className="show-grid text-center">
 
-      <Image width={500} height={500} alt="800x800" src={ingredient.picture} circle className="contributor-pic" />
-      <h1><big>{ingredient.name}</big></h1>
+      <Image width={500} height={500} alt="800x800" src={this.state.ingredient.picture} circle className="contributor-pic" />
+      <h1><big>{this.state.ingredient.name}</big></h1>
       <h1></h1>
       <Col xs={12} sm={6}  className="image-wrap">
-      <h2>Calories: {ingredient.calories}</h2>
-      <h2>Fat: {ingredient.fat}</h2>
-      <h2>Protein: {ingredient.protein}</h2>
-      <h2>Carbs: {ingredient.carbs}</h2>
+      <h2>Calories: {this.state.ingredient.calories}</h2>
+      <h2>Fat: {this.state.ingredient.fat}</h2>
+      <h2>Protein: {this.state.ingredient.protein}</h2>
+      <h2>Carbs: {this.state.ingredient.carbs}</h2>
       </Col>
       <Col xs={12} sm={6} className="image-wrap">
       </Col>
@@ -60,6 +73,7 @@ const Ingredient = (props) => {
       </Row>
 
     </Grid>
-  )
+    )
+}
 }
 export default Ingredient

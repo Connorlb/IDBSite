@@ -13,7 +13,6 @@ class RecipeCard extends React.Component {
       return(
                 <div class="card">
                 <li class="list-group-item">
-
                 <Link to={`/restaurants/${this.props.name}`}><li class="list-group-item"><h2 class="name">{this.props.name}</h2></li></Link>
                 <li class="list-group-item"><b>Cuisine</b> {this.props.cuisine}</li>
                 <li class="list-group-item"><b>Servings </b>{this.props.servings}</li>

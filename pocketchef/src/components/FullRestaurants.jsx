@@ -15,6 +15,9 @@ import 'react-virtualized-select/styles.css'
 const DATA = require('../cuisines.js');
 
 
+
+
+
 class FullRestaurants extends React.Component {
   constructor() {
       super();
@@ -28,20 +31,51 @@ class FullRestaurants extends React.Component {
 
       this.handlePageChange = this.handlePageChange.bind(this)
       this.componentDidMount = this.componentDidMount.bind(this)
+      this.updateValue = this.updateValue.bind(this)
   }
+
   updateValue(newValue){
+    //console.log(data);
+    if(!newValue){
+
+      axios.get('http://pocketchef.me/api/restaurants2',{
+      params: {
+        page: 1
+      }
+    })
+        .then(response => {
+        this.setState({cards: response.data.objects});})
+        .catch(function (error) {
+          console.log(error);})
+          this.setState({activePage: 1});
+          this.setState({selectValue: 'Search'});
+    }else{
+    var cuisine_filter = [{"name": "cuisine", "op": "equals", "val": newValue}];
+    var ords = [{"field": "name", "direction": "asc"}];
+    let data = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
+    axios({
+      method: 'get',
+      url: 'http://pocketchef.me/api/restaurants2',
+      params: {
+        q: data
+      },
+      config: { headers: {'Content-Type': "application/json", "Access-Control-Allow-Origin": "*"}}
+      }).then(response => {
+      console.log(response.data.objects);
+      this.setState({cards: response.data.objects});});
     this.setState({selectValue: newValue});
+  }
   }
 
   handlePageChange(pageNumber) {
-    //   axios.get('/user', {
-    //   params: {
-    //     ID: 12345
-    //   }
-    // })
+    if (this.state.selectValue != 'Search'){
+    var cuisine_filter = [{"name": "cuisine", "op": "equals", "val": this.state.selectValue}];
+    var ords = [{"field": "name", "direction": "asc"}];
+    let data = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
     axios.get('http://pocketchef.me/api/restaurants2',{
     params: {
-      page: pageNumber
+      page: pageNumber,
+      q: data
     }
   })
       .then(response => {
@@ -49,7 +83,19 @@ class FullRestaurants extends React.Component {
       .catch(function (error) {
         console.log(error);})
         this.setState({activePage: pageNumber});
+      }else{
+        axios.get('http://pocketchef.me/api/restaurants2',{
+        params: {
+          page: pageNumber
+        }
+      })
+          .then(response => {
+          this.setState({cards: response.data.objects});})
+          .catch(function (error) {
+            console.log(error);})
+            this.setState({activePage: pageNumber});
       }
+    }
 
   componentDidMount() {
     axios.get('http://pocketchef.me/api/restaurants2')

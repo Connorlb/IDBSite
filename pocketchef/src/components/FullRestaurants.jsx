@@ -25,16 +25,24 @@ class FullRestaurants extends React.Component {
             activePage: 1,
             cards:[],
             username: '',
-	    selectValue: 'Search'
-
+	    selectValue: '%'
+            sortValue: 'name'
+            sortDir: 'asc'
       };
 
       this.handlePageChange = this.handlePageChange.bind(this)
       this.componentDidMount = this.componentDidMount.bind(this)
       this.updateValue = this.updateValue.bind(this)
+      this.handleDrops = this.handleDrops.bind(this)
   }
 
-  updateValue(newValue){
+  handleDrops: function(e, evt){
+     this.state.sortVal = evt[0];
+     this.state.sortDir = evt[1];
+     this.updateValue(this.state.selectValue);
+  }
+
+  updateValue(newValue, ordVal, ordDir){
     //console.log(data);
     if(!newValue){
 
@@ -51,7 +59,7 @@ class FullRestaurants extends React.Component {
           this.setState({selectValue: 'Search'});
     }else{
     var cuisine_filter = [{"name": "cuisine", "op": "equals", "val": newValue}];
-    var ords = [{"field": "name", "direction": "asc"}];
+    var ords = [{"field": this.state.sortVal, "direction": this.state.sortDir}];
     let data = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
     axios({
       method: 'get',
@@ -128,11 +136,12 @@ class FullRestaurants extends React.Component {
       <DropdownButton
         title={'Sort by...'}
         key={1}
-        id={'recipe-sort-button'}>
-        <MenuItem eventKey="1"> Rating DESC </MenuItem>
-        <MenuItem eventKey="2"> Rating ASC </MenuItem>
-        <MenuItem eventKey="3"> Name DESC </MenuItem>
-        <MenuItem eventKey="4"> Name ASC </MenuItem>
+        id={'recipe-sort-button'}
+        onSelect={this.handleDrops}>
+        <MenuItem eventKey=["rating", "asc"]> Rating DESC </MenuItem>
+        <MenuItem eventKey=["rating", "desc"]> Rating ASC </MenuItem>
+        <MenuItem eventKey=["name", "desc"]> Name DESC </MenuItem>
+        <MenuItem eventKey=["name", "asc"]> Name ASC </MenuItem>
       </DropdownButton>
       </Col>
 	      </Row>

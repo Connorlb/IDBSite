@@ -15,6 +15,9 @@ import 'react-virtualized-select/styles.css'
 const DATA = require('../cuisines.js');
 
 
+
+
+
 class FullRestaurants extends React.Component {
   constructor() {
       super();
@@ -22,26 +25,65 @@ class FullRestaurants extends React.Component {
             activePage: 1,
             cards:[],
             username: '',
-	    selectValue: 'Search'
-
+	    selectValue: '%'
+            sortValue: 'name'
+            sortDir: 'asc'
       };
 
       this.handlePageChange = this.handlePageChange.bind(this)
       this.componentDidMount = this.componentDidMount.bind(this)
+      this.updateValue = this.updateValue.bind(this)
+      this.handleDrops = this.handleDrops.bind(this)
   }
-  updateValue(newValue){
+
+  handleDrops: function(e, evt){
+     this.state.sortVal = evt[0];
+     this.state.sortDir = evt[1];
+     this.updateValue(this.state.selectValue);
+  }
+
+  updateValue(newValue, ordVal, ordDir){
+    //console.log(data);
+    if(!newValue){
+
+      axios.get('http://pocketchef.me/api/restaurants2',{
+      params: {
+        page: 1
+      }
+    })
+        .then(response => {
+        this.setState({cards: response.data.objects});})
+        .catch(function (error) {
+          console.log(error);})
+          this.setState({activePage: 1});
+          this.setState({selectValue: 'Search'});
+    }else{
+    var cuisine_filter = [{"name": "cuisine", "op": "equals", "val": newValue}];
+    var ords = [{"field": this.state.sortVal, "direction": this.state.sortDir}];
+    let data = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
+    axios({
+      method: 'get',
+      url: 'http://pocketchef.me/api/restaurants2',
+      params: {
+        q: data
+      },
+      config: { headers: {'Content-Type': "application/json", "Access-Control-Allow-Origin": "*"}}
+      }).then(response => {
+      console.log(response.data.objects);
+      this.setState({cards: response.data.objects});});
     this.setState({selectValue: newValue});
+  }
   }
 
   handlePageChange(pageNumber) {
-    //   axios.get('/user', {
-    //   params: {
-    //     ID: 12345
-    //   }
-    // })
+    if (this.state.selectValue != 'Search'){
+    var cuisine_filter = [{"name": "cuisine", "op": "equals", "val": this.state.selectValue}];
+    var ords = [{"field": "name", "direction": "asc"}];
+    let data = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
     axios.get('http://pocketchef.me/api/restaurants2',{
     params: {
-      page: pageNumber
+      page: pageNumber,
+      q: data
     }
   })
       .then(response => {
@@ -49,7 +91,19 @@ class FullRestaurants extends React.Component {
       .catch(function (error) {
         console.log(error);})
         this.setState({activePage: pageNumber});
+      }else{
+        axios.get('http://pocketchef.me/api/restaurants2',{
+        params: {
+          page: pageNumber
+        }
+      })
+          .then(response => {
+          this.setState({cards: response.data.objects});})
+          .catch(function (error) {
+            console.log(error);})
+            this.setState({activePage: pageNumber});
       }
+    }
 
   componentDidMount() {
     axios.get('http://pocketchef.me/api/restaurants2')
@@ -82,11 +136,12 @@ class FullRestaurants extends React.Component {
       <DropdownButton
         title={'Sort by...'}
         key={1}
-        id={'recipe-sort-button'}>
-        <MenuItem eventKey="1"> Rating DESC </MenuItem>
-        <MenuItem eventKey="2"> Rating ASC </MenuItem>
-        <MenuItem eventKey="3"> Name DESC </MenuItem>
-        <MenuItem eventKey="4"> Name ASC </MenuItem>
+        id={'recipe-sort-button'}
+        onSelect={this.handleDrops}>
+        <MenuItem eventKey=["rating", "asc"]> Rating DESC </MenuItem>
+        <MenuItem eventKey=["rating", "desc"]> Rating ASC </MenuItem>
+        <MenuItem eventKey=["name", "desc"]> Name DESC </MenuItem>
+        <MenuItem eventKey=["name", "asc"]> Name ASC </MenuItem>
       </DropdownButton>
       </Col>
 	      </Row>

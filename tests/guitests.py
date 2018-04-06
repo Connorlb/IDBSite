@@ -63,7 +63,7 @@ class Test4(unittest.TestCase) :
         self.browser.quit()
 
 # Test API endpoint
-class Test4(unittest.TestCase) :
+class Test5(unittest.TestCase) :
     def setUp(self) :
         self.browser = webdriver.Firefox()
 

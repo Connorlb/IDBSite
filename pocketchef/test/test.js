@@ -15,17 +15,17 @@ import Home from '../src/components/Home'
 describe('<App/>', function () {
   it('pls render', function () {
     shallow(<App />);
-  }};
-}};
+  });
+});
 
 describe('<Navbar/>', function () {
   it('pls render', function() {
     shallow(<Navbar />);
-  }};
+  });
   it('should say PocketChef', function() {
-    const navWrap = shallow(<Navbar />)
+    const navWrap = shallow(<Navbar />);
     expect(navWrap.find('Navbar.brand').render().text()).to.equal('PocketChef');
-  }};
+  });
   it('should have about, ingredients, recipes, restaurants', function () {
     const navWrap = shallow(<Navbar />);
     const navItems = navWrap.find('NavItem');
@@ -35,11 +35,12 @@ describe('<Navbar/>', function () {
     expect(navItems.at(2).render().text()).to.equal('Recipes');
     expect(navItems.at(3).render().text()).to.equal('Ingredients');
     expect(navItems.at(4).render().text()).to.equal('About');
-  }};
-}};
+  });
+});
 
 describe('<About/>', function () {
   it('pls render', function() {
-    shallow(<About />;
-}};
+    shallow(<About />);
+  });
+});
 

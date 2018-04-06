@@ -25,8 +25,8 @@ class FullRestaurants extends React.Component {
             activePage: 1,
             cards:[],
             username: '',
-	    selectValue: '%'
-            sortValue: 'name'
+	          selectValue: '%',
+            sortValue: 'name',
             sortDir: 'asc'
       };
 
@@ -36,10 +36,10 @@ class FullRestaurants extends React.Component {
       this.handleDrops = this.handleDrops.bind(this)
   }
 
-  handleDrops: function(e, evt){
-     this.state.sortVal = evt[0];
-     this.state.sortDir = evt[1];
-     this.updateValue(this.state.selectValue);
+  handleDrops (e, evt){
+    this.setState({sortVal: evt[0]});
+    this.setState({sortDir: evt[1]});
+    this.updateValue(this.state.selectValue);
   }
 
   updateValue(newValue, ordVal, ordDir){
@@ -59,7 +59,7 @@ class FullRestaurants extends React.Component {
           this.setState({selectValue: 'Search'});
     }else{
     var cuisine_filter = [{"name": "cuisine", "op": "equals", "val": newValue}];
-    var ords = [{"field": this.state.sortVal, "direction": this.state.sortDir}];
+    var ords = [{"field": this.state.sortValue, "direction": this.state.sortDir}];
     let data = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
     axios({
       method: 'get',
@@ -138,10 +138,10 @@ class FullRestaurants extends React.Component {
         key={1}
         id={'recipe-sort-button'}
         onSelect={this.handleDrops}>
-        <MenuItem eventKey=["rating", "asc"]> Rating DESC </MenuItem>
-        <MenuItem eventKey=["rating", "desc"]> Rating ASC </MenuItem>
-        <MenuItem eventKey=["name", "desc"]> Name DESC </MenuItem>
-        <MenuItem eventKey=["name", "asc"]> Name ASC </MenuItem>
+        <MenuItem eventKey= "rating asc" > Rating DESC </MenuItem>
+        <MenuItem eventKey= "rating desc" > Rating ASC </MenuItem>
+        <MenuItem eventKey= "name desc" > Name DESC </MenuItem>
+        <MenuItem eventKey= "name asc" > Name ASC </MenuItem>
       </DropdownButton>
       </Col>
 	      </Row>

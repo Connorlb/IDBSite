@@ -1,0 +1,238 @@
+{
+	"info": {
+		"name": "Pocketchef",
+		"_postman_id": "50fd0917-0c16-66d5-b6ea-50d50706054e",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://pocketchef.me/api/restaurants2?q={{american-asc}}",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "79943640-e6f8-4f72-8928-3b69c1bd4b9d",
+						"type": "text/javascript",
+						"exec": [
+							"// Cuisine: American, Order: Ascending",
+							"pm.environment.set(\"american-asc\", \"%7B%22filters%22%3A%20%5B%7B%22name%22%3A%20%22cuisine%22%2C%20%22op%22%3A%20%22equals%22%2C%20%22val%22%3A%20%22American%22%7D%5D%2C%20%22order_by%22%3A%20%5B%7B%22field%22%3A%20%22name%22%2C%20%22direction%22%3A%20%22asc%22%7D%5D%7D\");"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "259709cb-4225-48d1-987b-ca511308f63d",
+						"type": "text/javascript",
+						"exec": [
+							"// Check that response is valid and has a body",
+							"pm.test(\"Response must be valid and have a body\", function () {",
+							"     pm.response.to.be.ok;",
+							"     pm.response.to.be.withBody;",
+							"     pm.response.to.be.json;",
+							"});",
+							"",
+							"// Check that the response body is in ascending order",
+							"pm.test(\"American restaurants in ascending order\", function() {",
+							"    pm.expect(pm.response.json().objects[0].name).to.equal(\"Bea\");",
+							"});",
+							"",
+							"// Check that all restaurants are American cuisine",
+							"pm.test(\"American restaurants cuisine check\", function() {",
+							"    var cuisines = new Set();",
+							"    for (var restaurant in pm.response.json().objects) {",
+							"        cuisines.add(restaurant.cuisine);",
+							"    }",
+							"    ",
+							"    console.log(cuisines);",
+							"    pm.expect(cuisines.size).to.equal(1);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": ""
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://pocketchef.me/api/restaurants2?q={{american-asc}}",
+					"protocol": "http",
+					"host": [
+						"pocketchef",
+						"me"
+					],
+					"path": [
+						"api",
+						"restaurants2"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "{{american-asc}}",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://pocketchef.me/api/restaurants2?q={{american-desc}}",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "7cc3a217-0f5d-429b-9f12-f77bffb860e7",
+						"type": "text/javascript",
+						"exec": [
+							"// Cuisine: American, Order: Descending",
+							"pm.environment.set(\"american-desc\", \"%7B%22filters%22%3A%20%5B%7B%22name%22%3A%20%22cuisine%22%2C%20%22op%22%3A%20%22equals%22%2C%20%22val%22%3A%20%22American%22%7D%5D%2C%20%22order_by%22%3A%20%5B%7B%22field%22%3A%20%22name%22%2C%20%22direction%22%3A%20%22desc%22%7D%5D%7D\");"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "b8f70752-b926-47d9-9258-9cdee4ec9c97",
+						"type": "text/javascript",
+						"exec": [
+							"// Check that response is valid and has a body",
+							"pm.test(\"Response must be valid and have a body\", function () {",
+							"     pm.response.to.be.ok;",
+							"     pm.response.to.be.withBody;",
+							"     pm.response.to.be.json;",
+							"});",
+							"",
+							"// Check that the response body is in descending order",
+							"pm.test(\"American restaurants in descending order\", function() {",
+							"    pm.expect(pm.response.json().objects[0].name).to.equal(\"Zig Zag Cafe\");",
+							"});",
+							"",
+							"// Check that all restaurants are American cuisine",
+							"pm.test(\"American restaurants cuisine check\", function() {",
+							"    var cuisines = new Set();",
+							"    for (var restaurant in pm.response.json().objects) {",
+							"        cuisines.add(restaurant.cuisine);",
+							"    }",
+							"    ",
+							"    console.log(cuisines);",
+							"    pm.expect(cuisines.size).to.equal(1);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://pocketchef.me/api/restaurants2?q={{american-desc}}",
+					"protocol": "http",
+					"host": [
+						"pocketchef",
+						"me"
+					],
+					"path": [
+						"api",
+						"restaurants2"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "{{american-desc}}",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://pocketchef.me/api/restaurants2?q={{name-halal}}",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f2de61bd-3419-410f-b9f7-c9e86206b7b4",
+						"type": "text/javascript",
+						"exec": [
+							"// Name like \"%Halal%\"",
+							"pm.environment.set(\"name-halal\", \"%7B%22filters%22%3A%20%5B%7B%22name%22%3A%20%22name%22%2C%20%22op%22%3A%20%22like%22%2C%20%22val%22%3A%20%22%25Halal%25%22%7D%5D%7D\");"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "7e574973-c8c6-4a79-a767-ce663f6f57d9",
+						"type": "text/javascript",
+						"exec": [
+							"// Check that response is valid and has a body",
+							"pm.test(\"Response must be valid and have a body\", function () {",
+							"     pm.response.to.be.ok;",
+							"     pm.response.to.be.withBody;",
+							"     pm.response.to.be.json;",
+							"});",
+							"",
+							"// Check that name is \"The Halal Guys\"",
+							"pm.test(\"Name is \\\"The Halal Guys\\\"\", function() {",
+							"    pm.expect(pm.response.json().objects[0].name).to.equal(\"The Halal Guys\");",
+							"});",
+							"",
+							"// Check that number of results is only 1",
+							"pm.test(\"Number of results is only 1\", function() {",
+							"    pm.expect(pm.response.json().num_results).to.equal(1);",
+							"});",
+							"",
+							"// Check that number of pages is only 1",
+							"pm.test(\"Number of pages is only 1\", function() {",
+							"    pm.expect(pm.response.json().page).to.equal(1);",
+							"});",
+							"",
+							"// Check that total number of pages is only 1",
+							"pm.test(\"Total number of pages is only 1\", function() {",
+							"    pm.expect(pm.response.json().total_pages).to.equal(1);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://pocketchef.me/api/restaurants2?q={{name-halal}}",
+					"protocol": "http",
+					"host": [
+						"pocketchef",
+						"me"
+					],
+					"path": [
+						"api",
+						"restaurants2"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "{{name-halal}}",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

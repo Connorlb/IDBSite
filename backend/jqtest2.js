@@ -1,11 +1,11 @@
-require('../pocketchef/node_modules/jsdom/lib/old-api').env("", function(err, window) {
+require('../frontend/node_modules/jsdom/lib/old-api').env("", function(err, window) {
     if (err) {
         console.error(err);
         return;
     }
-    var $ = require('../pocketchef/node_modules/jquery')(window);
+    var $ = require('../frontend/node_modules/jquery')(window);
 
-    var XMLHttpRequest = require("../pocketchef/node_modules/xmlhttprequest").XMLHttpRequest;
+    var XMLHttpRequest = require("../frontend/node_modules/xmlhttprequest").XMLHttpRequest;
     var xhr = new XMLHttpRequest();
 
     var name_filter = [{"name": "name", "op": "like", "val": "%Halal%"}];

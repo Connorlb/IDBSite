@@ -1,4 +1,4 @@
-var request = require('../pocketchef/node_modules/request');
+var request = require('../frontend/node_modules/request');
 var qs = require('querystring');
 var filters = [{"name": "name", "op": "like", "val": "%halal%"}];
 

@@ -5,6 +5,8 @@ import './css/Ingredients.css'
 import './Ingredient.jsx'
 import FullIngredients from './FullIngredients'
 import Ingredient from './Ingredient'
+import { Card, CardImg, CardText, CardBody,
+  CardTitle, CardSubtitle } from 'reactstrap';
 
 
 export default class IngredientsContainer extends Component {

@@ -23,10 +23,11 @@ class FullRestaurants extends React.Component {
       super();
       this.state = {
             activePage: 1,
-            cards:[],
+            totalPages: -1,
+            cards: [],
             username: '',
-	          selectValue: '%',
-            sortValue: 'name',
+	          selectValue: '',
+            sortVal: 'name',
             sortDir: 'asc'
       };
 
@@ -37,16 +38,26 @@ class FullRestaurants extends React.Component {
   }
 
   handleDrops (e, evt){
-    var t = "";
-    t = t+evt
-    var args = t.split(" ");
-    this.setState({sortVal: args[0]});
-    this.setState({sortDir: args[1]});
-    this.updateValue(this.state.selectValue);
+    console.log(e);
+    var args = e.split(" ");
+    console.log(args);
+
+    this.setState({sortVal: args[0]}, () => {
+      console.log(this.state.sortVal);
+    });
+    this.setState({sortDir: args[1]}, () => {
+      console.log(this.state.sortDir);
+      //this.sortCards();
+      this.updateValue(this.state.selectValue);
+    });
+    //this.updateValue(this.state.selectValue);
   }
 
-  updateValue(newValue, ordVal, ordDir){
-    //console.log(data);
+  sortCards(){
+
+  }
+
+  updateValue(newValue){
     if(!newValue){
 
       axios.get('http://pocketchef.me/api/restaurants2',{
@@ -55,14 +66,18 @@ class FullRestaurants extends React.Component {
       }
     })
         .then(response => {
-        this.setState({cards: response.data.objects});})
+        this.setState({cards: response.data.objects});
+        this.setState({totalPages: response.data.num_results});
+        })
         .catch(function (error) {
           console.log(error);})
           this.setState({activePage: 1});
-          this.setState({selectValue: 'Search'});
+          this.setState({selectValue: ''});
+          this.setState({sortVal: ''});
+          this.setState({sortDir: ''});
     }else{
     var cuisine_filter = [{"name": "cuisine", "op": "equals", "val": newValue}];
-    var ords = [{"field": this.state.sortValue, "direction": this.state.sortDir}];
+    var ords = [{"field": this.state.sortVal, "direction": this.state.sortDir}];
     let data = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
     axios({
       method: 'get',
@@ -72,14 +87,15 @@ class FullRestaurants extends React.Component {
       },
       config: { headers: {'Content-Type': "application/json", "Access-Control-Allow-Origin": "*"}}
       }).then(response => {
-      console.log(response.data.objects);
+      this.setState({totalPages: response.data.num_results});
       this.setState({cards: response.data.objects});});
+
     this.setState({selectValue: newValue});
   }
   }
 
   handlePageChange(pageNumber) {
-    if (this.state.selectValue != 'Search'){
+    if (this.state.selectValue != ''){
     var cuisine_filter = [{"name": "cuisine", "op": "equals", "val": this.state.selectValue}];
     var ords = [{"field": "name", "direction": "asc"}];
     let data = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
@@ -90,6 +106,7 @@ class FullRestaurants extends React.Component {
     }
   })
       .then(response => {
+      this.setState({totalPages: response.data.num_results});
       this.setState({cards: response.data.objects});})
       .catch(function (error) {
         console.log(error);})
@@ -101,6 +118,7 @@ class FullRestaurants extends React.Component {
         }
       })
           .then(response => {
+          this.setState({totalPages: response.data.num_results});
           this.setState({cards: response.data.objects});})
           .catch(function (error) {
             console.log(error);})
@@ -111,6 +129,7 @@ class FullRestaurants extends React.Component {
   componentDidMount() {
     axios.get('http://pocketchef.me/api/restaurants2')
       .then(response => {
+        this.setState({totalPages: response.data.num_results});
       this.setState({cards: response.data.objects});})
       .catch(function (error) {
         console.log(error);})
@@ -141,8 +160,8 @@ class FullRestaurants extends React.Component {
         key={1}
         id={'recipe-sort-button'}
         onSelect={this.handleDrops}>
-        <MenuItem eventKey= "rating asc" > Rating DESC </MenuItem>
-        <MenuItem eventKey= "rating desc" > Rating ASC </MenuItem>
+        <MenuItem eventKey= "rating desc" > Rating DESC </MenuItem>
+        <MenuItem eventKey= "rating asc" > Rating ASC </MenuItem>
         <MenuItem eventKey= "name desc" > Name DESC </MenuItem>
         <MenuItem eventKey= "name asc" > Name ASC </MenuItem>
       </DropdownButton>
@@ -167,7 +186,7 @@ class FullRestaurants extends React.Component {
               <Pagination
                   activePage={this.state.activePage}
                   itemsCountPerPage={9}
-                  totalItemsCount={100}
+                  totalItemsCount={this.state.totalPages}
                   pageRangeDisplayed={5}
                   onChange={this.handlePageChange}
                 />

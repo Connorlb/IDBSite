@@ -1,26 +1,40 @@
 import React from 'react'
 import RestaurantAPI from '../../api'
 import { Link } from 'react-router-dom'
-// import "./css/RestaurantCard.css"
+import "./css/Recipes.css"
 import Pagination from "react-js-pagination";
-import {Grid, Row, Col, Image, Button } from 'react-bootstrap' ;
+import { Grid, Row, Col, Image, Button } from 'react-bootstrap';
+import { Card, CardImg, CardText, CardBody,
+  CardTitle, CardSubtitle } from 'reactstrap';
+
 
 class RecipeCard extends React.Component {
+
   constructor() {
         super();
     }
     render(){
       return(
-                <div class="card">
-                <li class="list-group-item">
-                <Link to={`/recipes/${this.props.name}`}><li class="list-group-item"><h2 class="name">{this.props.name}</h2></li></Link>
-                <li class="list-group-item"><b>Cuisine</b> {this.props.cuisine}</li>
-                <li class="list-group-item"><b>Servings </b>{this.props.servings}</li>
-                <li class="list-group-item"><a href={`${this.props.link}`}>LINK</a></li>
-                </li>
-                </div>
+        <div>
+        <Card>
+        <CardTitle className="name">
+         <Link to={`/recipes/${this.props.name}`}>{this.props.name}</Link>
+        </CardTitle>
+          <CardBody outline color="secondary">
+            <CardText>
+              <b>Cuisine</b> {this.props.cuisine}<br/>
+              <b>Servings </b>{this.props.servings}
+            </CardText>
+            <Button><Link to={`${this.props.link}`} id="link">Read Full Recipe</Link></Button>
+          </CardBody>
+        </Card>
+        </div>
       );
     }
   }
 
 export default RecipeCard
+
+
+
+

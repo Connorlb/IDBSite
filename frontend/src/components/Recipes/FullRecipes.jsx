@@ -2,7 +2,7 @@ import React from 'react'
 import RestaurantAPI from '../../api'
 import VirtualizedSelect from 'react-virtualized-select';
 import { Link } from 'react-router-dom'
-import RestaurantCard from './RecipesCard'
+import RecipeCard from './RecipesCard'
 // import './css/FullRestaurants.css'
 import Pagination from "react-js-pagination";
 import {Grid, Row, Col, Image, Button, MenuItem, DropdownButton} from 'react-bootstrap' ;
@@ -11,46 +11,11 @@ import axios from 'axios'
 import 'react-select/dist/react-select.css'
 import 'react-virtualized/styles.css'
 import 'react-virtualized-select/styles.css'
+import { Card, CardImg, CardText, CardBody,
+  CardTitle, CardSubtitle, CardGroup } from 'reactstrap';
 
 const DATA = require('../../functionalityassets/cuisines.js');
 
-
-// const FullRecipes = () => (
-//   <div>
-//     <Row>
-//       <Col xs={6} xsOffset={3}>
-//       <DropdownButton
-//         title={'Sort by...'}
-//         key={1}
-//         id={'recipe-sort-button'}>
-//         <MenuItem eventKey="1"> Servings DESC </MenuItem>
-//         <MenuItem eventKey="2"> Servings ASC </MenuItem>
-//         <MenuItem eventKey="3"> Prep Time DESC </MenuItem>
-//         <MenuItem eventKey="4"> Prep Time ASC </MenuItem>
-//       </DropdownButton>
-//       </Col>
-//     </Row>
-//     <ul>
-//     <Row className="show-grid text-center">
-//       {
-//         RecipeAPI.res().map(p => (
-//
-//             <Col xs={12} sm={4} md={4} className="image-wrap" key={p.name}>
-//             <li class="list-group-item">
-//             <Link to={`/recipes/${p.name}`}><h3>{p.name}</h3></Link></li>
-//             <li class="list-group-item"><h3>Servings: {p.servings}</h3></li>
-//             <li class="list-group-item"><b>prep_time:</b> {p.prep_time}</li>
-//             <li class="list-group-item"><b>Phone </b>{p.phone}</li>
-//             <Link to={`${p.yelp_link}`}></Link>
-//             </Col>
-//
-//         ))
-//       }
-//       </Row>
-//     </ul>
-//   </div>
-// )
-// export default FullRecipes
 
 
 class FullRecipes extends React.Component {
@@ -94,10 +59,16 @@ class FullRecipes extends React.Component {
    render() {
         var options = DATA.CUISINES;
         return(
+
           <div>
+          <Card className="fullRecipe">
+          <CardTitle>
+            <h1>Recipes</h1>
+            </CardTitle>
+         
              <Row className="show-grid">
-    	        <Col xs={3} xsOffset={3}>
-		   <b>Filter by Cuisine</b>
+    	        <Col xs={3} xsOffset={4}>
+		            <b>Filter by Cuisine</b>
             <VirtualizedSelect ref="cuisineSelect"
               options={options}
               simpleValue
@@ -107,10 +78,10 @@ class FullRecipes extends React.Component {
               onChange={this.updateValue}
               searchable
               labelKey="cuisine"
-              valueKey="cuisine"
-		      		/>
+              valueKey="cuisine"/>
 		</Col>
     <Col xs={3}>
+     <b>Sort the Recipies<br/></b>
       <DropdownButton
         title={'Sort by...'}
         key={1}
@@ -122,21 +93,21 @@ class FullRecipes extends React.Component {
       </DropdownButton>
       </Col>
 	      </Row>
-            <Row className="show-grid text-center">
+         </Card>
+      <CardGroup>
+      <Row className="show-grid text-center">
               {
                 this.state.cards.map(rest => (
-
-                  <Col xs={12} sm={4} md={4} className="image-wrap" key={rest.name}>
-                  <RestaurantCard name={rest.name} cuisine={rest.cuisine} servings={rest.servings}  prep_time={rest.prep_time} rating={rest.rating} link={rest.src_url}/>
+                  <Col xs={12} sm={6} md={4} key={rest.name}>
+                  <RecipeCard name={rest.name} cuisine={rest.cuisine} servings={rest.servings}  prep_time={rest.prep_time} rating={rest.rating} link={rest.src_url}/>
                   </Col>
-
-
               ))
             }
 
               </Row>
+              </CardGroup>
             <Row className="show-grid">
-                <Col xs={6} xsOffset={6}>
+                <Col xs={6} xsOffset={5}>
               <Pagination
                   activePage={this.state.activePage}
                   itemsCountPerPage={9}
@@ -144,7 +115,7 @@ class FullRecipes extends React.Component {
                   pageRangeDisplayed={5}
                   onChange={this.handlePageChange}
                 />
-		</Col>
+		        </Col>
 	     </Row>
 
               </div>

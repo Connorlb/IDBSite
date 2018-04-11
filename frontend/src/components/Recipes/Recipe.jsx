@@ -5,6 +5,10 @@ import {Grid, Row, Col, Image, Button } from 'react-bootstrap' ;
 import YouTube from 'react-youtube'
 import GoogleMapReact from 'google-map-react';
 import axios from 'axios'
+import './css/Recipes.css'
+import { Card, CardImg, CardText, CardBody,
+  CardTitle, CardSubtitle } from 'reactstrap';
+
 
 class Recipe extends React.Component {
   constructor() {
@@ -46,16 +50,28 @@ componentDidMount() {
 
       <h1><big>{this.state.recipe.name}</big></h1>
       <h1></h1>
-      <Col xs={12} sm={6}  className="image-wrap">
-      <h3>Servings: {this.state.recipe.servings}</h3>
-      <h2>Prep time: {this.state.recipe.prep_time}</h2>
-      <h2>Phone: {this.state.recipe.phone}</h2>
-      <h1>Ingredients: {this.state.recipe.ingredients}</h1>
+      <Row>
+        <Card className="fullRecipe header">
+          <CardTitle>
+            <h2>
+              <span>Servings: {this.state.recipe.servings} </span>
+              <span>Prep time: {this.state.recipe.prep_time}</span>
+              <span>Cuisine: {this.state.recipe.cuisine}</span>
+              </h2>
+          </CardTitle>
+        </Card>
+      </Row>
 
+      <Col xs={12} sm={6} >
+      <Card className="fullRecipe body">
+      <h1>Ingredients:</h1><h4> <br/> {this.state.recipe.ingredients}</h4>
+      </Card>
       </Col>
-      <Col xs={12} sm={6} className="image-wrap">
-      <h2>Cuisine: {this.state.recipe.cuisine}</h2>
-      <h1>Instructions: {this.state.recipe.instructions}</h1>
+
+      <Col xs={12} sm={6} >
+      <Card className="fullRecipe body">
+      <h1>Instructions:</h1><h4> <br/> {this.state.recipe.instructions}</h4>
+      </Card>
       </Col>
       </Row>
 

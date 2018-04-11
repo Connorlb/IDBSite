@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-export default class pcNavbar extends Component {
+export default class PcNavbar extends Component {
   constructor() {
     super();
     this.state = {
@@ -17,7 +17,7 @@ export default class pcNavbar extends Component {
       <Navbar default collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand>
-            <Link to="/"> PocketChef </Link>
+            <a href="/"> PocketChef </a>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>

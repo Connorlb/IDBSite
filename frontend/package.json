@@ -16,6 +16,7 @@
     "react-bootstrap": "^0.32.1",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.1",
+    "reactstrap": "^5.0.0",
     "xmlhttprequest": "^1.8.0"
   },
   "scripts": {

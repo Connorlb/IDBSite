@@ -9,7 +9,7 @@ import Pagination from "react-js-pagination";
 import {Grid, Row, Col, Image, Button, MenuItem, DropdownButton} from 'react-bootstrap' ;
 import axios from 'axios'
 import { Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle } from 'reactstrap';
+  CardTitle, CardSubtitle, CardGroup } from 'reactstrap';
 import InputRange from 'react-input-range';
 import 'react-select/dist/react-select.css'
 import 'react-virtualized/styles.css'
@@ -166,12 +166,12 @@ class FullIngredients extends React.Component {
       </Col>
         </Row>
          </Card>
-
+         <CardGroup>
             <Row className="show-grid text-center">
               {
 
                 this.state.cards.map(rest => (
-                  <Col xs={12} sm={4} md={4} className="image-wrap" key={rest.name}>
+                  <Col xs={12} sm={6} md={4} key={rest.name}>
                   <IngredientCard name={rest.name} image={rest.picture} calories={rest.calories} protein={rest.protein} fat={rest.fat}/>
                   </Col>
 
@@ -180,8 +180,9 @@ class FullIngredients extends React.Component {
             }
 
               </Row>
+              </CardGroup>
             <Row className="show-grid">
-                <Col xs={6} xsOffset={6}>
+                <Col xs={6} xsOffset={5}>
               <Pagination
                   activePage={this.state.activePage}
                   itemsCountPerPage={9}
@@ -189,10 +190,9 @@ class FullIngredients extends React.Component {
                   pageRangeDisplayed={5}
                   onChange={this.handlePageChange}
                 />
-		</Col>
-	     </Row>
-
-              </div>
+		            </Col>
+	              </Row>
+                </div>
         );
         }
 }

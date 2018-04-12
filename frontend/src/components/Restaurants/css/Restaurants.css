@@ -1,0 +1,100 @@
+h3.name {
+  font-size: 1.5em;
+  margin: 0;
+  padding: 0;
+}
+
+div.card{
+  padding-bottom: 10px;
+  background-color: #fff;
+ 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+ 	border-radius: 10px;
+ 	margin:10px;
+ 	border: 1px solid rgba(0, 0, 0, .125);
+}
+
+.fullRestaurant .card-title {
+	min-height: 45px;
+	padding-top:0px;
+	padding-left:20px;
+	padding-right:20px;
+	font-size:25px;
+	border-radius: 10px 10px 0 0;
+	font-weight: 300;
+	text-align: center;
+}
+
+.fullRestaurant .card-title span {
+	padding:30px;
+}
+
+.fullRestaurant.card .header {
+	padding:0;
+}
+
+.fullRestaurant.card {
+	padding-top:0px;
+	padding-bottom:20px;
+}
+
+.fullRestaurant.body.card {
+	padding:20px;
+}
+
+.card-title {
+	min-height: 100px;
+	padding-top:10px;
+	padding-left:20px;
+	padding-right:20px;
+	font-size:25px;
+	border-radius: 10px 10px 0 0;
+	font-weight: 300;
+}
+
+.card-group {
+	padding:40px;
+}
+
+.card-text{
+	font-size: 20px;
+}
+
+.card-body {
+	margin-bottom:20px;
+}
+
+div.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+div.card.fullRestaurant:hover {
+ 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+}
+
+
+.btn {
+ 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.btn-default {
+    box-shadow: none;
+    background-image: none;
+  }
+
+#Restaurant-sort-button {
+	min-width: 160px;
+}
+
+a#link {
+	color: #000;
+	font-size: 18px;
+	font-weight: 300;
+}
+
+a {
+	color:#111;
+}
+
+a:hover{
+	color:#111;
+}

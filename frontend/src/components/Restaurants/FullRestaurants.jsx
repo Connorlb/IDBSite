@@ -10,6 +10,8 @@ import axios from 'axios'
 import 'react-select/dist/react-select.css'
 import 'react-virtualized/styles.css'
 import 'react-virtualized-select/styles.css'
+import { Card, CardImg, CardText, CardBody,
+  CardTitle, CardSubtitle, CardGroup } from 'reactstrap';
 const DATA = require('../../functionalityassets/cuisines.js');
 
 class FullRestaurants extends React.Component {
@@ -151,9 +153,13 @@ class FullRestaurants extends React.Component {
         var options = DATA.CUISINES;
         return(
           <div>
+          <Card className="fullRecipe">
+          <CardTitle>
+            <h1>Restaurants</h1>
+            </CardTitle>
              <Row className="show-grid">
     	        <Col xs={3} xsOffset={3}>
-		   <b>Filter by Cuisine</b>
+		            <b>Filter by Cuisine</b>
             <VirtualizedSelect ref="cuisineSelect"
               options={options}
               simpleValue
@@ -167,6 +173,7 @@ class FullRestaurants extends React.Component {
 		      		/>
 		</Col>
     <Col xs={3}>
+    <b>Sort the Restaurants<br/></b>
       <DropdownButton
         title={'Sort by...'}
         key={1}
@@ -179,12 +186,13 @@ class FullRestaurants extends React.Component {
       </DropdownButton>
       </Col>
 	      </Row>
+        </Card>
+        <CardGroup>
             <Row className="show-grid text-center">
               {
 
                 this.state.cards.map(rest => (
-
-                  <Col xs={12} sm={4} md={4} className="image-wrap" key={rest.name}>
+                  <Col xs={12} sm={6} md={4} key={rest.name}>
                   <RestaurantCard name={rest.name} image={rest.img_link} cuisine={rest.cuisine} rating={rest.rating} phone={rest.phone}/>
                   </Col>
 
@@ -193,8 +201,9 @@ class FullRestaurants extends React.Component {
             }
 
               </Row>
+              </CardGroup>
             <Row className="show-grid">
-                <Col xs={6} xsOffset={6}>
+                <Col xs={6} xsOffset={5}>
               <Pagination
                   activePage={this.state.activePage}
                   itemsCountPerPage={9}

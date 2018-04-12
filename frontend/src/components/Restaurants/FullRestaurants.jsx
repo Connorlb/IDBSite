@@ -3,20 +3,14 @@ import RestaurantAPI from '../../api'
 import VirtualizedSelect from 'react-virtualized-select';
 import { Link } from 'react-router-dom'
 import RestaurantCard from './RestaurantCard'
-// import './css/FullRestaurants.css'
+import './css/FullRestaurants.css'
 import Pagination from "react-js-pagination";
 import {Grid, Row, Col, Image, Button, MenuItem, DropdownButton} from 'react-bootstrap' ;
 import axios from 'axios'
-
 import 'react-select/dist/react-select.css'
 import 'react-virtualized/styles.css'
 import 'react-virtualized-select/styles.css'
-
 const DATA = require('../../functionalityassets/cuisines.js');
-
-
-
-
 
 class FullRestaurants extends React.Component {
   constructor() {
@@ -25,7 +19,6 @@ class FullRestaurants extends React.Component {
             activePage: 1,
             totalPages: -1,
             cards: [],
-            username: '',
 	          selectValue: '',
             sortVal: 'name',
             sortDir: 'asc'
@@ -38,22 +31,41 @@ class FullRestaurants extends React.Component {
   }
 
   handleDrops (e, evt){
-    console.log(e);
     var args = e.split(" ");
-    console.log(args);
-
     this.setState({sortVal: args[0]}, () => {
-      console.log(this.state.sortVal);
     });
     this.setState({sortDir: args[1]}, () => {
-      console.log(this.state.sortDir);
-      //this.sortCards();
-      this.updateValue(this.state.selectValue);
+      this.sortCards();
     });
-    //this.updateValue(this.state.selectValue);
   }
 
   sortCards(){
+    var cuisine_filter;
+    var ords;
+    let data;
+    console.log(this.state.sortVal);
+    if(this.state.selectValue){
+      cuisine_filter = [{"name": "cuisine", "op": "equals", "val": this.state.selectValue}];
+      ords = [{"field": this.state.sortVal, "direction": this.state.sortDir}];
+      data = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
+    }else{
+      cuisine_filter = [];
+      ords = [{"field": this.state.sortVal, "direction": this.state.sortDir}];
+      data = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
+    }
+    console.log("sortVal "+this.state.sortVal);
+
+    axios({
+      method: 'get',
+      url: 'http://pocketchef.me/api/restaurants2',
+      params: {
+        q: data
+      },
+      config: { headers: {'Content-Type': "application/json", "Access-Control-Allow-Origin": "*"}}
+      }).then(response => {
+      this.setState({totalPages: response.data.num_results});
+      this.setState({cards: response.data.objects});
+      });
 
   }
 
@@ -190,12 +202,10 @@ class FullRestaurants extends React.Component {
                   pageRangeDisplayed={5}
                   onChange={this.handlePageChange}
                 />
-		</Col>
-	     </Row>
-
-              </div>
+		              </Col>
+	                </Row>
+                  </div>
         );
         }
 }
-
 export default FullRestaurants

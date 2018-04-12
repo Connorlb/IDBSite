@@ -23,9 +23,10 @@ class RecipeCard extends React.Component {
           <CardBody outline color="secondary">
             <CardText>
               <b>Cuisine</b> {this.props.cuisine}<br/>
+              <b>Prep Time</b> {this.props.prep_time}<br/>
               <b>Servings </b>{this.props.servings}
             </CardText>
-            <Button><Link to={`${this.props.link}`} id="link">Read Full Recipe</Link></Button>
+            <Button><a href={`${this.props.link}`} id="link">Read Full Recipe</a></Button>
           </CardBody>
         </Card>
         </div>
@@ -34,7 +35,3 @@ class RecipeCard extends React.Component {
   }
 
 export default RecipeCard
-
-
-
-

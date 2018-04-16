@@ -4,7 +4,6 @@ import { Jumbotron, Grid, Row, Col, Image, Button } from 'react-bootstrap' ;
 import './css/About.css'
 
 
-
 export default class About extends Component {
   render(){
     return (
@@ -99,8 +98,8 @@ export default class About extends Component {
           </Col>
           <Col xs={12} sm={3}>
             <h3>Links:</h3>
-            <p>https://github.com/Connorlb/IDBSite</p>
-            <p>https://www.gitbook.com/book/connorlb/pocketchef/details</p>
+            <p><a href="https://github.com/Connorlb/IDBSite">Github Repo</a></p>
+            <p><a href="https://www.gitbook.com/book/connorlb/pocketchef/details">Gitbook</a></p>
           </Col>
         </Row>
       </Grid>

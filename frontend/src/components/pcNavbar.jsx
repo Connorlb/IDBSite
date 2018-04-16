@@ -11,6 +11,7 @@ export default class PcNavbar extends Component {
   }
   updateSearch(event){
     this.setState({search: event.target.value});
+    
   }
   render(){
     return (
@@ -42,7 +43,7 @@ export default class PcNavbar extends Component {
           </Nav>
           <Nav pullRight>
             <NavItem>
-                Search: 
+                Search:
                 <input type="text"
                   value={this.state.search}
                   onChange={this.updateSearch.bind(this)}/>

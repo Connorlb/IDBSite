@@ -5,15 +5,10 @@ language: python
 python:
    - "3.6"
 
-# before_install:
-#     - cat .travis.yml
-#     # - pip install --upgrade pip
-#     # - pip --version
-#     - npm update -g
-
 install:
-    - npm install -g mocha
-    - npm install lodash
+    - cd frontend
+    - npm install
+    - cd ..
     - pip install autopep8
     - pip install coverage
     - pip install mypy
@@ -30,3 +25,5 @@ install:
 script:
    - cd backend
    - python3 tests.py
+   - cd ../frontend
+   - npm run mocha

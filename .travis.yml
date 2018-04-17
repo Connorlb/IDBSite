@@ -5,13 +5,11 @@ language: python
 python:
    - "3.6"
 
-before_install:
-    - cat .travis.yml
-    # - pip install --upgrade pip
-    # - pip --version
-    - npm update -g
-    - make create_env
-    - make gui_testing
+# before_install:
+#     - cat .travis.yml
+#     # - pip install --upgrade pip
+#     # - pip --version
+#     - npm update -g
 
 install:
     - npm install -g istanbul

@@ -74,6 +74,7 @@ class FullRecipes extends React.Component {
       }).then(response => {
       this.setState({totalPages: response.data.num_results});
       this.setState({cards: response.data.objects});
+      this.setState({activePage: 1});
       });
 
   }
@@ -95,8 +96,8 @@ class FullRecipes extends React.Component {
             console.log(error);})
             this.setState({activePage: 1});
             this.setState({selectValue: ''});
-            this.setState({sortVal: ''});
-            this.setState({sortDir: ''});
+            this.setState({sortVal: 'name'});
+            this.setState({sortDir: 'asc'});
       }else{
       var cuisine_filter = [{"name": "cuisine", "op": "equals", "val": newValue}];
       var ords = [{"field": this.state.sortVal, "direction": this.state.sortDir}];
@@ -182,7 +183,7 @@ class FullRecipes extends React.Component {
     <Col xs={3}>
      <b>Sort the Recipies<br/></b>
      <DropdownButton
-       title={'Sort by...'}
+       title={`${this.state.sortVal} ${this.state.sortDir}`}
        key={1}
        id={'recipe-sort-button'}
        onSelect={this.handleDrops}>

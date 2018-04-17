@@ -155,7 +155,7 @@ class FullIngredients extends React.Component {
     <Col xs={3}>
     <b>Sort the Ingredients<br/></b>
       <DropdownButton
-        title={'Sort by...'}
+        title={`${this.state.sortVal} ${this.state.sortDir}`}
         key={1}
         id={'recipe-sort-button'}
         onSelect={this.handleDrops}>

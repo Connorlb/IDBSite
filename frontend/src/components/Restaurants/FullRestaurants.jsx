@@ -87,10 +87,11 @@ class FullRestaurants extends React.Component {
         })
         .catch(function (error) {
           console.log(error);})
+
           this.setState({activePage: 1});
           this.setState({selectValue: ''});
-          this.setState({sortVal: ''});
-          this.setState({sortDir: ''});
+          this.setState({sortVal: 'name'});
+          this.setState({sortDir: 'asc'});
     }else{
 
     var ords;
@@ -185,7 +186,7 @@ class FullRestaurants extends React.Component {
     <Col xs={3}>
     <b>Sort the Restaurants<br/></b>
       <DropdownButton
-        title={'Sort by...'}
+        title={`${this.state.sortVal} ${this.state.sortDir}`}
         key={1}
         id={'recipe-sort-button'}
         onSelect={this.handleDrops}>

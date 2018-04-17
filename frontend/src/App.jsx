@@ -6,9 +6,9 @@ import About from './components/About/About';
 import Ingredients from './components/Ingredients/Ingredients';
 import Recipes from './components/Recipes/Recipes';
 import Restaurants from './components/Restaurants/Restaurants';
-import Restaurants from './components/Restaurants/Searches';
+//import Restaurants from './components/Restaurants/Searches';
 import Navbar from './components/pcNavbar';
-import Restaurants from './components/Search/Restaurants';
+import Searches from './components/Search/Searches';
 
 
 

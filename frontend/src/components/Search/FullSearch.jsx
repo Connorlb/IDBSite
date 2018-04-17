@@ -11,6 +11,7 @@ import 'react-virtualized/styles.css'
 import 'react-virtualized-select/styles.css'
 import { Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, CardGroup } from 'reactstrap';
+import RestaurantCard from '../Restaurants/RestaurantCard'
 
 class FullSearch extends React.Component {
   constructor() {

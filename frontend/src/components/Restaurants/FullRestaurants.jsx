@@ -52,6 +52,7 @@ class FullRestaurants extends React.Component {
       data = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
     }else{
       cuisine_filter = [];
+      //console.log("sortVal "+this.state.sortVal);
       ords = [{"field": this.state.sortVal, "direction": this.state.sortDir}];
       data = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
     }
@@ -67,6 +68,7 @@ class FullRestaurants extends React.Component {
       }).then(response => {
       this.setState({totalPages: response.data.num_results});
       this.setState({cards: response.data.objects});
+      this.setState({activePage: 1});
       });
 
   }
@@ -90,9 +92,17 @@ class FullRestaurants extends React.Component {
           this.setState({sortVal: ''});
           this.setState({sortDir: ''});
     }else{
+
+    var ords;
+    if(this.state.sortVal){
+      ords = [{"field": this.state.sortVal, "direction": this.state.sortDir}];
+    }else{
+      ords = [{"field": "name", "direction": "asc"}];
+
+    }
     var cuisine_filter = [{"name": "cuisine", "op": "equals", "val": newValue}];
-    var ords = [{"field": this.state.sortVal, "direction": this.state.sortDir}];
     let data = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
+
     axios({
       method: 'get',
       url: 'http://pocketchef.me/api/restaurants2',
@@ -103,8 +113,8 @@ class FullRestaurants extends React.Component {
       }).then(response => {
       this.setState({totalPages: response.data.num_results});
       this.setState({cards: response.data.objects});});
+      this.setState({selectValue: newValue});
 
-    this.setState({selectValue: newValue});
   }
   }
 

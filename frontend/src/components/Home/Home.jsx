@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Jumbotron, Grid, Row, Col, Image, Button , Carousel} from 'react-bootstrap' ;
 import './css/Home.css'
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
 
 export default class Home extends Component {
   render(){

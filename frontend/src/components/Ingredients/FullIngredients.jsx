@@ -116,7 +116,8 @@ class FullIngredients extends React.Component {
       this.setState({totalPages: response.data.num_results});
       this.setState({cards: response.data.objects});})
       .catch(function (error) {
-        console.log(error);})
+        console.log(error);
+      })
         this.setState({activePage: pageNumber});
       }
 
@@ -134,7 +135,7 @@ class FullIngredients extends React.Component {
         var options = DATA.CUISINES;
         return(
           <div>
-          <Card className="fullRecipe">
+          <Card className="fullIngredient">
           <CardTitle>
             <h1>Ingredients</h1>
             </CardTitle>

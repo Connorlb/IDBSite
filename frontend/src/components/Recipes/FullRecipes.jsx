@@ -3,7 +3,7 @@ import RestaurantAPI from '../../api'
 import VirtualizedSelect from 'react-virtualized-select';
 import { Link } from 'react-router-dom'
 import RecipeCard from './RecipesCard'
-// import './css/FullRestaurants.css'
+import './css/Recipes.css'
 import Pagination from "react-js-pagination";
 import {Grid, Row, Col, Image, Button, MenuItem, DropdownButton} from 'react-bootstrap' ;
 import axios from 'axios'

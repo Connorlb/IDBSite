@@ -62,14 +62,14 @@ componentDidMount() {
               videoId="DkiyT-dnmv8"
               opts={opts}/>
           </Col>
-          <Col xs={12} sm={6}  className="image-wrap">
-            <div style={{ height: '33vh', width: '100%' }}>
-              <GoogleMapReact bootstrapURLKeys={{ key: "AIzaSyBFObWyqlbpObdkdNE0k4JwX9AB66cTGKw"}}
-                defaultCenter={{lat:parseInt(this.state.restaurant.latitude,10),lng:parseInt(this.state.restaurant.longitude,10)}}
-                defaultZoom={11} />
-            </div>
-          </Col>
         </Row>
+        <Row>
+          <div style={{ height: '43vh', width: '100%' }}>
+            <GoogleMapReact bootstrapURLKeys={{ key: "AIzaSyBFObWyqlbpObdkdNE0k4JwX9AB66cTGKw"}}
+              defaultCenter={{lat:parseInt(this.state.restaurant.latitude,10),lng:parseInt(this.state.restaurant.longitude,10)}}
+              defaultZoom={11} />
+          </div>
+       </Row>
       </Grid>
     )
   }

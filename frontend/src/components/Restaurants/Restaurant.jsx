@@ -44,24 +44,15 @@ componentDidMount() {
       <Grid>
         <Row className="show-grid text-center">
           <Col xs={12} sm={6}>
-            <Card>
-              <CardTitle>
-                <Image width={500} height={500} alt="800x800" src={this.state.restaurant.img_link} circle className="contributor-pic" />
-              </CardTitle>
-              <CardText>
-                <h1>{this.state.restaurant.name}</h1>
-              </CardText>
-            </Card>
+            <Image width={500} height={500} alt="800x800" src={this.state.restaurant.img_link} circle className="contributor-pic" />
+            <h1>{this.state.restaurant.name}</h1>
+            <h1></h1>
           </Col>
           <Col xs={12} sm={6}>
-            <Card>
-              <CardText>
-                <h3>Address: {this.state.restaurant.address}</h3>
-                <h3>Rating: {this.state.restaurant.rating}</h3>
-                <h3>Phone: {this.state.restaurant.phone}</h3>
-                <h3>Cuisine: {this.state.restaurant.cuisine}</h3>
-              </CardText>
-            </Card>
+            <h3>Address: {this.state.restaurant.address}</h3>
+            <h3>Rating: {this.state.restaurant.rating}</h3>
+            <h3>Phone: {this.state.restaurant.phone}</h3>
+            <h3>Cuisine: {this.state.restaurant.cuisine}</h3>
           </Col>
         </Row>
 
@@ -73,7 +64,7 @@ componentDidMount() {
           </Col>
         </Row>
         <Row>
-          <div style={{ height: '100vh', width: '100%' }}>
+          <div style={{ height: '73vh', width: '100%' }}>
             <GoogleMapReact bootstrapURLKeys={{ key: "AIzaSyBFObWyqlbpObdkdNE0k4JwX9AB66cTGKw"}}
               defaultCenter={{lat:this.state.restaurant.latitude,lng:this.state.restaurant.longitude}}
               defaultZoom={11} />

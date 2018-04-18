@@ -55,15 +55,12 @@ componentDidMount() {
           </Col>
           <Col xs={12} sm={6}>
             <Card>
-
-              <CardBody outline color="secondary">
-                <CardText>
-                  <h3>Address: {this.state.restaurant.address}</h3>
-                  <h3>Rating: {this.state.restaurant.rating}</h3>
-                  <h3>Phone: {this.state.restaurant.phone}</h3>
-                  <h3>Cuisine: {this.state.restaurant.cuisine}</h3>
-                </CardText>
-              </CardBody>
+              <CardText>
+                <h3>Address: {this.state.restaurant.address}</h3>
+                <h3>Rating: {this.state.restaurant.rating}</h3>
+                <h3>Phone: {this.state.restaurant.phone}</h3>
+                <h3>Cuisine: {this.state.restaurant.cuisine}</h3>
+              </CardText>
             </Card>
           </Col>
         </Row>
@@ -76,9 +73,9 @@ componentDidMount() {
           </Col>
         </Row>
         <Row>
-          <div style={{ height: '73vh', width: '100%' }}>
+          <div style={{ height: '100vh', width: '100%' }}>
             <GoogleMapReact bootstrapURLKeys={{ key: "AIzaSyBFObWyqlbpObdkdNE0k4JwX9AB66cTGKw"}}
-              defaultCenter={{lat:30,lng:98}}
+              defaultCenter={{lat:this.state.restaurant.latitude,lng:this.state.restaurant.longitude}}
               defaultZoom={11} />
           </div>
        </Row>

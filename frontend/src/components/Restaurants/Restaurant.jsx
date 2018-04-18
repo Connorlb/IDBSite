@@ -8,11 +8,11 @@ import axios from 'axios'
 
 class Restaurant extends React.Component {
   constructor() {
-      super();
-      this.state = {
-            restaurant: {},
-      };
-      this.componentDidMount = this.componentDidMount.bind(this)
+    super();
+    this.state = {
+      restaurant: {},
+    };
+    this.componentDidMount = this.componentDidMount.bind(this)
   }
 
 componentDidMount() {
@@ -32,50 +32,46 @@ componentDidMount() {
 }
 
   render(){
-  const opts = {
-    height: '390',
-    width: '640',
-    playerVars: {
-      autoplay: 0
+    const opts = {
+      height: '390',
+      width: '640',
+      playerVars: {
+        autoplay: 0
+      }
     }
+
+    return (
+      <Grid>
+        <Row className="show-grid text-center">
+          <Col xs={12} sm={6}>
+            <Image width={500} height={500} alt="800x800" src={this.state.restaurant.img_link} circle className="contributor-pic" />
+            <h1>{this.state.restaurant.name}</h1>
+            <h1></h1>
+          </Col>
+          <Col xs={12} sm={6}>
+            <h3>Address: {this.state.restaurant.address}</h3>
+            <h3>Rating: {this.state.restaurant.rating}</h3>
+            <h3>Phone: {this.state.restaurant.phone}</h3>
+            <h3>Cuisine: {this.state.restaurant.cuisine}</h3>
+          </Col>
+        </Row>
+
+        <Row className="show-grid text-center">
+          <Col xs={12} sm={6}  className="image-wrap">
+          <YouTube
+            videoId="DkiyT-dnmv8"
+            opts={opts}/>
+          </Col>
+          <Col xs={12} sm={6}  className="image-wrap">
+            <div style={{ height: '73vh', width: '100%' }}>
+              <GoogleMapReact bootstrapURLKeys={{ key: "AIzaSyBFObWyqlbpObdkdNE0k4JwX9AB66cTGKw"}}
+                defaultCenter={{lat:this.state.restaurant.latitude,lng:this.state.restaurant.longitude}}
+                defaultZoom={11} />
+            </div>
+          </Col>
+        </Row>
+      </Grid>
+    )
   }
-
-  return (
-    <Grid>
-    <Row className="show-grid text-center">
-
-      <Image width={500} height={500} alt="800x800" src={this.state.restaurant.img_link} circle className="contributor-pic" />
-      <h1><big>{this.state.restaurant.name}</big></h1>
-      <h1></h1>
-      <Col xs={12} sm={6}  className="image-wrap">
-      <h3>Address: {this.state.restaurant.address}</h3>
-      <h2>Rating: {this.state.restaurant.rating}</h2>
-      <h2>Phone: {this.state.restaurant.phone}</h2>
-      <h2>Cuisine: {this.state.restaurant.cuisine}</h2>
-      </Col>
-      <Col xs={12} sm={6} className="image-wrap">
-
-      <Link to='/'><h3>Restaurants {this.state.restaurant.position}</h3></Link>
-      </Col>
-      </Row>
-
-      <Row className="show-grid text-center">
-      <Col xs={12}  className="image-wrap">
-      <YouTube
-        videoId="DkiyT-dnmv8"
-        opts={opts}
-      />
-      </Col>
-      </Row>
-      <Row>
-      <div style={{ height: '100vh', width: '100%' }}>
-          <GoogleMapReact bootstrapURLKeys={{ key: "AIzaSyBFObWyqlbpObdkdNE0k4JwX9AB66cTGKw"}}
-            defaultCenter={{lat:30,lng:98}}
-            defaultZoom={11} />
-        </div>
-      </Row>
-    </Grid>
-  )
-}
 }
 export default Restaurant

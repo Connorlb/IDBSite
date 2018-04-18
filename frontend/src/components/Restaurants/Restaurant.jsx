@@ -66,7 +66,7 @@ componentDidMount() {
         <Row>
           <div style={{ height: '73vh', width: '100%' }}>
             <GoogleMapReact bootstrapURLKeys={{ key: "AIzaSyBFObWyqlbpObdkdNE0k4JwX9AB66cTGKw"}}
-              defaultCenter={{lat:this.state.restaurant.latitude,lng:this.state.restaurant.longitude}}
+              defaultCenter={{lat:30,lng:98}}
               defaultZoom={11} />
           </div>
        </Row>

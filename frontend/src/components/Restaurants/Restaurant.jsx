@@ -24,7 +24,7 @@ class Restaurant extends React.Component {
   componentDidMount() {
     var cuisine_filter = [{"name": "name", "op": "equals", "val": this.props.match.params.name}];
     var ords = [{"field": "name", "direction": "asc"}];
-    let data = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
+    var data = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
     axios({
       method: 'get',
       url: 'http://pocketchef.me/api/restaurants2',
@@ -38,9 +38,9 @@ class Restaurant extends React.Component {
       this.setState({latitude: this.state.restaurant.latitude});
       this.setState({longitude: this.state.restaurant.longitude});});
 
-      var cuisine_filter = [{"name": "cuisine", "op": "equals", "val": this.state.restaurant.cuisine}];
-      var ords = [{"field": "name", "direction": "asc"}];
-      let data = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
+      cuisine_filter2 = [{"name": "cuisine", "op": "equals", "val": this.state.restaurant.cuisine}];
+      ords2 = [{"field": "name", "direction": "asc"}];
+      data = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
       axios({
         method: 'get',
         url: 'http://pocketchef.me/api/recipes2',

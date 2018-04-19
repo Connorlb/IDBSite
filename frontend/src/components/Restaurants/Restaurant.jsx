@@ -7,6 +7,7 @@ import GoogleMapReact from 'google-map-react';
 import { Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, CardGroup } from 'reactstrap';
 import axios from 'axios'
+import rMap from '../assets/rMap'
 
 class Restaurant extends React.Component {
   constructor() {
@@ -36,7 +37,7 @@ class Restaurant extends React.Component {
 
   render(){
     const opts = {
-      height: '250',
+      height: '280',
       width: '500',
       playerVars: {
         autoplay: 0

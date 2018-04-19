@@ -73,7 +73,7 @@ class Restaurant extends React.Component {
         </Row>
         <Row>
           <div style={{ height: '43vh', width: '100%' }}>
-            <rMap/>
+            <rMap latitude={this.state.restaurant.latitude} longitude={this.state.restaurant.longitude} zoom={11}/>
           </div>
        </Row>
       </Grid>

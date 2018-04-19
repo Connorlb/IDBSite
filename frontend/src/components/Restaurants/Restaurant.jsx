@@ -14,10 +14,6 @@ class Restaurant extends React.Component {
     this.state = {
       restaurant: {},
       zoom: 11,
-      center: {
-        lat: 0,
-        lng: 0
-       },
     };
     this.componentDidMount = this.componentDidMount.bind(this)
   }
@@ -47,7 +43,6 @@ class Restaurant extends React.Component {
         autoplay: 0
       }
     }
-    this.setState({center: {lat: this.state.restaurant.latitude, lng: this.state.restaurant.longitude}})
 
     return (
       <Grid>
@@ -78,9 +73,8 @@ class Restaurant extends React.Component {
         </Row>
         <Row>
           <div style={{ height: '73vh', width: '100%' }}>
-            <p>{this.state.center.longitude} {this.state.center.latitude} {this.state.restaurant.latitude}</p>
             <GoogleMapReact bootstrapURLKeys={{ key: "AIzaSyBFObWyqlbpObdkdNE0k4JwX9AB66cTGKw"}}
-              defaultCenter={this.state.center}
+              defaultCenter={{lat:this.state.restaurant.latitude, lng:this.state.restaurant.longitude}}
               defaultZoom={this.state.zoom} />
           </div>        
         </Row>

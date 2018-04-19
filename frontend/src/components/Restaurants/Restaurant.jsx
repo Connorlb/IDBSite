@@ -34,22 +34,21 @@ class Restaurant extends React.Component {
       config: { headers: {'Content-Type': "application/json", "Access-Control-Allow-Origin": "*"}}
       }).then(response => {
       console.log(response.data.objects);
-      this.setState({restaurant: response.data.objects[0]});
-      this.setState({latitude: this.state.restaurant.latitude});
-      this.setState({longitude: this.state.restaurant.longitude});});
+      this.setState({restaurant: response.data.objects[0]});});
 
-      cuisine_filter = [{"name": "cuisine", "op": "equals", "val": this.state.restaurant.cuisine}];
-      ords = [{"field": "name", "direction": "asc"}];
-      let data2 = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
-      axios({
-        method: 'get',
-        url: 'http://pocketchef.me/api/recipes2',
-        params: {
-          q: data2
-        },
-        config: { headers: {'Content-Type': "application/json", "Access-Control-Allow-Origin": "*"}}
-        }).then(response => {
-          this.setState({external: response.data2.objects});});
+    cuisine_filter = [{"name": "cuisine", "op": "equals", "val": this.state.restaurant.cuisine}];
+    ords = [{"field": "name", "direction": "asc"}];
+    let data2 = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
+
+    axios({
+      method: 'get',
+      url: 'http://pocketchef.me/api/recipes2',
+      params: {
+        q: data2
+      },
+      config: { headers: {'Content-Type': "application/json", "Access-Control-Allow-Origin": "*"}}
+      }).then(response => {
+        this.setState({external: response.data2.objects});});
   }
 
 

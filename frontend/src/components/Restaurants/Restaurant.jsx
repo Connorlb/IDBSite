@@ -13,7 +13,9 @@ class Restaurant extends React.Component {
     super();
     this.state = {
       restaurant: {},
-      zoom: 11
+      zoom: 10,
+      latitude: 46.7,
+      longitude: -122.4
     };
     this.componentDidMount = this.componentDidMount.bind(this)
   }
@@ -31,7 +33,9 @@ class Restaurant extends React.Component {
       config: { headers: {'Content-Type': "application/json", "Access-Control-Allow-Origin": "*"}}
       }).then(response => {
       console.log(response.data.objects);
-      this.setState({restaurant: response.data.objects[0]});});
+      this.setState({restaurant: response.data.objects[0]});
+      this.setState({latitude: this.state.restaurant.latitude});
+      this.setState({longitude: this.state.restaurant.longitude});});
   }
 
 
@@ -59,7 +63,7 @@ class Restaurant extends React.Component {
           </Col>
           <Col xs={12} sm={6}>
             <Card>
-              <CardText>
+              <CardText body>
                 <h3>Address: {this.state.restaurant.address}</h3>
                 <h3>Rating: {this.state.restaurant.rating}</h3>
                 <h3>Phone: {this.state.restaurant.phone}</h3>
@@ -74,7 +78,7 @@ class Restaurant extends React.Component {
         <Row>
           <div style={{ height: '73vh', width: '100%' }}>
             <GoogleMapReact bootstrapURLKeys={{ key: "AIzaSyBFObWyqlbpObdkdNE0k4JwX9AB66cTGKw"}}
-              defaultCenter={{lat:this.state.restaurant.longitude, lng:this.state.restaurant.longitude}}
+              defaultCenter={{lat:this.state.latitude, lng:this.state.longitude}}
               defaultZoom={this.state.zoom} />
           </div>        
         </Row>

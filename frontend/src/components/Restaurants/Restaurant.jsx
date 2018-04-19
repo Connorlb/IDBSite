@@ -13,15 +13,39 @@ class Restaurant extends React.Component {
     super();
     this.state = {
       restaurant: {},
-      external:{},
+      external:[{name:"sample"}, {name:"sample2"}, {name:"this"}],
       zoom: 10,
       latitude: 46.7,
       longitude: -122.4
     };
-    this.componentDidMount = this.componentDidMount.bind(this)
+    this.componentWillMount = this.componentWillMount.bind(this)
+    this.getRecipe = this.getRecipe.bind(this)
+
   }
 
-  componentDidMount() {
+  getRecipe() {
+
+    var cuisine_filter = [{"name": "cuisine", "op": "equals","val": `${this.state.restaurant.cuisine}`}];
+    var ords = [{"field": "name", "direction": "asc"}];
+    let data = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
+    //console.log("DATA ");
+    axios({
+      method: 'get',
+      url: 'http://pocketchef.me/api/recipes2',
+      params: {
+        q: data
+      },
+      config: { headers: {'Content-Type': "application/json", "Access-Control-Allow-Origin": "*"}}
+      }).then(response => {
+        console.log(response.data.objects);
+        this.setState({external: response.data.objects});})
+      .catch(function (error) {
+        console.log(error);})
+
+        //console.log("END DATA");
+  }
+
+  componentWillMount() {
     var cuisine_filter = [{"name": "name", "op": "equals", "val": this.props.match.params.name}];
     var ords = [{"field": "name", "direction": "asc"}];
     let data = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
@@ -33,22 +57,13 @@ class Restaurant extends React.Component {
       },
       config: { headers: {'Content-Type': "application/json", "Access-Control-Allow-Origin": "*"}}
       }).then(response => {
-      console.log(response.data.objects);
-      this.setState({restaurant: response.data.objects[0]});});
+      this.setState({restaurant: response.data.objects[0]}, () => {
+        this.getRecipe();
+      });})
+      .catch(function (error) {
+        console.log(error);})
 
-    cuisine_filter = [{"name": "cuisine", "op": "equals", "val": this.state.restaurant.cuisine}];
-    ords = [{"field": "name", "direction": "asc"}];
-    let data2 = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
 
-    axios({
-      method: 'get',
-      url: 'http://pocketchef.me/api/recipes2',
-      params: {
-        q: data2
-      },
-      config: { headers: {'Content-Type': "application/json", "Access-Control-Allow-Origin": "*"}}
-      }).then(response => {
-        this.setState({external: response.data2.objects});});
   }
 
 
@@ -72,7 +87,7 @@ class Restaurant extends React.Component {
               <CardText>
                 <h1>{this.state.restaurant.name}</h1>
               </CardText>
-            </Card> 
+            </Card>
           </Col>
           <Col xs={12} sm={6}>
             <Card>
@@ -91,36 +106,30 @@ class Restaurant extends React.Component {
         <Row>
           <h3>Recipes of similar cuisine:</h3>
           <Col>
-            <Card>        
-              <CardTitle className="name">
-                <Link to={`/restaurants/${this.external[0].name}`}>
-                  <Image width={200} height={200} alt="200x200" src={this.external[0].image} circle className="contributor-pic" /></Link>
-              </CardTitle>
-              <CardText>
-                <h3>{this.external[0].name}</h3>
-              </CardText>
-            </Card>
-          </Col>
-          <Col>
-            <Card>        
-              <CardTitle className="name">
-                <Link to={`/restaurants/${this.external[1].name}`}>
-                  <Image width={200} height={200} alt="200x200" src={this.external[1].image} circle className="contributor-pic" /></Link>
-              </CardTitle>
-              <CardText>
-                <h3>{this.external[1].name}</h3>
-              </CardText>
-            </Card>
-          </Col>
-          <Col>
-            <Card>        
-              <CardTitle className="name">
-                <Link to={`/restaurants/${this.external[2].name}`}>
-                  <Image width={200} height={200} alt="200x200" src={this.external[2].image} circle className="contributor-pic" /></Link>
-              </CardTitle>
-              <CardText>
-                <h3>{this.external[2].name}</h3>
-              </CardText>
+            <Card>
+            <CardTitle className="name">
+              <Link to={`/recipes/${this.state.external[0].name}`}>
+              <h3>{this.state.external[0].name}</h3>
+                </Link>
+            </CardTitle>
+          </Card>
+        </Col>
+        <Col>
+          <Card>
+            <CardTitle className="name">
+              <Link to={`/recipes/${this.state.external[1].name}`}>
+              <h3>{this.state.external[1].name}</h3>
+                </Link>
+            </CardTitle>
+          </Card>
+        </Col>
+        <Col>
+          <Card>
+            <CardTitle className="name">
+              <Link to={`/recipes/${this.state.external[2].name}`}>
+              <h3>{this.state.external[2].name}</h3>
+                </Link>
+            </CardTitle>
             </Card>
           </Col>
         </Row>
@@ -129,7 +138,7 @@ class Restaurant extends React.Component {
             <GoogleMapReact bootstrapURLKeys={{ key: "AIzaSyBFObWyqlbpObdkdNE0k4JwX9AB66cTGKw"}}
               defaultCenter={{lat:0, lng:0}}
               defaultZoom={this.state.zoom} />
-          </div>        
+          </div>
         </Row>
       </Grid>
     )

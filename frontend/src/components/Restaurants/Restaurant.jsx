@@ -13,6 +13,7 @@ class Restaurant extends React.Component {
     super();
     this.state = {
       restaurant: {},
+      external:{},
       zoom: 10,
       latitude: 46.7,
       longitude: -122.4
@@ -36,6 +37,19 @@ class Restaurant extends React.Component {
       this.setState({restaurant: response.data.objects[0]});
       this.setState({latitude: this.state.restaurant.latitude});
       this.setState({longitude: this.state.restaurant.longitude});});
+
+      var cuisine_filter = [{"name": "cuisine", "op": "equals", "val": this.state.restaurant.cuisine}];
+      var ords = [{"field": "name", "direction": "asc"}];
+      let data = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
+      axios({
+        method: 'get',
+        url: 'http://pocketchef.me/api/recipes2',
+        params: {
+          q: data
+        },
+        config: { headers: {'Content-Type': "application/json", "Access-Control-Allow-Origin": "*"}}
+        }).then(response => {
+          this.setState({external: response.data.objects});});
   }
 
 
@@ -73,6 +87,45 @@ class Restaurant extends React.Component {
             <YouTube
               videoId="DkiyT-dnmv8"
               opts={opts}/>
+          </Col>
+        </Row>
+        <Row>
+          <h3>Recipes of similar cuisine:</h3>
+          <Col>
+            <Link to={`/recipes/${this.external[0].name}`}>
+              <Card>        
+                <CardTitle className="name">
+                    <Image width={200} height={200} alt="200x200" src={this.external[0].image} circle className="contributor-pic" />
+                </CardTitle>
+                <CardText>
+                  <h3>{this.external[0].name}</h3>
+                </CardText>
+              </Card>
+            </Link>
+          </Col>
+          <Col>
+            <Link to={`/recipes/${this.external[1].name}`}>
+              <Card>        
+                <CardTitle className="name">
+                    <Image width={200} height={200} alt="200x200" src={this.external[1].image} circle className="contributor-pic" />
+                </CardTitle>
+                <CardText>
+                  <h3>{this.external[1].name}</h3>
+                </CardText>
+              </Card>
+            </Link>
+          </Col>
+          <Col>
+            <Link to={`/recipes/${this.external[2].name}`}>
+              <Card>        
+                <CardTitle className="name">
+                    <Image width={200} height={200} alt="200x200" src={this.external[2].image} circle className="contributor-pic" />
+                </CardTitle>
+                <CardText>
+                  <h3>{this.external[2].name}</h3>
+                </CardText>
+              </Card>
+            </Link>
           </Col>
         </Row>
         <Row>

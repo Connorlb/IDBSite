@@ -7,13 +7,17 @@ import GoogleMapReact from 'google-map-react';
 import { Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, CardGroup } from 'reactstrap';
 import axios from 'axios'
-import rMap from '../assets/rMap'
 
 class Restaurant extends React.Component {
   constructor() {
     super();
     this.state = {
       restaurant: {},
+      zoom: 11,
+      center: {
+        lat: 0,
+        lng: 0
+       },
     };
     this.componentDidMount = this.componentDidMount.bind(this)
   }
@@ -22,6 +26,7 @@ class Restaurant extends React.Component {
     var cuisine_filter = [{"name": "name", "op": "equals", "val": this.props.match.params.name}];
     var ords = [{"field": "name", "direction": "asc"}];
     let data = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
+    let self = this
     axios({
       method: 'get',
       url: 'http://pocketchef.me/api/restaurants2',
@@ -32,6 +37,7 @@ class Restaurant extends React.Component {
       }).then(response => {
       console.log(response.data.objects);
       this.setState({restaurant: response.data.objects[0]});});
+      self.setState({center: {lat: this.state.restaurant.latitude, lng: this.state.restaurant.longitude}})
   }
 
 
@@ -72,10 +78,12 @@ class Restaurant extends React.Component {
           </Col>
         </Row>
         <Row>
-          
-            <rMap latitude={this.state.restaurant.latitude} longitude={this.state.restaurant.longitude} zoom={11}/>
-        
-       </Row>
+          <div style={{ height: '73vh', width: '100%' }}>
+            <GoogleMapReact bootstrapURLKeys={{ key: "AIzaSyBFObWyqlbpObdkdNE0k4JwX9AB66cTGKw"}}
+              defaultCenter={this.state.center}
+              defaultZoom={this.state.zoom} />
+          </div>        
+        </Row>
       </Grid>
     )
   }

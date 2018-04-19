@@ -2,9 +2,111 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Jumbotron, Grid, Row, Col, Image, Button } from 'react-bootstrap' ;
 import './css/About.css'
+import axios from 'axios'
 
+
+//https://api.github.com/repos/Connorlb/IDBSite/contributors?anon=1
 
 export default class About extends Component {
+    constructor() {
+        super();
+        this.state = {
+          Matthew: {commits: 0, issues: 0},
+          Jesus: {commits: 0, issues: 0},
+          Connor: {commits: 0, issues: 0},
+          Adtya: {commits: 0, issues: 0},
+          Patrick: {commits: 0, issues: 0},
+
+        };
+        this.componentDidMount = this.componentDidMount.bind(this)
+        }
+        componentDidMount() {
+          var Matthew = {commits: 0, issues: 0}
+          var Jesus = {commits: 0, issues: 0}
+          var Connor = {commits: 0, issues: 0}
+          var Adtya = {commits: 0, issues: 0}
+          var Patrick = {commits: 0, issues: 0}
+
+        axios.get('https://api.github.com/repos/Connorlb/IDBSite/contributors?anon=1')
+        .then(response => {
+            response.data.map(coder => {
+              //console.log(coder)
+              if(coder.login == "AdityaPrasad1"){
+                Adtya.commits += coder.contributions
+              }
+              else if(coder.login == "Jesus-Romero"){
+                Jesus.commits += coder.contributions
+              }
+              else if(coder.login == "Connorlb" || coder.login == "connor.burkman@gmail.com"){
+                Connor.commits += coder.contributions
+              }
+              else if(coder.login == "pdalisay"){
+                Patrick.commits += coder.contributions
+              }
+              else if(coder.login == "mmcurtis55" || coder.type == "Anonymous"){
+                Matthew.commits += coder.contributions
+              }
+
+            })
+
+        })
+        .catch(function (error) {
+          console.log(error);})
+
+          axios.get('https://api.github.com/repos/Connorlb/IDBSite/issues?state=all&creator=mmcurtis55')
+          .then(response => {
+            response.data.map(coder => {
+              Matthew.issues += 1
+            })
+            console.log("Matthew.issues "+ Matthew.issues )
+            this.setState({Matthew: Matthew });
+          })
+
+          axios.get('https://api.github.com/repos/Connorlb/IDBSite/issues?state=all&creator=AdityaPrasad1')
+          .then(response => {
+            response.data.map(coder => {
+              Adtya.issues += 1
+            })
+            console.log("Adtya.issues "+ Adtya.issues )
+            this.setState({Adtya: Adtya });
+          })
+
+          axios.get('https://api.github.com/repos/Connorlb/IDBSite/issues?state=all&creator=Jesus-Romero')
+          .then(response => {
+            response.data.map(coder => {
+              Jesus.issues += 1
+            })
+            console.log("Jesus.issues "+ Jesus.issues )
+            this.setState({Jesus: Jesus });
+          })
+
+          axios.get('https://api.github.com/repos/Connorlb/IDBSite/issues?state=all&creator=pdalisay')
+          .then(response => {
+            response.data.map(coder => {
+              Patrick.issues += 1
+            })
+            console.log("Patrick.issues "+ Patrick.issues )
+            this.setState({Patrick: Patrick });
+          })
+
+          axios.get('https://api.github.com/repos/Connorlb/IDBSite/issues?state=all&creator=Connorlb')
+          .then(response => {
+            response.data.map(coder => {
+              Connor.issues += 1
+            })
+            console.log("Connor.issues "+ Connor.issues )
+            this.setState({Connor: Connor });
+          })
+
+
+          console.log(Matthew)
+          console.log(Jesus)
+          console.log(Connor)
+          console.log(Patrick)
+          console.log(Adtya)
+          console.log(Adtya.commits + Matthew.commits +Jesus.commits +Connor.commits + Patrick.commits)
+        }
+
   render(){
     return (
       <Grid>
@@ -22,8 +124,8 @@ export default class About extends Component {
             <h3>Aditya Prasad</h3>
             <li class="list-group-item"><b>About:</b> Aditya is a third-year CS student who is super into playing instruments, but not one specific one. He plays four different ones. He really enjoys going to Halal Bros.</li>
             <li class="list-group-item"><b>Major Responsibilities:</b> Full Stack, setting up server</li>
-            <li class="list-group-item"><b>Commits:</b>65</li>
-            <li class="list-group-item"><b>Issues:</b>0</li>
+            <li class="list-group-item"><b>Commits:</b>{this.state.Adtya.commits}</li>
+            <li class="list-group-item"><b>Issues:</b>{this.state.Adtya.issues}</li>
             <li class="list-group-item"><b>Unit Tests:</b>2</li>
           </Col>
           <Col xs={12} sm={4}>
@@ -31,8 +133,8 @@ export default class About extends Component {
             <h3>Connor Burkman</h3>
             <li class="list-group-item"><b>About:</b> Connor is a fourth-year CS student who thinks Panda Express is too spicy. He's in love with some of the food at Song La.</li>
             <li class="list-group-item"><b>Major Responsibilities:</b> Full Stack, setting up server</li>
-            <li class="list-group-item"><b>Commits:</b>47</li>
-            <li class="list-group-item"><b>Issues:</b>0</li>
+            <li class="list-group-item"><b>Commits:</b>{this.state.Connor.commits}</li>
+            <li class="list-group-item"><b>Issues:</b>{this.state.Connor.issues}</li>
             <li class="list-group-item"><b>Unit Tests:</b>0</li>
           </Col>
           <Col xs={12} sm={4}>
@@ -40,8 +142,8 @@ export default class About extends Component {
             <h3>Jesus Romero</h3>
             <li class="list-group-item"><b>About:</b> Jesus is a fourth-year CS student who loves tamales. He's an advocate of Olive Garden and splurges at Sushi Junai.</li>
             <li class="list-group-item"><b>Major Responsibilities:</b> Full Stack, setting up server</li>
-            <li class="list-group-item"><b>Commits:</b>36</li>
-            <li class="list-group-item"><b>Issues:</b>0</li>
+            <li class="list-group-item"><b>Commits:</b>{this.state.Jesus.commits}</li>
+            <li class="list-group-item"><b>Issues:</b>{this.state.Jesus.issues}</li>
             <li class="list-group-item"><b>Unit Tests:</b>0</li>
           </Col>
         </Row>
@@ -51,26 +153,26 @@ export default class About extends Component {
             <h3>Matthew Curtis</h3>
             <li class="list-group-item"><b>About:</b> Matthew is a fourth-year CS students who has the misfortune of having first names for both first and last names. He loves the take on Asian cuisine at the local food truck Pinch.</li>
             <li class="list-group-item"><b>Major Responsibilities:</b> Full Stack, managing server redeployment, creating and tracking issues, writting user stories, writting html pages</li>
-            <li class="list-group-item"><b>Commits:</b>49</li>
-            <li class="list-group-item"><b>Issues:</b>18</li>
-            <li class="list-group-item"><b>Unit Tests:</b>0</li>
+            <li class="list-group-item"><b>Commits:</b>{this.state.Matthew.commits}</li>
+            <li class="list-group-item"><b>Issues:</b>{this.state.Matthew.issues}</li>
+            <li class="list-group-item"><b>Unit Tests:</b>11</li>
           </Col>
           <Col xs={12} sm={4}>
             <Image width={200} height={200} alt="100x100" src="https://i.imgur.com/BmRVX02.jpg" circle align="center"/>
             <h3>Patrick Dalisay</h3>
             <li class="list-group-item"><b>About:</b> Patrick is a third-year CS student who enjoys long walks on the beach and competitive dancing. His favorite place to eat is at basically any taco truck that serves some nice, cheap tacos al pastor.</li>
             <li class="list-group-item"><b>Major Responsibilities:</b> Full Stack, setting up server, writting html pages</li>
-            <li class="list-group-item"><b>Commits:</b>19</li>
-            <li class="list-group-item"><b>Issues:</b>10</li>
+            <li class="list-group-item"><b>Commits:</b>{this.state.Patrick.commits}</li>
+            <li class="list-group-item"><b>Issues:</b>{this.state.Patrick.issues}</li>
             <li class="list-group-item"><b>Unit Tests:</b>0</li>
           </Col>
         </Row>
         <Row>
           <Col xs={12} sm={3}>
             <h3>Stats:</h3>
-            <p>Total no. of commits:216</p>
-            <p>Total no. of issues:28</p>
-            <p>Total no. of unit tests:2</p>
+            <p>Total no. of commits:{this.state.Connor.commits + this.state.Adtya.commits + this.state.Matthew.commits + this.state.Jesus.commits + this.state.Patrick.commits}</p>
+            <p>Total no. of issues:{this.state.Adtya.issues + this.state.Connor.issues + this.state.Jesus.issues + this.state.Matthew.issues + this.state.Patrick.issues}</p>
+            <p>Total no. of unit tests:13</p>
           </Col>
           <Col xs={12} sm={3}>
             <h3>Data:</h3>
@@ -98,8 +200,8 @@ export default class About extends Component {
           </Col>
           <Col xs={12} sm={3}>
             <h3>Links:</h3>
-            <p><a href="https://github.com/Connorlb/IDBSite">Github Repo</a></p>
-            <p><a href="https://www.gitbook.com/book/connorlb/pocketchef/details">Gitbook</a></p>
+            <p><a href="https://github.com/Connorlb/IDBSite"><h3 className="link">Github Repo</h3></a></p>
+            <p><a href="https://www.gitbook.com/book/connorlb/pocketchef/details"><h3 class = "link">Gitbook</h3></a></p>
           </Col>
         </Row>
       </Grid>

@@ -1,0 +1,29 @@
+sudo: false
+
+language: python
+
+python:
+   - "3.6"
+
+install:
+    - cd frontend
+    - npm install
+    - cd ..
+    - pip install autopep8
+    - pip install coverage
+    - pip install mypy
+    - pip install numpy
+    - pip install pylint
+    - pip install requests
+    - pip install Flask
+    - pip install flask_cors
+    - pip install flask_sqlalchemy
+    - pip install SQLAlchemy
+    - pip install psycopg2
+    - pip list
+
+script:
+   - cd backend
+   - python3 tests.py
+   - cd ../frontend
+   - npm run mocha

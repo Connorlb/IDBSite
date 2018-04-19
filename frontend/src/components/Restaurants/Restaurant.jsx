@@ -36,7 +36,7 @@ class Restaurant extends React.Component {
 
   render(){
     const opts = {
-      height: '300',
+      height: '250',
       width: '500',
       playerVars: {
         autoplay: 0
@@ -72,7 +72,7 @@ class Restaurant extends React.Component {
         </Row>
         <Row>
           <div style={{ height: '43vh', width: '100%' }}>
-            <rMap center={{latitude: this.state.restaurant.latitude, longitude: this.state.restaurant.longitude}} zoom={11}/>
+            <rMap latitude={this.state.restaurant.latitude} longitude={this.state.restaurant.longitude} zoom={11}/>
           </div>
        </Row>
       </Grid>

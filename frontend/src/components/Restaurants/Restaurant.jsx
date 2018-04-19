@@ -79,6 +79,7 @@ class Restaurant extends React.Component {
         </Row>
         <Row>
           <div style={{ height: '73vh', width: '100%' }}>
+            <p>this.state.center.longitude this.state.center.latitude</p>
             <GoogleMapReact bootstrapURLKeys={{ key: "AIzaSyBFObWyqlbpObdkdNE0k4JwX9AB66cTGKw"}}
               defaultCenter={this.state.center}
               defaultZoom={this.state.zoom} />

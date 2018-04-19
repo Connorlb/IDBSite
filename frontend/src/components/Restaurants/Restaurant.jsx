@@ -40,7 +40,7 @@ class Restaurant extends React.Component {
 
       cuisine_filter = [{"name": "cuisine", "op": "equals", "val": this.state.restaurant.cuisine}];
       ords = [{"field": "name", "direction": "asc"}];
-      data2 = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
+      let data2 = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
       axios({
         method: 'get',
         url: 'http://pocketchef.me/api/recipes2',

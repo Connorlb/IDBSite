@@ -170,7 +170,6 @@ class FullIngredients extends React.Component {
                   <IngredientCard name={rest.name} image={rest.picture} calories={rest.calories} protein={rest.protein} fat={rest.fat}/>
                 </Col>))
             }
-
           </Row>
         </CardGroup>
         <Row className="show-grid">

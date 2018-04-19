@@ -24,7 +24,7 @@ class Restaurant extends React.Component {
   componentDidMount() {
     var cuisine_filter = [{"name": "name", "op": "equals", "val": this.props.match.params.name}];
     var ords = [{"field": "name", "direction": "asc"}];
-    var data = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
+    let data = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
     axios({
       method: 'get',
       url: 'http://pocketchef.me/api/restaurants2',
@@ -92,40 +92,37 @@ class Restaurant extends React.Component {
         <Row>
           <h3>Recipes of similar cuisine:</h3>
           <Col>
-            <Link to={`/recipes/${this.external[0].name}`}>
-              <Card>        
-                <CardTitle className="name">
-                    <Image width={200} height={200} alt="200x200" src={this.external[0].image} circle className="contributor-pic" />
-                </CardTitle>
-                <CardText>
-                  <h3>{this.external[0].name}</h3>
-                </CardText>
-              </Card>
-            </Link>
+            <Card>        
+              <CardTitle className="name">
+                <Link to={`/restaurants/${this.external[0].name}`}>
+                  <Image width={200} height={200} alt="200x200" src={this.external[0].image} circle className="contributor-pic" /></Link>
+              </CardTitle>
+              <CardText>
+                <h3>{this.external[0].name}</h3>
+              </CardText>
+            </Card>
           </Col>
           <Col>
-            <Link to={`/recipes/${this.external[1].name}`}>
-              <Card>        
-                <CardTitle className="name">
-                    <Image width={200} height={200} alt="200x200" src={this.external[1].image} circle className="contributor-pic" />
-                </CardTitle>
-                <CardText>
-                  <h3>{this.external[1].name}</h3>
-                </CardText>
-              </Card>
-            </Link>
+            <Card>        
+              <CardTitle className="name">
+                <Link to={`/restaurants/${this.external[0].name}`}>
+                  <Image width={200} height={200} alt="200x200" src={this.external[0].image} circle className="contributor-pic" /></Link>
+              </CardTitle>
+              <CardText>
+                <h3>{this.external[0].name}</h3>
+              </CardText>
+            </Card>
           </Col>
           <Col>
-            <Link to={`/recipes/${this.external[2].name}`}>
-              <Card>        
-                <CardTitle className="name">
-                    <Image width={200} height={200} alt="200x200" src={this.external[2].image} circle className="contributor-pic" />
-                </CardTitle>
-                <CardText>
-                  <h3>{this.external[2].name}</h3>
-                </CardText>
-              </Card>
-            </Link>
+            <Card>        
+              <CardTitle className="name">
+                <Link to={`/restaurants/${this.external[0].name}`}>
+                  <Image width={200} height={200} alt="200x200" src={this.external[0].image} circle className="contributor-pic" /></Link>
+              </CardTitle>
+              <CardText>
+                <h3>{this.external[0].name}</h3>
+              </CardText>
+            </Card>
           </Col>
         </Row>
         <Row>

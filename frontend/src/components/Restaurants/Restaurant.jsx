@@ -13,7 +13,7 @@ class Restaurant extends React.Component {
     super();
     this.state = {
       restaurant: {},
-      zoom: 11,
+      zoom: 11
     };
     this.componentDidMount = this.componentDidMount.bind(this)
   }
@@ -74,7 +74,7 @@ class Restaurant extends React.Component {
         <Row>
           <div style={{ height: '73vh', width: '100%' }}>
             <GoogleMapReact bootstrapURLKeys={{ key: "AIzaSyBFObWyqlbpObdkdNE0k4JwX9AB66cTGKw"}}
-              defaultCenter={{lat:this.state.restaurant.latitude, lng:this.state.restaurant.longitude}}
+              defaultCenter={{lat:0, lng:0}}
               defaultZoom={this.state.zoom} />
           </div>        
         </Row>

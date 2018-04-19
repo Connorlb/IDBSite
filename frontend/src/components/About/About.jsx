@@ -30,7 +30,7 @@ export default class About extends Component {
         axios.get('https://api.github.com/repos/Connorlb/IDBSite/contributors?anon=1')
         .then(response => {
             response.data.map(coder => {
-              //console.log(coder)
+                //console.log(coder)
               if(coder.login == "AdityaPrasad1"){
                 Adtya.commits += coder.contributions
               }

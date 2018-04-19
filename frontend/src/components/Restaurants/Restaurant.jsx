@@ -37,7 +37,6 @@ class Restaurant extends React.Component {
       }).then(response => {
       console.log(response.data.objects);
       this.setState({restaurant: response.data.objects[0]});});
-      self.setState({center: {lat: this.state.restaurant.latitude, lng: this.state.restaurant.longitude}})
   }
 
 
@@ -49,6 +48,7 @@ class Restaurant extends React.Component {
         autoplay: 0
       }
     }
+    self.setState({center: {lat: this.state.restaurant.latitude, lng: this.state.restaurant.longitude}})
 
     return (
       <Grid>

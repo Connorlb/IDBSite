@@ -10,8 +10,10 @@ class IngredientCard extends React.Component {
   constructor() {
       super();
   }
+
   render(){
-    return(             
+    console.log(this.props.image);
+    return(
       <div>
         <Card>
          <CardTitle className="name">
@@ -25,7 +27,7 @@ class IngredientCard extends React.Component {
               <b>Protein </b>{this.props.protein}<br/>
               <b>Fat </b>{this.props.fat}<br/>
             </CardText>
-            <Button><Link to={`${this.props.link}`}>More Info</Link></Button>
+            <Button><a href={`${this.props.image}`}>More Info</a></Button>
           </CardBody>
         </Card>
       </div>

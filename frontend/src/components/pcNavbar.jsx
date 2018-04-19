@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import { Navbar, Nav, NavItem, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 export default class PcNavbar extends Component {
@@ -10,8 +10,9 @@ export default class PcNavbar extends Component {
     };
   }
   updateSearch(event){
+    console.log("event "+ event.target.value);
     this.setState({search: event.target.value});
-    
+
   }
   render(){
     return (
@@ -42,11 +43,14 @@ export default class PcNavbar extends Component {
           </Nav>
           <Nav pullRight>
             <NavItem>
-              Search:
               <input type="text"
                 value={this.state.search}
                 onChange={this.updateSearch.bind(this)}/>
+                </NavItem>
+                  <NavItem>
+                <Button><Link to={`/search/${this.state.search}`}>Search</Link></Button>
             </NavItem>
+
           </Nav>
         </Navbar.Collapse>
       </Navbar>

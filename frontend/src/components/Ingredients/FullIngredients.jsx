@@ -66,7 +66,7 @@ class FullIngredients extends React.Component {
         this.setState({activePage: response.data.page});
         this.setState({cards: response.data.objects});
       });
-  } 
+  }
 
   updateValue(newValue){
     var protein_filter = [{"name": "protein", "op": "lt", "val": newValue}];
@@ -93,7 +93,7 @@ class FullIngredients extends React.Component {
     var ords;
     let data;
     console.log("sortVal "+this.state.sortVal);
- 
+
     if(this.state.sortVal){
       cuisine_filter = [{"name": "protein", "op": "lt", "val": this.state.value}];
       ords = [{"field": this.state.sortVal, "direction": this.state.sortDir}];

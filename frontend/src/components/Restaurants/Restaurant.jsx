@@ -24,7 +24,7 @@ class Restaurant extends React.Component {
   componentDidMount() {
     var cuisine_filter = [{"name": "name", "op": "equals", "val": this.props.match.params.name}];
     var ords = [{"field": "name", "direction": "asc"}];
-    var data = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
+    let data = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
     axios({
       method: 'get',
       url: 'http://pocketchef.me/api/restaurants2',
@@ -40,16 +40,16 @@ class Restaurant extends React.Component {
 
       cuisine_filter = [{"name": "cuisine", "op": "equals", "val": this.state.restaurant.cuisine}];
       ords = [{"field": "name", "direction": "asc"}];
-      data = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
+      let data2 = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
       axios({
         method: 'get',
         url: 'http://pocketchef.me/api/recipes2',
         params: {
-          q: data
+          q: data2
         },
         config: { headers: {'Content-Type': "application/json", "Access-Control-Allow-Origin": "*"}}
         }).then(response => {
-          this.setState({external: response.data.objects});});
+          this.setState({external: response.data2.objects});});
   }
 
 
@@ -92,46 +92,43 @@ class Restaurant extends React.Component {
         <Row>
           <h3>Recipes of similar cuisine:</h3>
           <Col>
-            <Link to={`/recipes/${this.external[0].name}`}>
-              <Card>        
-                <CardTitle className="name">
-                    <Image width={200} height={200} alt="200x200" src={this.external[0].image} circle className="contributor-pic" />
-                </CardTitle>
-                <CardText>
-                  <h3>{this.external[0].name}</h3>
-                </CardText>
-              </Card>
-            </Link>
+            <Card>        
+              <CardTitle className="name">
+                <Link to={`/restaurants/${this.external[0].name}`}>
+                  <Image width={200} height={200} alt="200x200" src={this.external[0].image} circle className="contributor-pic" /></Link>
+              </CardTitle>
+              <CardText>
+                <h3>{this.external[0].name}</h3>
+              </CardText>
+            </Card>
           </Col>
           <Col>
-            <Link to={`/recipes/${this.external[1].name}`}>
-              <Card>        
-                <CardTitle className="name">
-                    <Image width={200} height={200} alt="200x200" src={this.external[1].image} circle className="contributor-pic" />
-                </CardTitle>
-                <CardText>
-                  <h3>{this.external[1].name}</h3>
-                </CardText>
-              </Card>
-            </Link>
+            <Card>        
+              <CardTitle className="name">
+                <Link to={`/restaurants/${this.external[1].name}`}>
+                  <Image width={200} height={200} alt="200x200" src={this.external[1].image} circle className="contributor-pic" /></Link>
+              </CardTitle>
+              <CardText>
+                <h3>{this.external[1].name}</h3>
+              </CardText>
+            </Card>
           </Col>
           <Col>
-            <Link to={`/recipes/${this.external[2].name}`}>
-              <Card>        
-                <CardTitle className="name">
-                    <Image width={200} height={200} alt="200x200" src={this.external[2].image} circle className="contributor-pic" />
-                </CardTitle>
-                <CardText>
-                  <h3>{this.external[2].name}</h3>
-                </CardText>
-              </Card>
-            </Link>
+            <Card>        
+              <CardTitle className="name">
+                <Link to={`/restaurants/${this.external[2].name}`}>
+                  <Image width={200} height={200} alt="200x200" src={this.external[2].image} circle className="contributor-pic" /></Link>
+              </CardTitle>
+              <CardText>
+                <h3>{this.external[2].name}</h3>
+              </CardText>
+            </Card>
           </Col>
         </Row>
         <Row>
           <div style={{ height: '73vh', width: '100%' }}>
             <GoogleMapReact bootstrapURLKeys={{ key: "AIzaSyBFObWyqlbpObdkdNE0k4JwX9AB66cTGKw"}}
-              defaultCenter={{lat:this.state.latitude, lng:this.state.longitude}}
+              defaultCenter={{lat:0, lng:0}}
               defaultZoom={this.state.zoom} />
           </div>        
         </Row>

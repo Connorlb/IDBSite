@@ -38,8 +38,8 @@ class Restaurant extends React.Component {
       this.setState({latitude: this.state.restaurant.latitude});
       this.setState({longitude: this.state.restaurant.longitude});});
 
-      cuisine_filter2 = [{"name": "cuisine", "op": "equals", "val": this.state.restaurant.cuisine}];
-      ords2 = [{"field": "name", "direction": "asc"}];
+      cuisine_filter = [{"name": "cuisine", "op": "equals", "val": this.state.restaurant.cuisine}];
+      ords = [{"field": "name", "direction": "asc"}];
       data = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
       axios({
         method: 'get',

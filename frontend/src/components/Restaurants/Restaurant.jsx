@@ -26,7 +26,6 @@ class Restaurant extends React.Component {
     var cuisine_filter = [{"name": "name", "op": "equals", "val": this.props.match.params.name}];
     var ords = [{"field": "name", "direction": "asc"}];
     let data = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
-    let self = this
     axios({
       method: 'get',
       url: 'http://pocketchef.me/api/restaurants2',
@@ -48,7 +47,7 @@ class Restaurant extends React.Component {
         autoplay: 0
       }
     }
-    self.setState({center: {lat: this.state.restaurant.latitude, lng: this.state.restaurant.longitude}})
+    this.setState({center: {lat: this.state.restaurant.latitude, lng: this.state.restaurant.longitude}})
 
     return (
       <Grid>
@@ -79,7 +78,7 @@ class Restaurant extends React.Component {
         </Row>
         <Row>
           <div style={{ height: '73vh', width: '100%' }}>
-            <p>{this.state.center.longitude} {this.state.center.latitude}</p>
+            <p>{this.state.center.longitude} {this.state.center.latitude} {this.state.restaurant.latitude}</p>
             <GoogleMapReact bootstrapURLKeys={{ key: "AIzaSyBFObWyqlbpObdkdNE0k4JwX9AB66cTGKw"}}
               defaultCenter={this.state.center}
               defaultZoom={this.state.zoom} />

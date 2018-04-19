@@ -49,7 +49,7 @@ class Restaurant extends React.Component {
           <Col xs={12} sm={6}>
             <Card>
               <CardTitle>
-                <Image width={500} height={500} alt="800x800" src={this.state.restaurant.img_link} circle className="contributor-pic" />
+                <Image width={400} height={400} alt="400x400" src={this.state.restaurant.img_link} circle className="contributor-pic" />
               </CardTitle>
               <CardText>
                 <h1>{this.state.restaurant.name}</h1>
@@ -72,7 +72,7 @@ class Restaurant extends React.Component {
         </Row>
         <Row>
           <div style={{ height: '43vh', width: '100%' }}>
-            <rMap latitude={this.state.restaurant.latitude} longitude={this.state.restaurant.longitude} zoom={11}/>
+            <rMap center={{latitude: this.state.restaurant.latitude, longitude: this.state.restaurant.longitude}} zoom={11}/>
           </div>
        </Row>
       </Grid>

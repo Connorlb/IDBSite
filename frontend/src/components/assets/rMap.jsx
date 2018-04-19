@@ -8,8 +8,8 @@ class rMap extends Component {
         return (
             <GoogleMapReact
                 bootstrapURLKeys={{ key: "AIzaSyBFObWyqlbpObdkdNE0k4JwX9AB66cTGKw" }}
-                defaultCenter={ {lat:this.props.latitude, lng:this.props.longitude}}
-                defaultZoom={this.props.zoom}
+                defaultCenter={ {lat:0, lng:0}}
+                defaultZoom={11}
             >
             </GoogleMapReact>
     );

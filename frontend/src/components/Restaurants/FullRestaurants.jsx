@@ -3,7 +3,7 @@ import RestaurantAPI from '../../api'
 import VirtualizedSelect from 'react-virtualized-select';
 import { Link } from 'react-router-dom'
 import RestaurantCard from './RestaurantCard'
-import './css/FullRestaurants.css'
+import './css/Restaurants.css'
 import Pagination from "react-js-pagination";
 import {Grid, Row, Col, Image, Button, MenuItem, DropdownButton} from 'react-bootstrap' ;
 import axios from 'axios'
@@ -164,12 +164,12 @@ class FullRestaurants extends React.Component {
         var options = DATA.CUISINES;
         return(
           <div>
-          <Card className="fullRecipe">
+          <Card className="fullRestaurant">
           <CardTitle>
             <h1>Restaurants</h1>
             </CardTitle>
              <Row className="show-grid">
-    	        <Col xs={3} xsOffset={3}>
+    	        <Col xs={3} xsOffset={4}>
 		            <b>Filter by Cuisine</b>
             <VirtualizedSelect ref="cuisineSelect"
               options={options}
@@ -188,7 +188,7 @@ class FullRestaurants extends React.Component {
       <DropdownButton
         title={`${this.state.sortVal} ${this.state.sortDir}`}
         key={1}
-        id={'recipe-sort-button'}
+        id={'restaurant-sort-button'}
         onSelect={this.handleDrops}>
         <MenuItem eventKey= "rating desc" > Rating DESC </MenuItem>
         <MenuItem eventKey= "rating asc" > Rating ASC </MenuItem>

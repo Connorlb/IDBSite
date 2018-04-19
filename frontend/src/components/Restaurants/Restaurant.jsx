@@ -36,8 +36,8 @@ class Restaurant extends React.Component {
 
   render(){
     const opts = {
-      height: '390',
-      width: '640',
+      height: '300',
+      width: '500',
       playerVars: {
         autoplay: 0
       }
@@ -72,9 +72,7 @@ class Restaurant extends React.Component {
         </Row>
         <Row>
           <div style={{ height: '43vh', width: '100%' }}>
-            <GoogleMapReact bootstrapURLKeys={{ key: "AIzaSyBFObWyqlbpObdkdNE0k4JwX9AB66cTGKw"}}
-              defaultCenter={{lat:this.state.restaurant.latitude,lng:this.state.restaurant.longitude}}
-              defaultZoom={11} />
+            <rMap latitude={this.state.restaurant.latitude} longitude={this.state.restaurant.longitude} zoom={11}/>
           </div>
        </Row>
       </Grid>

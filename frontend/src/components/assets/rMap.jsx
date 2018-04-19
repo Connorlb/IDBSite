@@ -16,3 +16,4 @@ class rMap extends Component {
     );
   }
 }
+export default rMap

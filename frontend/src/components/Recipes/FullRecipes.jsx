@@ -22,6 +22,7 @@ class FullRecipes extends React.Component {
       activePage: 1,
       totalPages: -1,
       cards:[],
+      value: 20,
       selectValue: '',
       sortVal: 'name',
       sortDir: 'asc'
@@ -31,6 +32,7 @@ class FullRecipes extends React.Component {
     this.updateValue = this.updateValue.bind(this)
     this.handleDrops = this.handleDrops.bind(this)
     this.sortCards = this.sortCards.bind(this)
+    this.updateProteinValue = this.updateProteinValue.bind(this)
   }
 
   handleDrops (e, evt){
@@ -75,6 +77,26 @@ class FullRecipes extends React.Component {
         this.setState({cards: response.data.objects});
         this.setState({activePage: 1});
       });
+  }
+
+  updateProteinValue(newValue){
+    var protein_filter = [{"name": "protein", "op": "lt", "val": newValue}];
+    var ords = [{"field": this.state.sortVal, "direction": this.state.sortDir}];
+    let data = JSON.stringify({"filters": protein_filter, "order_by": ords});
+    axios({
+      method: 'get',
+      url: 'http://pocketchef.me/api/ingredients2',
+      params: {
+        q: data
+      },
+      config: { headers: {'Content-Type': "application/json", "Access-Control-Allow-Origin": "*"}}
+      }).then(response => {
+        console.log(response.data.objects);
+        this.setState({totalPages: response.data.num_results});
+        this.setState({activePage: response.data.page});
+        this.setState({cards: response.data.objects});
+      });
+    this.setState({value: newValue});
   }
 
 

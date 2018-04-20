@@ -81,7 +81,7 @@ componentDidMount() {
               <span>Servings: {this.state.recipe.servings} </span>
               <span>Prep time: {this.state.recipe.prep_time}</span>
               <span>Cuisine: {this.state.recipe.cuisine}</span>
-              <a href={`${this.state.recipe.src_url}`}><span>Full Recipe</span></a>
+              <a href={`${this.state.recipe.src_url}`}><span className="link">Full Recipe</span></a>
               </h2>
           </CardTitle>
         </Card>

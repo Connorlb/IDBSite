@@ -98,3 +98,7 @@ a {
 a:hover{
 	color:#111;
 }
+
+span.link{
+  color: blue;
+}

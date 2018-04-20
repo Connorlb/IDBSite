@@ -7,6 +7,9 @@ import { Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, CardGroup } from 'reactstrap';
 import axios from 'axios'
 
+const LINKS = require('../../functionalityassets/cuisine_links.js');
+
+
 class Restaurant extends React.Component {
   constructor() {
     super();
@@ -61,6 +64,7 @@ class Restaurant extends React.Component {
 
 
   render(){
+    var options = LINKS.LINKS;
     const opts = {
       height: '280',
       width: '500',
@@ -92,8 +96,9 @@ class Restaurant extends React.Component {
                 <h3><a href={this.state.restaurant.yelp_link}>Reviews</a></h3>
               </CardText>
             </Card>
+            <h3>Related Videos</h3>
             <YouTube
-              videoId="DkiyT-dnmv8"
+              videoId={options[this.state.restaurant.cuisine][1]}
               opts={opts}/>
           </Col>
         </Row>

@@ -89,6 +89,7 @@ class Restaurant extends React.Component {
                 <h3>Rating: {this.state.restaurant.rating}</h3>
                 <h3>Phone: {this.state.restaurant.phone}</h3>
                 <h3>Cuisine: {this.state.restaurant.cuisine}</h3>
+                <h3><a href={this.state.restaurant.yelp_link}>Reviews</a></h3>
               </CardText>
             </Card>
             <YouTube

@@ -204,7 +204,7 @@ class FullRestaurants extends React.Component {
 
                 this.state.cards.map(rest => (
                   <Col xs={12} sm={6} md={4} key={rest.name}>
-                  <RestaurantCard name={rest.name} image={rest.img_link} cuisine={rest.cuisine} rating={rest.rating} phone={rest.phone}/>
+                  <RestaurantCard name={rest.name} image={rest.img_link} cuisine={rest.cuisine} rating={rest.rating} phone={rest.phone} yelp={rest.yelp_link}/>
                   </Col>
 
 

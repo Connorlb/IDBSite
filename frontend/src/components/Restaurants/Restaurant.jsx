@@ -20,15 +20,12 @@ class Restaurant extends React.Component {
     };
     this.componentWillMount = this.componentWillMount.bind(this)
     this.getRecipe = this.getRecipe.bind(this)
-
   }
 
   getRecipe() {
-
     var cuisine_filter = [{"name": "cuisine", "op": "equals","val": `${this.state.restaurant.cuisine}`}];
     var ords = [{"field": "name", "direction": "asc"}];
     let data = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
-    //console.log("DATA ");
     axios({
       method: 'get',
       url: 'http://pocketchef.me/api/recipes2',
@@ -41,8 +38,6 @@ class Restaurant extends React.Component {
         this.setState({external: response.data.objects});})
       .catch(function (error) {
         console.log(error);})
-
-        //console.log("END DATA");
   }
 
   componentWillMount() {
@@ -62,7 +57,6 @@ class Restaurant extends React.Component {
       });})
       .catch(function (error) {
         console.log(error);})
-
 
   }
 

@@ -12,6 +12,9 @@ import 'react-virtualized-select/styles.css'
 import { Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, CardGroup } from 'reactstrap';
 import RestaurantCard from '../Restaurants/RestaurantCard'
+import RecipeCard from '../Recipes/RecipesCard'
+import IngredientCard from '../Ingredients/IngredientCard'
+
 
 class FullSearch extends React.Component {
   constructor() {
@@ -20,6 +23,8 @@ class FullSearch extends React.Component {
             activePage: 1,
             totalPages: -1,
             cards: [],
+            Icards: [],
+            Rcards: [],
 	          selectValue: '',
 
       };
@@ -109,6 +114,7 @@ class FullSearch extends React.Component {
     }
 
   componentDidMount() {
+    var total_pages = 0;
     console.log("this.props.match.params.name " +  this.props.match.params.name)
 
     var cuisine_filter = [{"name": "name", "op": "like", "val": `%${this.props.match.params.name}%`}]; //will depend heavenly  on  kind of kard
@@ -121,11 +127,50 @@ class FullSearch extends React.Component {
     }
   })
       .then(response => {
-        this.setState({totalPages: response.data.num_results});
+        total_pages += response.data.num_results;
+        //this.setState({totalPages: response.data.num_results});
       this.setState({cards: response.data.objects});
       this.setState({activePage: 1});})
       .catch(function (error) {
         console.log(error);})
+
+    //var cuisine_filter = [{"name": "name", "op": "like", "val": `%${this.props.match.params.name}%`}]; //will depend heavenly  on  kind of kard
+    //var ords = [{"field": "name", "direction": "asc"}];
+    //let data = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
+    axios.get('http://pocketchef.me/api/recipes2',{
+    params: {
+      page: 1,
+      q: data
+    }
+  })
+      .then(response => {
+        total_pages += response.data.num_results;
+        //this.setState({totalPages: response.data.num_results});
+      this.setState({Rcards: response.data.objects});
+      //this.setState({activePage: 1});
+      })
+      .catch(function (error) {
+        console.log(error);})
+
+    //var cuisine_filter = [{"name": "name", "op": "like", "val": `%${this.props.match.params.name}%`}]; //will depend heavenly  on  kind of kard
+    //var ords = [{"field": "name", "direction": "asc"}];
+    //let data = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
+    axios.get('http://pocketchef.me/api/ingredients2',{
+    params: {
+      page: 1,
+      q: data
+    }
+  })
+      .then(response => {
+        total_pages += response.data.num_results;
+        //this.setState({totalPages: response.data.num_results});
+      this.setState({Icards: response.data.objects});
+      //this.setState({activePage: 1});
+      })
+      .catch(function (error) {
+        console.log(error);})
+
+        this.setState({totalPages: total_pages});
   }
 
    render() {
@@ -146,10 +191,22 @@ class FullSearch extends React.Component {
                   <Col xs={12} sm={6} md={4} key={rest.name}>
                   <RestaurantCard name={rest.name} image={rest.img_link} cuisine={rest.cuisine} rating={rest.rating} phone={rest.phone}/>
                   </Col>
-                  //where we map card values
-
-
               ))
+
+            }
+            {
+              this.state.Rcards.map(rest => (
+                <Col xs={12} sm={6} md={4} key={rest.name}>
+                <RecipeCard name={rest.name} cuisine={rest.cuisine} servings={rest.servings}  prep_time={rest.prep_time} rating={rest.rating} link={rest.src_url}/>
+                </Col>
+            ))
+            }
+            {
+              this.state.Icards.map(rest => (
+                <Col xs={12} sm={6} md={4} key={rest.name}>
+                <IngredientCard name={rest.name} cuisine={rest.cuisine} servings={rest.servings}  prep_time={rest.prep_time} rating={rest.rating} link={rest.src_url}/>
+                </Col>
+            ))
             }
               </Row>
               </CardGroup>

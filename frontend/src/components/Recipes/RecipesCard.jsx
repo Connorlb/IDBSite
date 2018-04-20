@@ -6,6 +6,7 @@ import Pagination from "react-js-pagination";
 import { Grid, Row, Col, Image, Button } from 'react-bootstrap';
 import { Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle } from 'reactstrap';
+  const LINKS = require('../../functionalityassets/cuisine_links.js');
 
 
 class RecipeCard extends React.Component {
@@ -14,14 +15,17 @@ class RecipeCard extends React.Component {
         super();
     }
     render(){
+      var links = LINKS.LINKS;
       return(
         <div>
         <Card>
         <CardTitle className="name">
-         <Link to={`/recipes/${this.props.name}`}>{this.props.name}</Link>
+         <Link to={`/recipes/${this.props.name}`}>
+         <Image width={200} height={200} alt="200x200" src={links[this.props.cuisine][0]} circle className="contributor-pic" /></Link>
         </CardTitle>
           <CardBody outline color="secondary">
             <CardText>
+              {this.props.name}<br/>
               <b>Cuisine</b> {this.props.cuisine}<br/>
               <b>Prep Time</b> {this.props.prep_time}<br/>
               <b>Servings </b>{this.props.servings}

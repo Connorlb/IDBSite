@@ -14,7 +14,7 @@ class Restaurant extends React.Component {
   constructor() {
     super();
     this.state = {
-      restaurant: {},
+      restaurant: {cuisine:"Mexican"},
       external:[{name:"sample"}, {name:"sample2"}, {name:"this"}],
       zoom: 10,
       latitude: 46.7,
@@ -65,6 +65,7 @@ class Restaurant extends React.Component {
 
   render(){
     var options = LINKS.LINKS;
+
     const opts = {
       height: '280',
       width: '500',
@@ -135,7 +136,7 @@ class Restaurant extends React.Component {
         <Row>
           <div style={{ height: '73vh', width: '100%' }}>
             <GoogleMapReact bootstrapURLKeys={{ key: "AIzaSyBFObWyqlbpObdkdNE0k4JwX9AB66cTGKw"}}
-              defaultCenter={{lat:this.state.restaurant.latitude, lng:this.state.restaurant.longitude}}
+              defaultCenter={{lat:this.state.latitude, lng:this.state.longitude}}
               defaultZoom={this.state.zoom} />
           </div>
         </Row>

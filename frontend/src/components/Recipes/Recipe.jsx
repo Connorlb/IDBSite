@@ -8,12 +8,14 @@ import './css/Recipes.css'
 import { Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle } from 'reactstrap';
 
+  const LINKS = require('../../functionalityassets/cuisine_links.js');
+
 
 class Recipe extends React.Component {
   constructor() {
       super();
       this.state = {
-            recipe: {},
+            recipe: {cuisine:"tess"},
             external:[{name:"sample"}, {name:"sample2"}, {name:"this"}]
       };
       this.componentDidMount = this.componentDidMount.bind(this)
@@ -60,6 +62,7 @@ componentDidMount() {
 }
 
   render(){
+    var options = LINKS.LINKS;
   const opts = {
     height: '390',
     width: '640',

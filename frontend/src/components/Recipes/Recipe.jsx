@@ -21,6 +21,8 @@ class Recipe extends React.Component {
   }
 
   getRestaurant() {
+    console.log("this.state.recipe.cuisine")
+    console.log(this.state.recipe)
     var cuisine_filter = [{"name": "cuisine", "op": "equals","val": `${this.state.recipe.cuisine}`}];
     var ords = [{"field": "name", "direction": "asc"}];
     let data = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
@@ -32,6 +34,7 @@ class Recipe extends React.Component {
       },
       config: { headers: {'Content-Type': "application/json", "Access-Control-Allow-Origin": "*"}}
       }).then(response => {
+        console.log("response.data.objects")
         console.log(response.data.objects);
         this.setState({external: response.data.objects});})
       .catch(function (error) {
@@ -106,24 +109,6 @@ componentDidMount() {
             </CardTitle>
           </Card>
         </Col>
-        <Col>
-          <Card>
-            <CardTitle className="name">
-              <Link to={`/restaurants/${this.state.external[1].name}`}>
-              <h3>{this.state.external[1].name}</h3>
-                </Link>
-            </CardTitle>
-          </Card>
-        </Col>
-        <Col>
-          <Card>
-            <CardTitle className="name">
-              <Link to={`/restaurants/${this.state.external[2].name}`}>
-              <h3>{this.state.external[2].name}</h3>
-                </Link>
-            </CardTitle>
-            </Card>
-          </Col>
         </Row>
 
     </Grid>

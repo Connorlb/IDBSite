@@ -213,8 +213,7 @@ class FullRestaurants extends React.Component {
 
               </Row>
               </CardGroup>
-            <Row className="show-grid">
-                <Col xs={6} xsOffset={5}>
+            <Row className="show-grid text-center">
               <Pagination
                   activePage={this.state.activePage}
                   itemsCountPerPage={9}
@@ -222,7 +221,6 @@ class FullRestaurants extends React.Component {
                   pageRangeDisplayed={5}
                   onChange={this.handlePageChange}
                 />
-		              </Col>
 	                </Row>
                   </div>
         );

@@ -48,7 +48,7 @@ export default class PcNavbar extends Component {
                 onChange={this.updateSearch.bind(this)}/>
                 </NavItem>
                   <NavItem>
-                <Button><Link to={`/search/${this.state.search}`}>Search</Link></Button>
+                <Link to={`/search/${this.state.search}`}><Button>Search</Button></Link>
             </NavItem>
 
           </Nav>

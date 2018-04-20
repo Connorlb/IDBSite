@@ -1,5 +1,4 @@
 import React from 'react'
-import RestaurantAPI from '../../api'
 import { Link } from 'react-router-dom'
 import {Grid, Row, Col, Image, Button } from 'react-bootstrap' ;
 import YouTube from 'react-youtube'
@@ -20,6 +19,7 @@ class Recipe extends React.Component {
       this.componentDidMount = this.componentDidMount.bind(this)
       this.getRestaurant = this.getRestaurant.bind(this)
   }
+
   getRestaurant() {
     var cuisine_filter = [{"name": "cuisine", "op": "equals","val": `${this.state.recipe.cuisine}`}];
     var ords = [{"field": "name", "direction": "asc"}];
@@ -96,9 +96,9 @@ componentDidMount() {
       </Col>
       </Row>
       <Row>
-          <h3>Restaurants that serve food of similar cuisine:</h3>
-          <Col>
-            <Card>
+        <h3>Restaurants that serve food of similar cuisine:</h3>
+        <Col>
+          <Card>
             <CardTitle className="name">
               <Link to={`/restaurants/${this.state.external[0].name}`}>
               <h3>{this.state.external[0].name}</h3>

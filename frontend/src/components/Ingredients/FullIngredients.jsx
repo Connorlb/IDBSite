@@ -173,14 +173,12 @@ class FullIngredients extends React.Component {
           </Row>
         </CardGroup>
         <Row className="show-grid">
-          <Col xs={6} xsOffset={5}>
-            <Pagination
-              activePage={this.state.activePage}
-              itemsCountPerPage={9}
-              totalItemsCount={this.state.totalPages}
-              pageRangeDisplayed={5}
-              onChange={this.handlePageChange}/>
-          </Col>
+          <Pagination
+            activePage={this.state.activePage}
+            itemsCountPerPage={9}
+            totalItemsCount={this.state.totalPages}
+            pageRangeDisplayed={5}
+            onChange={this.handlePageChange}/>
         </Row>
       </div>
     );

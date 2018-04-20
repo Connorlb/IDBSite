@@ -13,7 +13,7 @@ class RestaurantCard extends React.Component {
     }
     render(){
       return(
-              
+
        <div>
         <Card>
         <CardTitle className="name">
@@ -27,7 +27,7 @@ class RestaurantCard extends React.Component {
             <b>Stars </b>{this.props.rating} <br/>
             <b>Phone </b>{this.props.phone} <br/>
             </CardText>
-            <Button><Link to={`${this.props.yelp}`}>See Reviews</Link></Button>
+            <a href={`${this.props.yelp}`}><Button>See Reviews</Button></a>
           </CardBody>
         </Card>
         </div>

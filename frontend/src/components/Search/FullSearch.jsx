@@ -163,6 +163,7 @@ class FullSearch extends React.Component {
   })
       .then(response => {
         total_pages += response.data.num_results;
+        this.setState({totalPages: total_pages});
         //this.setState({totalPages: response.data.num_results});
       this.setState({Icards: response.data.objects});
       //this.setState({activePage: 1});
@@ -170,14 +171,14 @@ class FullSearch extends React.Component {
       .catch(function (error) {
         console.log(error);})
 
-        this.setState({totalPages: total_pages});
+
   }
 
    render() {
         return(
           <div>
           <Card >
-          <CardTitle>
+          <CardTitle >
             <h1>Search</h1>
             </CardTitle>
              <Row className="show-grid">
@@ -210,7 +211,7 @@ class FullSearch extends React.Component {
             }
               </Row>
               </CardGroup>
-            <Row className="show-grid">
+            <Row className="show-grid text-center">
               <Pagination
                   activePage={this.state.activePage}
                   itemsCountPerPage={9}

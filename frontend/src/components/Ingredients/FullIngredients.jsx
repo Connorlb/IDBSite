@@ -172,7 +172,7 @@ class FullIngredients extends React.Component {
             }
           </Row>
         </CardGroup>
-        <Row className="show-grid">
+        <Row className="show-grid text-center">
           <Pagination
             activePage={this.state.activePage}
             itemsCountPerPage={9}

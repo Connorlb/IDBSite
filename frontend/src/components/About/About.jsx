@@ -176,7 +176,7 @@ export default class About extends Component {
           </Col>
           <Col xs={12} sm={3}>
             <h3>Data:</h3>
-            <p>https://spoonacular.com/food-ap : wrote a API scraper in Python to scrape ingredient and recipe information by running http requests in a loop, then commiting the information to the database.</p>
+            <p>https://spoonacular.com/food-api : wrote a API scraper in Python to scrape ingredient and recipe information by running http requests in a loop, then commiting the information to the database.</p>
             <p>https://developers.zomato.com/api : wrote another API scraper in Python to scrape nutritional information and then commited the values to the database.</p>
             <p>https://www.yelp.com/developers : wrote Python API scrapers to scrape restaurant specifics, such as name, location, and rating.</p>
             <p>https://developers.google.com/maps/ : used restaurant coordinates and address to produce a map of the area</p>

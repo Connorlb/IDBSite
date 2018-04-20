@@ -16,7 +16,7 @@ export default class PcNavbar extends Component {
   }
   render(){
     return (
-      <Navbar default collapseOnSelect>
+      <Navbar className="myColor" default collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand>
             <a href="/"> PocketChef </a>

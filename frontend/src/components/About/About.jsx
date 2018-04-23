@@ -129,7 +129,7 @@ export default class About extends Component {
             <li class="list-group-item"><b>Unit Tests:</b>2</li>
           </Col>
           <Col xs={12} sm={4}>
-            <Image width={200} height={200} alt="200x200" src="https://i.imgur.com/bXpurgB.jpg" circle align="center"/>
+            <Image width={200} height={200} alt="200x200" src="https://i.imgur.com/c9sbjl0.jpg" circle align="center"/>
             <h3>Connor Burkman</h3>
             <li class="list-group-item"><b>About:</b> Connor is a fourth-year CS student who thinks Panda Express is too spicy. He's in love with some of the food at Song La.</li>
             <li class="list-group-item"><b>Major Responsibilities:</b> Full Stack, setting up server</li>

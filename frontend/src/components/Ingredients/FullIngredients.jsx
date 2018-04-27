@@ -131,7 +131,7 @@ class FullIngredients extends React.Component {
     var options = DATA.CUISINES;
     return(
       <div>
-        <Card className="fullIngredient">
+        <Card className="fullIngredient" style={{ backgroundColor: '#D8C3A5'}}>
           <CardTitle>
             <h1>Ingredients</h1>
           </CardTitle>

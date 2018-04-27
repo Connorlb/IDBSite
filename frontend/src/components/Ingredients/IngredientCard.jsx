@@ -15,7 +15,7 @@ class IngredientCard extends React.Component {
     console.log(this.props.image);
     return(
       <div>
-        <Card>
+        <Card style={{ backgroundColor: '#D8C3A5'}}>
          <CardTitle className="name">
             <Link to={`/ingredients/${this.props.name}`}>
             <Image width={200} height={200} alt="200x200" src={this.props.image} circle className="contributor-pic" /></Link>
@@ -27,7 +27,6 @@ class IngredientCard extends React.Component {
               <b>Protein </b>{this.props.protein}<br/>
               <b>Fat </b>{this.props.fat}<br/>
             </CardText>
-            <Button><a href={`${this.props.image}`}>More Info</a></Button>
           </CardBody>
         </Card>
       </div>

@@ -5,6 +5,8 @@ import {Grid, Row, Col, Image, Button } from 'react-bootstrap' ;
 import YouTube from 'react-youtube'
 import GoogleMapReact from 'google-map-react';
 import axios from 'axios'
+import { Card, CardImg, CardText, CardBody,
+  CardTitle, CardSubtitle, CardGroup } from 'reactstrap';
 
 class Ingredient extends React.Component {
   constructor() {
@@ -43,28 +45,21 @@ class Ingredient extends React.Component {
   return (
     <Grid>
       <Row className="show-grid text-center">
-        <Image width={500} height={500} alt="800x800" src={this.state.ingredient.picture} circle className="contributor-pic" />
-        <h1><big>{this.state.ingredient.name}</big></h1>
-        <Col xs={12} sm={6}  className="image-wrap">
-          <h2>Calories: {this.state.ingredient.calories}</h2>
-          <h2>Fat: {this.state.ingredient.fat}</h2>
-          <h2>Protein: {this.state.ingredient.protein}</h2>
-          <h2>Carbs: {this.state.ingredient.carbs}</h2>
-        </Col>
-      </Row>
-      <Row className="show-grid text-center">
-        <Col xs={12}  className="image-wrap">
-          <YouTube
-            videoId="DkiyT-dnmv8"
-            opts={opts}/>
-        </Col>
-      </Row>
-      <Row>
-       <div style={{ height: '100vh', width: '100%' }}>
-          <GoogleMapReact bootstrapURLKeys={{ key: "AIzaSyBFObWyqlbpObdkdNE0k4JwX9AB66cTGKw"}}
-            defaultCenter={{lat:30,lng:98}}
-            defaultZoom={11} />
-        </div>
+      <Card style={{ backgroundColor: '#D8C3A5'}}>
+         <CardTitle className="name">
+            <Link to={`/ingredients/${this.state.ingredient.name}`}>
+            <Image width={200} height={200} alt="200x200" src={this.state.ingredient.picture} circle className="contributor-pic" /></Link>
+          </CardTitle>
+          <CardBody outline color="secondary">
+            <CardText>
+              <h3 class="name">{this.state.ingredient.name}</h3><br/>
+              <b>Calories</b> {this.state.ingredient.calories}<br/>
+              <b>Protein </b>{this.state.ingredient.protein}<br/>
+              <b>Fat </b>{this.state.ingredient.fat}<br/>
+              <b>Carbs </b>{this.state.ingredient.carbs}<br/>
+            </CardText>
+          </CardBody>
+        </Card>
       </Row>
     </Grid>
     )

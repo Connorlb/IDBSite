@@ -15,7 +15,7 @@ class RestaurantCard extends React.Component {
       return(
 
        <div>
-        <Card>
+        <Card style={{ backgroundColor: '#D8C3A5'}}>
         <CardTitle className="name">
          <Link to={`/restaurants/${this.props.name}`}>
          <Image width={200} height={200} alt="200x200" src={this.props.image} circle className="contributor-pic" /></Link>

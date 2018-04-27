@@ -164,7 +164,7 @@ class FullRestaurants extends React.Component {
         var options = DATA.CUISINES;
         return(
           <div>
-          <Card className="fullRestaurant">
+          <Card className="fullRestaurant" style={{ backgroundColor: '#D8C3A5'}}>
           <CardTitle>
             <h1>Restaurants</h1>
             </CardTitle>

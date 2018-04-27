@@ -78,7 +78,7 @@ class Restaurant extends React.Component {
       <Grid>
         <Row className="show-grid text-center">
           <Col xs={12} sm={6}>
-            <Card>
+            <Card style={{ backgroundColor: '#D8C3A5'}}>
               <CardTitle>
                 <Image width={400} height={400} alt="400x400" src={this.state.restaurant.img_link} circle className="contributor-pic" />
               </CardTitle>
@@ -88,13 +88,13 @@ class Restaurant extends React.Component {
             </Card>
           </Col>
           <Col xs={12} sm={6}>
-            <Card>
+            <Card style={{ backgroundColor: '#D8C3A5'}}>
               <CardText body>
                 <h3>Address: {this.state.restaurant.address}</h3>
                 <h3>Rating: {this.state.restaurant.rating}</h3>
                 <h3>Phone: {this.state.restaurant.phone}</h3>
                 <h3>Cuisine: {this.state.restaurant.cuisine}</h3>
-                <h3><a href={this.state.restaurant.yelp_link}>Reviews</a></h3>
+                <h3><a href={this.state.restaurant.yelp_link}><img src="https://www.beyondindigopets.com/wp-content/uploads/2014/11/yelp-icon1.png" height="30" width="30"/> Reviews</a></h3>
               </CardText>
             </Card>
             <h3>Related Videos</h3>
@@ -106,7 +106,7 @@ class Restaurant extends React.Component {
         <Row>
           <h3>Recipes of similar cuisine:</h3>
           <Col>
-            <Card>
+            <Card style={{ backgroundColor: '#D8C3A5'}}>
             <CardTitle className="name">
               <Link to={`/recipes/${this.state.external[0].name}`}>
               <h3>{this.state.external[0].name}</h3>
@@ -115,7 +115,7 @@ class Restaurant extends React.Component {
           </Card>
         </Col>
         <Col>
-          <Card>
+          <Card style={{ backgroundColor: '#D8C3A5'}}>
             <CardTitle className="name">
               <Link to={`/recipes/${this.state.external[1].name}`}>
               <h3>{this.state.external[1].name}</h3>
@@ -124,7 +124,7 @@ class Restaurant extends React.Component {
           </Card>
         </Col>
         <Col>
-          <Card>
+          <Card style={{ backgroundColor: '#D8C3A5'}}>
             <CardTitle className="name">
               <Link to={`/recipes/${this.state.external[2].name}`}>
               <h3>{this.state.external[2].name}</h3>

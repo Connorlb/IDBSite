@@ -78,7 +78,7 @@ componentDidMount() {
       <h1><big>{this.state.recipe.name}</big></h1>
       <h1></h1>
       <Row>
-        <Card className="fullRecipe header">
+        <Card className="fullRecipe header" style={{ backgroundColor: '#D8C3A5'}}>
           <CardTitle>
             <h2>
               <span>Servings: {this.state.recipe.servings} </span>
@@ -91,13 +91,13 @@ componentDidMount() {
       </Row>
 
       <Col xs={12} sm={6} >
-      <Card className="fullRecipe body">
+      <Card className="fullRecipe body" style={{ backgroundColor: '#D8C3A5'}}>
       <h1>Ingredients:</h1><h4> <br/> {this.state.recipe.ingredients}</h4>
       </Card>
       </Col>
 
       <Col xs={12} sm={6} >
-      <Card className="fullRecipe body">
+      <Card className="fullRecipe body" style={{ backgroundColor: '#D8C3A5'}}>
       <h1>Instructions:</h1><h4> <br/> {this.state.recipe.instructions}</h4>
       </Card>
       </Col>
@@ -105,7 +105,7 @@ componentDidMount() {
       <Row>
         <h3>Restaurants that serve food of similar cuisine:</h3>
         <Col>
-          <Card>
+          <Card style={{ backgroundColor: '#D8C3A5'}}>
             <CardTitle className="name">
               <Link to={`/restaurants/${this.state.external[0].name}`}>
               <h3>{this.state.external[0].name}</h3>

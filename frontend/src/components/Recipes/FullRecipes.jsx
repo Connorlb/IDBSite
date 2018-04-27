@@ -177,7 +177,7 @@ class FullRecipes extends React.Component {
     var options = DATA.CUISINES;
     return(
       <div>
-        <Card className="fullRecipe">
+        <Card className="fullRecipe" style={{ backgroundColor: '#D8C3A5'}}>
           <CardTitle>
             <h1>Recipes</h1>
           </CardTitle>
@@ -196,7 +196,7 @@ class FullRecipes extends React.Component {
                 valueKey="cuisine"/>
             </Col>
             <Col xs={3}>
-              <b>Sort the Recipies<br/></b>
+              <b>Sort the Recipes<br/></b>
               <DropdownButton
                 title={`${this.state.sortVal} ${this.state.sortDir}`}
                 key={1}

@@ -18,7 +18,7 @@ class RecipeCard extends React.Component {
       var links = LINKS.LINKS;
       return(
         <div>
-        <Card>
+        <Card style={{ backgroundColor: '#D8C3A5'}}>
         <CardTitle className="name">
          <Link to={`/recipes/${this.props.name}`}>
          <Image width={200} height={200} alt="200x200" src={links[this.props.cuisine][0]} circle className="contributor-pic" /></Link>

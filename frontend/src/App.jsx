@@ -8,6 +8,8 @@ import Recipes from './components/Recipes/Recipes';
 import Restaurants from './components/Restaurants/Restaurants';
 import Navbar from './components/pcNavbar';
 import Searches from './components/Search/Searches';
+import { Card, CardImg, CardText, CardBody,
+  CardTitle, CardSubtitle, CardGroup } from 'reactstrap';
 
 
 
@@ -17,6 +19,8 @@ class App extends Component {
       <Router>
       <div>
         <Navbar />
+        <div style={{ height: '70px', width: '100%' }}>
+        </div>
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/ingredients" component={Ingredients} />

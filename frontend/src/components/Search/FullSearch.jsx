@@ -34,52 +34,6 @@ class FullSearch extends React.Component {
       //this.handleDrops = this.handleDrops.bind(this)
   }
 
-  // handleDrops (e, evt){
-  //   var args = e.split(" ");
-  //   this.setState({sortVal: args[0]}, () => {
-  //   });
-  //   this.setState({sortDir: args[1]}, () => {
-  //     this.sortCards();
-  //   });
-  // }
-
-  // updateValue(newValue){
-  //   if(!newValue){
-  //
-  //     axios.get('http://pocketchef.me/api/restaurants2',{ //search api call
-  //     params: {
-  //       page: 1
-  //     }
-  //   })
-  //       .then(response => {
-  //       this.setState({cards: response.data.objects});
-  //       this.setState({totalPages: response.data.num_results});
-  //       })
-  //       .catch(function (error) {
-  //         console.log(error);})
-  //         this.setState({activePage: 1});
-  //         this.setState({selectValue: ''});
-  //         this.setState({sortVal: ''});
-  //         this.setState({sortDir: ''});
-  //   }else{
-  //   var cuisine_filter = [{"name": "cuisine", "op": "equals", "val": newValue}];
-  //   var ords = [{"field": this.state.sortVal, "direction": this.state.sortDir}];
-  //   let data = JSON.stringify({"filters": cuisine_filter, "order_by": ords});
-  //   axios({
-  //     method: 'get',
-  //     url: 'http://pocketchef.me/api/restaurants2', //Change to Search call
-  //     params: {
-  //       q: data
-  //     },
-  //     config: { headers: {'Content-Type': "application/json", "Access-Control-Allow-Origin": "*"}}
-  //     }).then(response => {
-  //     this.setState({totalPages: response.data.num_results});
-  //     this.setState({cards: response.data.objects});});
-  //
-  //   this.setState({selectValue: newValue});
-  // }
-  // }
-
   componentWillReceiveProps(newValue){
     console.log("this.state.selectValue " +  this.state.selectValue)
     console.log("New name " +newValue.match.params.name)
@@ -177,7 +131,7 @@ class FullSearch extends React.Component {
    render() {
         return(
           <div>
-          <Card >
+          <Card style={{ backgroundColor: '#D8C3A5'}}>
           <CardTitle >
             <h1>Search</h1>
             </CardTitle>
@@ -205,7 +159,7 @@ class FullSearch extends React.Component {
             {
               this.state.Icards.map(rest => (
                 <Col xs={12} sm={6} md={4} key={rest.name}>
-                <IngredientCard name={rest.name} cuisine={rest.cuisine} servings={rest.servings}  prep_time={rest.prep_time} rating={rest.rating} link={rest.src_url}/>
+                <IngredientCard name={rest.name} image={rest.picture}  protein={rest.protein} fat={rest.fat} calories={rest.calories}/>
                 </Col>
             ))
             }

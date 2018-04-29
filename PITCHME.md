@@ -9,15 +9,15 @@ PocketChef - SWE Group 16
 + Jesus Romero - Responsible for frontend design/programming and server management.
 ---
 **Demonstration**:
-+ Navigation & Searching: pocketchef.me
-
-+ GUI Tests:
+Navigation & Searching: pocketchef.me
++++
+GUI Tests:
 ![guitests](https://i.imgur.com/cWRFUlw.png)
-
-+ Unit Tests:
++++
+Unit Tests:
 ![unittests](https://i.imgur.com/fAbkd5c.png)
-
-+ Frontend Tests:
++++
+Frontend Tests:
 ![frontendtests](https://i.imgur.com/Q1HYPKp.png)
 ---
 **Self-Critique**

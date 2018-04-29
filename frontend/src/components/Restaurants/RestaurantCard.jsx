@@ -24,8 +24,8 @@ class RestaurantCard extends React.Component {
             <CardText>
             <h3 class="name">{this.props.name}</h3>
             <b>Cuisine Type:</b> {this.props.cuisine} <br/>
-            <b>Stars </b>{this.props.rating} <br/>
-            <b>Phone </b>{this.props.phone} <br/>
+            <b>Stars: </b>{this.props.rating} <br/>
+            <b>Phone: </b>{this.props.phone} <br/>
             </CardText>
             <a href={`${this.props.yelp}`}><Button>See Reviews</Button></a>
           </CardBody>

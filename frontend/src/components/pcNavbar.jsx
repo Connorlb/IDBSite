@@ -41,6 +41,9 @@ export default class PcNavbar extends Component {
             <NavItem eventKey={5} componentClass={Link} href="/about" to="/about">
               <h4>About</h4>
             </NavItem>
+            <NavItem eventKey={6} componentClass={Link} href="/visualization" to="/visualization">
+              <h4>Visualization</h4>
+            </NavItem>
           </Nav>
           <Nav pullRight>
             <NavItem>

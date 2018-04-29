@@ -131,37 +131,41 @@ class FullIngredients extends React.Component {
     var options = DATA.CUISINES;
     return(
       <div>
-        <Card className="fullIngredient" style={{ backgroundColor: '#D8C3A5'}}>
-          <CardTitle>
-            <h1>Ingredients</h1>
-          </CardTitle>
-          <Row className="show-grid">
-            <Col xs={3} xsOffset={4}>
+        <div className="container" style={{ backgroundColor: '#D8C3A5', width: '100%', paddingBottom: '20px'}}>
+          <Grid>
+            <Row>
+              <Col xs={4} xsOffset={3}>
+                  <h1>Ingredients</h1>
+                </Col>
+              </Row>
+              <Row>
+              <Col xs={4} xsOffset={3}>
               <b>Filter by Protein</b>
-              <form className="form">
-                <InputRange
-                  maxValue={20}
-                  minValue={0}
-                  value={this.state.value}
-                  formatLabel={value => value.toFixed(2)}
-                  onChange={this.updateValue} />
-              </form>
-            </Col>
-            <Col xs={3}>
-              <b>Sort the Ingredients<br/></b>
-              <DropdownButton
-                title={`${this.state.sortVal} ${this.state.sortDir}`}
-                key={1}
-                id={'recipe-sort-button'}
-                onSelect={this.handleDrops}>
-                <MenuItem eventKey="fat desc"> Fat DESC </MenuItem>
-                <MenuItem eventKey="fat asc"> Fat ASC </MenuItem>
-                <MenuItem eventKey="name desc"> Name DESC </MenuItem>
-               <MenuItem eventKey="name asc"> Name ASC </MenuItem>
-              </DropdownButton>
-            </Col>
-          </Row>
-        </Card>
+                <form className="form">
+                  <InputRange
+                    maxValue={20}
+                    minValue={0}
+                    value={this.state.value}
+                    formatLabel={value => value.toFixed(2)}
+                    onChange={this.updateValue} />
+                </form>
+              </Col>
+              <Col xs={3}>
+                <b>Sort the Ingredients<br/></b>
+                <DropdownButton
+                  title={`${this.state.sortVal} ${this.state.sortDir}`}
+                  key={1}
+                  id={'recipe-sort-button'}
+                  onSelect={this.handleDrops}>
+                  <MenuItem eventKey="fat desc"> Fat DESC </MenuItem>
+                  <MenuItem eventKey="fat asc"> Fat ASC </MenuItem>
+                  <MenuItem eventKey="name desc"> Name DESC </MenuItem>
+                 <MenuItem eventKey="name asc"> Name ASC </MenuItem>
+                </DropdownButton>
+              </Col>  
+            </Row>
+          </Grid>
+        </div>
         <CardGroup>
           <Row className="show-grid text-center">
             {

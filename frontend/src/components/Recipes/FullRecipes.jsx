@@ -177,39 +177,43 @@ class FullRecipes extends React.Component {
     var options = DATA.CUISINES;
     return(
       <div>
-        <Card className="fullRecipe" style={{ backgroundColor: '#D8C3A5'}}>
-          <CardTitle>
-            <h1>Recipes</h1>
-          </CardTitle>
-          <Row className="show-grid">
-            <Col xs={3} xsOffset={4}>
-              <b>Filter by Cuisine</b>
-              <VirtualizedSelect ref="cuisineSelect"
-                options={options}
-                simpleValue
-                clearable
-                name="select-cuisine"
-                value={this.state.selectValue}
-                onChange={this.updateValue}
-                searchable
-                labelKey="cuisine"
-                valueKey="cuisine"/>
-            </Col>
-            <Col xs={3}>
-              <b>Sort the Recipes<br/></b>
-              <DropdownButton
-                title={`${this.state.sortVal} ${this.state.sortDir}`}
-                key={1}
-                id={'recipe-sort-button'}
-                onSelect={this.handleDrops}>
-                <MenuItem eventKey= "prep_time desc" > Prep Time DESC </MenuItem>
-                <MenuItem eventKey= "prep_time asc" > Prep Time ASC </MenuItem>
-                <MenuItem eventKey= "name desc" > Name DESC </MenuItem>
-                <MenuItem eventKey= "name asc" > Name ASC </MenuItem>
-              </DropdownButton>
-            </Col>
-          </Row>
-        </Card>
+        <div className="container" style={{ backgroundColor: '#D8C3A5', width: '100%', paddingBottom: '20px'}}>
+          <Grid>
+            <Row>
+              <Col xs={4} xsOffset={3}>
+                <h1>Recipes</h1>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={4} xsOffset={3}>
+                <b>Filter by Cuisine</b>
+                <VirtualizedSelect ref="cuisineSelect"
+                  options={options}
+                  simpleValue
+                  clearable
+                  name="select-cuisine"
+                  value={this.state.selectValue}
+                  onChange={this.updateValue}
+                  searchable
+                  labelKey="cuisine"
+                  valueKey="cuisine"/>
+              </Col>
+              <Col xs={3}>
+                <b>Sort the Recipes<br/></b>
+                <DropdownButton
+                  title={`${this.state.sortVal} ${this.state.sortDir}`}
+                  key={1}
+                  id={'recipe-sort-button'}
+                  onSelect={this.handleDrops}>
+                  <MenuItem eventKey= "prep_time desc" > Prep Time DESC </MenuItem>
+                  <MenuItem eventKey= "prep_time asc" > Prep Time ASC </MenuItem>
+                  <MenuItem eventKey= "name desc" > Name DESC </MenuItem>
+                  <MenuItem eventKey= "name asc" > Name ASC </MenuItem>
+                </DropdownButton>
+              </Col>  
+            </Row>
+          </Grid>
+        </div>
         <CardGroup>
           <Row className="show-grid text-center">
             {

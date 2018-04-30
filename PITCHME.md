@@ -26,19 +26,19 @@ PocketChef - SWE Group 16
 2. Our website looks great on mobile.
 3. Our API works reliably, and the formatting of our data in our database is solid.
 4. Our color scheme looks great.
----
++++
 **What did we learn?**
 1. We learned a lot about managing a database, including simple things like formatting the contents of a column.
 2. We learned how to create an API for a postgres database.
 3. We learned how to communicate with APIs and how to automate API calls.
 4. We learned how to communicate with a SQL database using Python.
----
++++
 **What can we do better?**
 1. Our google maps links lack accuracy, which needs to be improved for locating restaurants.
 2. Our search function is pretty specific and lacks some functionality.
 3. Our home page doesn't have anything interesting on it other than the carousel.
 4. Our ingredients images are low quality, which could be improved.
----
++++
 **What puzzles us?**
 1. We would like to be able to work with multiple concurrent filters.
 2. Properly working with google-map-react is very difficult and we never totally figured it out.
@@ -65,7 +65,6 @@ PocketChef - SWE Group 16
 +++
 **What puzzles us about their website?**
 1. Nothing really puzzled us about their site. Everything is presented very cleanly, it is easy to understand what is going on and what they were looking to accomplish
-
 ---
 ### Visualization: 
 [PocketChef](http://pocketchef.me/visualization)

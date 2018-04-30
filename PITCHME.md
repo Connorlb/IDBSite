@@ -10,7 +10,7 @@ PocketChef - SWE Group 16
 ---
 ### Demonstration:
 Navigation & Searching: 
-[PocketChef](pocketchef.me)
+[PocketChef](https://pocketchef.me)
 ---
 #### GUI Tests:
 ![guitests](https://i.imgur.com/cWRFUlw.png)
@@ -69,5 +69,5 @@ Nothing really puzzled us about their site. Everything is presented very cleanly
 
 ---
 ### Visualization: 
-[PocketChef](pocketchef.me/visualization)
+[PocketChef](https://pocketchef.me/visualization)
 

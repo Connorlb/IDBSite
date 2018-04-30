@@ -21,7 +21,7 @@ Unit Tests:
 Frontend Tests:
 ![frontendtests](https://i.imgur.com/Q1HYPKp.png)
 ---
-**Self-Critique**
+# Self-Critique
 **What did we do well?**
 1. Our information is presented pretty well. It's easy to read and not overwhelming.
 2. Our website looks great on mobile.
@@ -46,7 +46,7 @@ Frontend Tests:
 3. Working with npm packages can be tricky and we still haven't totally mastered it.
 4. We never learned how to have a nice loading animation.
 ---
-**Other Critique**
+# Other Critique
 **What did they do well?**
 1. The Slackers did a good job with their grid pages. Information is presented clearly, and the pages look great.
 2. Detailed information is presented well in a box on the model pages.
@@ -67,6 +67,6 @@ Frontend Tests:
 **What puzzles us about their website?**
 Nothing really puzzled us about their site. Everything is presented very cleanly, it is easy to understand what is going on and what they were looking to accomplish.
 ---
-**Visualization**
-[PocketChef Visualizatoin](pocketchef.me/visualization)
+**Visualization**: 
+[PocketChef](pocketchef.me/visualization)
 

@@ -8,10 +8,6 @@ PocketChef - SWE Group 16
 + Aditya Prasad - Responsible for backend programming, GUI testing, and web scraping.
 + Jesus Romero - Responsible for frontend design/programming and server management.
 ---
-### Demonstration:
-Navigation & Searching: 
-[PocketChef](http://pocketchef.me)
----
 #### GUI Tests:
 ![guitests](https://i.imgur.com/cWRFUlw.png)
 ---
@@ -20,6 +16,10 @@ Navigation & Searching:
 ---
 #### Frontend Tests:
 ![frontendtests](https://i.imgur.com/Q1HYPKp.png)
+---
+### Demonstration:
+#### Navigation & Searching: 
+[PocketChef](http://pocketchef.me)
 ---
 ### Self-Critique
 **What did we do well?**

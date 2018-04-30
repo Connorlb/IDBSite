@@ -12,13 +12,13 @@ PocketChef - SWE Group 16
 Navigation & Searching: 
 [PocketChef](pocketchef.me)
 ---
-GUI Tests:
+#### GUI Tests:
 ![guitests](https://i.imgur.com/cWRFUlw.png)
 ---
-Unit Tests:
+#### Unit Tests:
 ![unittests](https://i.imgur.com/fAbkd5c.png)
 ---
-Frontend Tests:
+#### Frontend Tests:
 ![frontendtests](https://i.imgur.com/Q1HYPKp.png)
 ---
 ### Self-Critique

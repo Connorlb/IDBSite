@@ -65,7 +65,8 @@ Navigation & Searching:
 3. Grid images get stretched to fit. This can look pretty weird at times, and it may be better to just crop the images.
 ---
 **What puzzles us about their website?**
-Nothing really puzzled us about their site. Everything is presented very cleanly, it is easy to understand what is going on and what they were looking to accomplish.
+Nothing really puzzled us about their site. Everything is presented very cleanly, it is easy to understand what is going on and what they were looking to accomplish
+
 ---
 ### Visualization: 
 [PocketChef](pocketchef.me/visualization)

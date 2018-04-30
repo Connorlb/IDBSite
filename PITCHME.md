@@ -17,7 +17,6 @@ PocketChef - SWE Group 16
 #### Frontend Tests:
 ![frontendtests](https://i.imgur.com/Q1HYPKp.png)
 ---
-### Demonstration:
 #### Navigation & Searching: 
 [PocketChef](http://pocketchef.me)
 ---
@@ -52,20 +51,20 @@ PocketChef - SWE Group 16
 2. Detailed information is presented well in a box on the model pages.
 3. The home page has some interesting links on it, and is presented well.
 4. The search functionality works extremely well.
----
++++
 **What did we learn from their website?**
 1. Filtering by sliders is a very interesting idea that we hadn't thought of.
 2. Good background image choices mean a lot for the overall aesthetic of the website.
 3. We got a few ideas about how to format our API documentation from theirs.
 4. We learned that cards are a great way to present information cleanly.
----
++++
 **What can they do better?**
 1. The links to google maps on the criminals model pages seem broken. They all link to the same place on the map regardless of the location of the criminals' crimes.
 2. Changing pages will not refresh model images right away, which can cause confusion.
 3. Grid images get stretched to fit. This can look pretty weird at times, and it may be better to just crop the images.
----
++++
 **What puzzles us about their website?**
-Nothing really puzzled us about their site. Everything is presented very cleanly, it is easy to understand what is going on and what they were looking to accomplish
+1. Nothing really puzzled us about their site. Everything is presented very cleanly, it is easy to understand what is going on and what they were looking to accomplish
 
 ---
 ### Visualization: 

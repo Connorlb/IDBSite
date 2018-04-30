@@ -67,5 +67,5 @@ PocketChef - SWE Group 16
 1. Nothing really puzzled us about their site. Everything is presented very cleanly, it is easy to understand what is going on and what they were looking to accomplish
 ---
 ### Visualization: 
-[PocketChef](http://pocketchef.me/visualization)
+Demonstration
 
